@@ -1,0 +1,27 @@
+module tb_ULA;
+  
+  reg [31:0]A;
+  reg [31:0]B;
+  wire [31:0]C;
+  wire z;
+  reg [1:0]sel;
+  integer i;
+
+  ULA dut ( .A (A),
+            .B (B),
+				.C (C),
+				.sel (sel)
+	);
+	
+	initial begin
+      $monitor ("[%0t] A=%4b B=%4b C=%4b sel=%2b", $time, A, B, C, sel);
+		A <= 4'b1010;
+		B <= 4'b0001;
+		sel <= 2'b00;
+		
+		for (i = 0; i < 4; i=i+1) begin
+		  #10 sel <= i;
+		end
+	end
+endmodule
+		
