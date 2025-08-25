@@ -1,1 +1,1 @@
-# Risc-v-R232I-pipeline-
+# Risc-v-RV32I-pipeline-
