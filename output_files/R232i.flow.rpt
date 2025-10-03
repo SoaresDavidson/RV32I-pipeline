@@ -1,5 +1,5 @@
 Flow report for R232i
-Sun Aug 24 22:55:31 2025
+Fri Oct 03 12:57:50 2025
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -41,16 +41,16 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Sun Aug 24 22:55:31 2025       ;
+; Flow Status                     ; Successful - Fri Oct 03 12:57:50 2025       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; R232i                                       ;
-; Top-level Entity Name           ; ULA                                         ;
+; Top-level Entity Name           ; R232i                                       ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CGXFC7C7F23C8                              ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 41 / 56,480 ( < 1 % )                       ;
-; Total registers                 ; 0                                           ;
-; Total pins                      ; 99 / 268 ( 37 % )                           ;
+; Logic utilization (in ALMs)     ; 835 / 56,480 ( 1 % )                        ;
+; Total registers                 ; 1024                                        ;
+; Total pins                      ; 116 / 268 ( 43 % )                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 7,024,640 ( 0 % )                       ;
 ; Total DSP Blocks                ; 0 / 156 ( 0 % )                             ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 08/24/2025 22:54:50 ;
+; Start date & time ; 10/03/2025 12:53:35 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; R232i               ;
 +-------------------+---------------------+
@@ -79,29 +79,32 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID                ; 154031910659592.175608689012213        ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID                ; 154031910659593.175950681508872        ; --            ; --          ; --                                ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; R232i_tb                          ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; tb_ULA                            ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_symbol           ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; tb_ULA                                 ; --            ; --          ; eda_simulation                    ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; R232i_tb                               ; --            ; --          ; eda_simulation                    ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                            ; --            ; --          ; eda_simulation                    ;
 ; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (Verilog)              ; <None>        ; --          ; --                                ;
 ; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                        ; --            ; --          ; eda_simulation                    ;
+; EDA_TEST_BENCH_FILE                  ; verilog_code/R232i_tb.v                ; --            ; --          ; R232i_tb                          ;
 ; EDA_TEST_BENCH_FILE                  ; verilog_code/tb_ULA.v                  ; --            ; --          ; tb_ULA                            ;
+; EDA_TEST_BENCH_MODULE_NAME           ; R232i_tb                               ; --            ; --          ; R232i_tb                          ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; tb_ULA                                 ; --            ; --          ; tb_ULA                            ;
 ; EDA_TEST_BENCH_NAME                  ; tb_ULA                                 ; --            ; --          ; eda_simulation                    ;
+; EDA_TEST_BENCH_NAME                  ; R232i_tb                               ; --            ; --          ; eda_simulation                    ;
 ; EDA_TIME_SCALE                       ; 1 ps                                   ; --            ; --          ; eda_simulation                    ;
 ; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --            ; --          ; --                                ;
 ; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --            ; --          ; --                                ;
-; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --            ; ULA         ; Top                               ;
-; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --            ; ULA         ; Top                               ;
-; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --            ; ULA         ; Top                               ;
+; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --            ; --          ; Top                               ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --            ; --          ; Top                               ;
+; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --            ; --          ; Top                               ;
 ; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                    ; --            ; --          ; --                                ;
 ; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --                                ;
 ; PROJECT_OUTPUT_DIRECTORY             ; output_files                           ; --            ; --          ; --                                ;
-; TOP_LEVEL_ENTITY                     ; ULA                                    ; R232i         ; --          ; --                                ;
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 
 
@@ -110,26 +113,26 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:05     ; 1.0                     ; 493 MB              ; 00:00:14                           ;
-; Fitter               ; 00:00:22     ; 1.0                     ; 2582 MB             ; 00:01:03                           ;
-; Assembler            ; 00:00:06     ; 1.0                     ; 514 MB              ; 00:00:06                           ;
-; Timing Analyzer      ; 00:00:05     ; 1.1                     ; 1012 MB             ; 00:00:05                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 690 MB              ; 00:00:01                           ;
-; Total                ; 00:00:38     ; --                      ; --                  ; 00:01:29                           ;
+; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 4915 MB             ; 00:00:17                           ;
+; Fitter               ; 00:03:41     ; 1.1                     ; 7686 MB             ; 00:17:24                           ;
+; Assembler            ; 00:00:09     ; 1.0                     ; 4854 MB             ; 00:00:08                           ;
+; Timing Analyzer      ; 00:00:09     ; 1.9                     ; 5367 MB             ; 00:00:16                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4746 MB             ; 00:00:01                           ;
+; Total                ; 00:04:08     ; --                      ; --                  ; 00:18:06                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+---------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                       ;
-+----------------------+------------------+---------------+------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name       ; OS Version ; Processor type ;
-+----------------------+------------------+---------------+------------+----------------+
-; Analysis & Synthesis ; pop-os           ; Pop!_OS 22.04 ; 22         ; x86_64         ;
-; Fitter               ; pop-os           ; Pop!_OS 22.04 ; 22         ; x86_64         ;
-; Assembler            ; pop-os           ; Pop!_OS 22.04 ; 22         ; x86_64         ;
-; Timing Analyzer      ; pop-os           ; Pop!_OS 22.04 ; 22         ; x86_64         ;
-; EDA Netlist Writer   ; pop-os           ; Pop!_OS 22.04 ; 22         ; x86_64         ;
-+----------------------+------------------+---------------+------------+----------------+
++------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                    ;
++----------------------+------------------+------------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++----------------------+------------------+------------+------------+----------------+
+; Analysis & Synthesis ; daviAlienware    ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; daviAlienware    ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; daviAlienware    ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; daviAlienware    ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; daviAlienware    ; Windows 10 ; 10.0       ; x86_64         ;
++----------------------+------------------+------------+------------+----------------+
 
 
 ------------

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for R232i
-Sun Aug 24 22:54:55 2025
+Fri Oct 03 12:53:43 2025
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -15,9 +15,11 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
   9. Multiplexer Restructuring Statistics (Restructuring Performed)
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+ 10. Port Connectivity Checks: "ULA:ULA"
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
+ 14. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -44,14 +46,14 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Aug 24 22:54:55 2025       ;
+; Analysis & Synthesis Status     ; Successful - Fri Oct 03 12:53:43 2025       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; R232i                                       ;
-; Top-level Entity Name           ; ULA                                         ;
+; Top-level Entity Name           ; R232i                                       ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 0                                           ;
-; Total pins                      ; 99                                          ;
+; Total registers                 ; 1024                                        ;
+; Total pins                      ; 116                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -70,7 +72,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
-; Top-level entity name                                                           ; ULA                ; R232i              ;
+; Top-level entity name                                                           ; R232i              ; R232i              ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -160,56 +162,68 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 14          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 14          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
+;     Processor 7            ;   0.0%      ;
+;     Processor 8            ;   0.0%      ;
+;     Processors 9-14        ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                      ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                        ; Library ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------+---------+
-; verilog_code/ULA.v               ; yes             ; User Verilog HDL File  ; /home/davidson/Documentos/Risc-v/verilog_code/ULA.v ;         ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                            ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                              ; Library ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------------+---------+
+; verilog_code/R232i.v             ; yes             ; User Verilog HDL File  ; C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i.v         ;         ;
+; verilog_code/ULA.v               ; yes             ; User Verilog HDL File  ; C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/ULA.v           ;         ;
+; verilog_code/register_bank.v     ; yes             ; User Verilog HDL File  ; C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/register_bank.v ;         ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                ;
-+---------------------------------------------+--------------+
-; Resource                                    ; Usage        ;
-+---------------------------------------------+--------------+
-; Estimate of Logic utilization (ALMs needed) ; 39           ;
-;                                             ;              ;
-; Combinational ALUT usage for logic          ; 71           ;
-;     -- 7 input functions                    ; 0            ;
-;     -- 6 input functions                    ; 6            ;
-;     -- 5 input functions                    ; 32           ;
-;     -- 4 input functions                    ; 0            ;
-;     -- <=3 input functions                  ; 33           ;
-;                                             ;              ;
-; Dedicated logic registers                   ; 0            ;
-;                                             ;              ;
-; I/O pins                                    ; 99           ;
-;                                             ;              ;
-; Total DSP Blocks                            ; 0            ;
-;                                             ;              ;
-; Maximum fan-out node                        ; sel[1]~input ;
-; Maximum fan-out                             ; 32           ;
-; Total fan-out                               ; 425          ;
-; Average fan-out                             ; 1.58         ;
-+---------------------------------------------+--------------+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 905       ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 839       ;
+;     -- 7 input functions                    ; 0         ;
+;     -- 6 input functions                    ; 694       ;
+;     -- 5 input functions                    ; 62        ;
+;     -- 4 input functions                    ; 32        ;
+;     -- <=3 input functions                  ; 51        ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 1024      ;
+;                                             ;           ;
+; I/O pins                                    ; 116       ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 1024      ;
+; Total fan-out                               ; 9093      ;
+; Average fan-out                             ; 4.34      ;
++---------------------------------------------+-----------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; |ULA                       ; 71 (71)             ; 0 (0)                     ; 0                 ; 0          ; 99   ; 0            ; |ULA                ; ULA         ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                 ;
++-----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------+---------------+--------------+
+; Compilation Hierarchy Node  ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name           ; Entity Name   ; Library Name ;
++-----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------+---------------+--------------+
+; |R232i                      ; 839 (0)             ; 1024 (0)                  ; 0                 ; 0          ; 116  ; 0            ; |R232i                        ; R232i         ; work         ;
+;    |ULA:ULA|                ; 64 (64)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |R232i|ULA:ULA                ; ULA           ; work         ;
+;    |register_bank:reg_bank| ; 775 (775)           ; 1024 (1024)               ; 0                 ; 0          ; 0    ; 0            ; |R232i|register_bank:reg_bank ; register_bank ; work         ;
++-----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------+---------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -218,23 +232,34 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 1024  ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 1024  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 1024  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |ULA|Mux15                 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |R232i|ULA:ULA|Mux31                ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |R232i|register_bank:reg_bank|Mux16 ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |R232i|register_bank:reg_bank|Mux63 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ULA:ULA"                                                                            ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; z    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -242,17 +267,20 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 71                          ;
+; arriav_ff             ; 1024                        ;
+;     ENA CLR           ; 1024                        ;
+; arriav_lcell_comb     ; 839                         ;
 ;     arith             ; 32                          ;
-;         2 data inputs ; 32                          ;
-;     normal            ; 39                          ;
+;         4 data inputs ; 32                          ;
+;     normal            ; 807                         ;
 ;         2 data inputs ; 1                           ;
-;         5 data inputs ; 32                          ;
-;         6 data inputs ; 6                           ;
-; boundary_port         ; 99                          ;
+;         3 data inputs ; 50                          ;
+;         5 data inputs ; 62                          ;
+;         6 data inputs ; 694                         ;
+; boundary_port         ; 116                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 6.70                        ;
-; Average LUT depth     ; 5.87                        ;
+; Max LUT depth         ; 10.60                       ;
+; Average LUT depth     ; 8.53                        ;
 +-----------------------+-----------------------------+
 
 
@@ -261,7 +289,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -271,27 +299,40 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sun Aug 24 22:54:50 2025
+    Info: Processing started: Fri Oct 03 12:53:35 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off R232i -c R232i
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
-Warning (12019): Can't analyze file -- file Processor.v is missing
-Info (12021): Found 1 design units, including 1 entities, in source file verilog_code/R232i.v
-    Info (12023): Found entity 1: R232i File: /home/davidson/Documentos/Risc-v/verilog_code/R232i.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file verilog_code/ULA.v
-    Info (12023): Found entity 1: ULA File: /home/davidson/Documentos/Risc-v/verilog_code/ULA.v Line: 1
-Info (12127): Elaborating entity "ULA" for the top level hierarchy
+Info (12021): Found 1 design units, including 1 entities, in source file verilog_code/r232i.v
+    Info (12023): Found entity 1: R232i File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file verilog_code/ula.v
+    Info (12023): Found entity 1: ULA File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/ULA.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file verilog_code/forward_unit.v
+    Info (12023): Found entity 1: forward_unit File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/forward_unit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file verilog_code/register_bank.v
+    Info (12023): Found entity 1: register_bank File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/register_bank.v Line: 1
+Info (12127): Elaborating entity "R232i" for the top level hierarchy
+Info (12128): Elaborating entity "register_bank" for hierarchy "register_bank:reg_bank" File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i.v Line: 28
+Warning (10240): Verilog HDL Always Construct warning at register_bank.v(17): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/register_bank.v Line: 17
+Info (12128): Elaborating entity "ULA" for hierarchy "ULA:ULA" File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i.v Line: 40
 Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/output_files/R232i.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 170 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 66 input pins
-    Info (21059): Implemented 33 output pins
-    Info (21061): Implemented 71 logic cells
+Info (21057): Implemented 1979 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 20 input pins
+    Info (21059): Implemented 96 output pins
+    Info (21061): Implemented 1863 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 493 megabytes
-    Info: Processing ended: Sun Aug 24 22:54:55 2025
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:14
+    Info: Peak virtual memory: 4915 megabytes
+    Info: Processing ended: Fri Oct 03 12:53:43 2025
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:17
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/output_files/R232i.map.smsg.
 
 

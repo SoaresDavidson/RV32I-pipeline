@@ -1,3 +1,4 @@
+# Reading pref.tcl
 # do R232i_run_msim_rtl_verilog.do
 # if {[file exists rtl_work]} {
 # 	vdel -lib rtl_work -all
@@ -6,35 +7,57 @@
 # vmap work rtl_work
 # Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
 # vmap work rtl_work 
-# Copying /home/davidson/intelFPGA_lite/20.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog -vlog01compat -work work +incdir+/home/davidson/Documentos/Risc-v/verilog_code {/home/davidson/Documentos/Risc-v/verilog_code/ULA.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:55:42 on Aug 24,2025
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/davidson/Documentos/Risc-v/verilog_code" /home/davidson/Documentos/Risc-v/verilog_code/ULA.v 
+# Start time: 12:59:36 on Oct 03,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i.v 
+# -- Compiling module R232i
+# 
+# Top level modules:
+# 	R232i
+# End time: 12:59:36 on Oct 03,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/ULA.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:59:36 on Oct 03,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/ULA.v 
 # -- Compiling module ULA
 # 
 # Top level modules:
 # 	ULA
-# End time: 22:55:42 on Aug 24,2025, Elapsed time: 0:00:00
+# End time: 12:59:36 on Oct 03,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# 
-# vlog -vlog01compat -work work +incdir+/home/davidson/Documentos/Risc-v/verilog_code {/home/davidson/Documentos/Risc-v/verilog_code/tb_ULA.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/register_bank.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:55:42 on Aug 24,2025
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/davidson/Documentos/Risc-v/verilog_code" /home/davidson/Documentos/Risc-v/verilog_code/tb_ULA.v 
-# -- Compiling module tb_ULA
+# Start time: 12:59:36 on Oct 03,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/register_bank.v 
+# -- Compiling module register_bank
 # 
 # Top level modules:
-# 	tb_ULA
-# End time: 22:55:42 on Aug 24,2025, Elapsed time: 0:00:00
+# 	register_bank
+# End time: 12:59:36 on Oct 03,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_ULA
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_ULA 
-# Start time: 22:55:42 on Aug 24,2025
-# Loading work.tb_ULA
+# vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i_tb.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:59:36 on Oct 03,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i_tb.v 
+# -- Compiling module R232i_tb
+# 
+# Top level modules:
+# 	R232i_tb
+# End time: 12:59:36 on Oct 03,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  R232i_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" R232i_tb 
+# Start time: 12:59:36 on Oct 03,2025
+# Loading work.R232i_tb
+# Loading work.R232i
+# Loading work.register_bank
 # Loading work.ULA
 # 
 # add wave *
@@ -43,9 +66,24 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# [0] A=00000000000000000000000000001010 B=00000000000000000000000000000001 C=00000000000000000000000000001011 sel=00, z=0
-# [20] A=00000000000000000000000000001010 B=00000000000000000000000000000001 C=00000000000000000000000000000000 sel=01, z=1
-# [30] A=00000000000000000000000000001010 B=00000000000000000000000000000001 C=00000000000000000000000000001011 sel=10, z=0
-# [40] A=00000000000000000000000000001010 B=00000000000000000000000000000001 C=00000000000000000000000000001010 sel=11, z=0
-# End time: 22:55:59 on Aug 24,2025, Elapsed time: 0:00:17
+# Time=0 | rst=1 | rs1= 0 rs2= 0 rd= 0 | sel=00 RW=0 | readA=         0 readB=         0 ULA_C=         0
+# Time=20000 | rst=0 | rs1= 0 rs2= 0 rd= 0 | sel=00 RW=0 | readA=         0 readB=         0 ULA_C=         0
+# 
+# --- TESTE 1: Escrevendo 100 no registrador x1 ---
+# 
+# --- TESTE 1: Verificando a leitura de x0 ---
+# Time=21000 | rst=0 | rs1= 0 rs2= 0 rd= 1 | sel=00 RW=0 | readA=         0 readB=         0 ULA_C=         0
+# 
+# --- TESTE 2: Simular 'addi x1, x0, 123' ---
+# 
+# --- TESTE 2: Escrevendo x0+x0 em x3 ---
+# Time=31000 | rst=0 | rs1= 0 rs2= 0 rd= 3 | sel=00 RW=1 | readA=         0 readB=         0 ULA_C=         0
+# 
+# --- TESTE 3: Verificando a escrita em x3 ---
+# Time=41000 | rst=0 | rs1= 3 rs2= 0 rd= 3 | sel=00 RW=0 | readA=         0 readB=         0 ULA_C=         0
+# ** Note: $finish    : C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i_tb.v(108)
+#    Time: 101 ns  Iteration: 0  Instance: /R232i_tb
+# 1
+# Break in Module R232i_tb at C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i_tb.v line 108
+# End time: 13:02:43 on Oct 03,2025, Elapsed time: 0:03:07
 # Errors: 0, Warnings: 0
