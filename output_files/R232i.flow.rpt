@@ -1,5 +1,5 @@
 Flow report for R232i
-Fri Oct 03 12:57:50 2025
+Fri Oct 03 13:27:35 2025
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -41,16 +41,16 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Fri Oct 03 12:57:50 2025       ;
+; Flow Status                     ; Successful - Fri Oct 03 13:27:35 2025       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; R232i                                       ;
 ; Top-level Entity Name           ; R232i                                       ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CGXFC7C7F23C8                              ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 835 / 56,480 ( 1 % )                        ;
-; Total registers                 ; 1024                                        ;
-; Total pins                      ; 116 / 268 ( 43 % )                          ;
+; Logic utilization (in ALMs)     ; 764 / 56,480 ( 1 % )                        ;
+; Total registers                 ; 992                                         ;
+; Total pins                      ; 138 / 268 ( 51 % )                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 7,024,640 ( 0 % )                       ;
 ; Total DSP Blocks                ; 0 / 156 ( 0 % )                             ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/03/2025 12:53:35 ;
+; Start date & time ; 10/03/2025 13:24:04 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; R232i               ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID                ; 154031910659593.175950681508872        ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID                ; 154031910659593.175950864320412        ; --            ; --          ; --                                ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; R232i_tb                          ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; tb_ULA                            ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
@@ -113,12 +113,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 4915 MB             ; 00:00:17                           ;
-; Fitter               ; 00:03:41     ; 1.1                     ; 7686 MB             ; 00:17:24                           ;
-; Assembler            ; 00:00:09     ; 1.0                     ; 4854 MB             ; 00:00:08                           ;
-; Timing Analyzer      ; 00:00:09     ; 1.9                     ; 5367 MB             ; 00:00:16                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4746 MB             ; 00:00:01                           ;
-; Total                ; 00:04:08     ; --                      ; --                  ; 00:18:06                           ;
+; Analysis & Synthesis ; 00:00:07     ; 1.0                     ; 4907 MB             ; 00:00:15                           ;
+; Fitter               ; 00:03:06     ; 1.0                     ; 7684 MB             ; 00:19:19                           ;
+; Assembler            ; 00:00:06     ; 1.0                     ; 4850 MB             ; 00:00:06                           ;
+; Timing Analyzer      ; 00:00:07     ; 2.3                     ; 5363 MB             ; 00:00:13                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4748 MB             ; 00:00:01                           ;
+; Total                ; 00:03:27     ; --                      ; --                  ; 00:19:54                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

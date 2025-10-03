@@ -8,10 +8,10 @@ module ULA (input [31:0]A,
 //soma, and, or, transparencia
 	always @(*) begin
 		case (sel)
-		  4'b00: C <= A + B;
-		  4'b01: C <= A & B;
-		  4'b10: C <= A | B;
-		  4'b11: C <= A;
+		  2'b00: C <= A + B;
+		  2'b01: C <= A & B;
+		  2'b10: C <= A | B;
+		  2'b11: C <= A;
 			default: C <= A;
 		endcase	
 		if (C == 0) begin

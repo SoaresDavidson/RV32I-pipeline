@@ -20,7 +20,7 @@ module register_bank(
             for (i = 0; i < 32; i = i + 1) begin
                 registers[i] <= 32'b0;
             end
-        end else if (RegWrite && (C != 5'b0)) begin
+        end else if (RegWrite && (rd != 5'b0)) begin
             registers[rd] <= C; // Escreve no registrador C se RegWrite estiver ativo e C não for o registrador zero
         end
     end

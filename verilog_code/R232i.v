@@ -70,16 +70,16 @@ module R232i(
 
     //ID/EX
     case (forwardA)
-      2'b00: ULArs1 <= A ; // Normal
+      2'b00: ULArs1 <= read_A ; // Normal
       2'b01: ULArs1 <= 32'h00000000 ; // EX/MEM
-      2'b10: ULArs1 <= C; // MEM/WB sei la não implementei isso ainda
-      default: ULArs1 <= A;
+      2'b10: ULArs1 <= ULA_C; // MEM/WB sei la não implementei isso ainda
+      default: ULArs1 <= read_A;
     endcase
     case (forwardB)
-      2'b00: ULArs2 <= B; // Normal
+      2'b00: ULArs2 <= read_B; // Normal
       2'b01: ULArs2 <= 32'h00000000; // EX/MEM
-      2'b10: ULArs2 <= C; // MEM/WB sei la não implementei isso ainda
-      default: ULArs2 <= B;
+      2'b10: ULArs2 <= ULA_C; // MEM/WB sei la não implementei isso ainda
+      default: ULArs2 <= read_B;
     endcase
 
 

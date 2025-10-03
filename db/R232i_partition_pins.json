@@ -444,11 +444,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "rd[0]",
-					"strict" : false
-				},
-				{
-					"name" : "rd[1]",
+					"name" : "RegWrite",
 					"strict" : false
 				},
 				{
@@ -460,11 +456,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "rd[4]",
+					"name" : "rd[0]",
 					"strict" : false
 				},
 				{
-					"name" : "RegWrite",
+					"name" : "rd[1]",
+					"strict" : false
+				},
+				{
+					"name" : "rd[4]",
 					"strict" : false
 				}
 			]
