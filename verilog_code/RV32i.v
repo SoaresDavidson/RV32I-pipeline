@@ -1,9 +1,9 @@
 module R232i(
-    input clk,
-    input reset,
-    input wire [4:0]rs1,
-    input wire [4:0]rs2,
-    input wire [4:0]rd,
+    input wire clk,
+    input wire rst,
+    input wire enable,
+
+    input wire [31:0] instruction,
     input wire RegWrite,
     input wire [1:0]sel,
     input [4:0]IDEXrs1,
@@ -17,14 +17,38 @@ module R232i(
     output wire [31:0] out_read_B,
     output wire [31:0] out_ULA_C
 );
+  //IF/ID
+  wire [6:0] opcode; 
+  wire [4:0] rd, IFID_rs1, IFID_rs2; //registadores de destino e fonte
+  wire [2:0] funct3; 
+  wire [6:0] funct7;
+  wire [11:0] imm_I, imm_S, imm_B; //imediatos tipo I, S e B
+  wire [19:0] imm_U, imm_J; //imediatos tipo U e J
+
+  IF_ID IF_ID(
+    .instruction(instruction),
+    .clk(clk),
+    .rst(rst),
+    .enable(enable),
+    .opcode(opcode),
+    .rd(rd),
+    .rs1(IFID_rs1),
+    .rs2(IFID_rs2),
+    .funct3(funct3),
+    .funct7(funct7),
+    .imm_I(imm_I),
+    .imm_S(imm_S),
+    .imm_B(imm_B),
+    .imm_U(imm_U),
+    .imm_J(imm_J)
+  );
   //Banco de registradores
   wire [31:0]read_A;
   wire [31:0]read_B;
   wire [31:0]ULA_C;
-
   register_bank reg_bank (
     .clk(clk),
-    .rst(reset),
+    .rst(rst),
     .rs1(rs1),
     .rs2(rs2),
     .rd(rd),
@@ -33,11 +57,25 @@ module R232i(
     .A(read_A),
     .B(read_B)
   );
+
+  //ID/EX
+  reg [31:0] imm_gen_output;
+  always @(*) begin
+    case opcode
+      7'b0110011: imm_gen_output = {32{1'b0}}; // tipo R
+      7'b0010011, 7'b0000011: imm_gen_output = {{20{imm_I[11]}}, imm_I}; //tipo I
+      7'b0100011: imm_gen_output = {{20{imm_S[11]}}, imm_S}; //tipo S
+      7'b1100011: imm_gen_output = {{19{imm_B[11]}}, imm_B, 1'b0}; //tipo B
+      7'b1101111: imm_gen_output = {{12{imm_J[19]}}, imm_J}; //tipo J
+      7'b0010111, 7'b0110111: imm_gen_output = {imm_U, 12{1'b0}}; //tipo U
+      default: imm_gen_output = 32'b0;
+    endcase
+  end
   //todos esse sinais vão vir dos registradores de pipeline so estou com eles aqui 
   //para teste
   
+  //ULA
   wire z;
-  
   ULA ULA ( 
     .A (read_A),
     .B (read_B),

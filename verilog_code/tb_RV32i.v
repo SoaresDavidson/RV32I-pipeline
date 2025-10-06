@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
 
-module R232i_tb;
+module RV32i_tb;
 
     // --- Sinais de Estímulo (controlam o DUT) ---
     reg clk;
@@ -17,7 +17,7 @@ module R232i_tb;
 
     // --- Instanciação do DUT ---
     // (Assumindo que R232i.v, ULA.v, register_bank.v e forward_unit.v estão na mesma pasta)
-    R232i dut (
+    RV32i dut (
         .clk(clk), .reset(reset), .rs1(rs1), .rs2(rs2), .rd(rd),
         .RegWrite(RegWrite), .sel(sel), .IDEXrs1(IDEXrs1), .IDEXrs2(IDEXrs2),
         .MEMWBrd(MEMWBrd), .EXMEMrd(EXMEMrd), .EXMEM_RegWrite(EXMEM_RegWrite),
