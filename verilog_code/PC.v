@@ -13,7 +13,7 @@ module ProgramCounter (
     end
     else if (Enable ==1) begin
       if (Control == 1) begin
-        pc <= Target;
+        pc <= pc + Target;
       end
       else begin
         pc <= pc + 4;
@@ -23,3 +23,4 @@ module ProgramCounter (
 endmodule
     
       
+
