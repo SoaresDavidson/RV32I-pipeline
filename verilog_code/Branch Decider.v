@@ -1,72 +1,30 @@
 module BranchDecider (
-  input wire [6:0] opcode,
-  input wire [2:0] funct3,
-  input wire [31:0] rs1,
-  input wire [31:0] rs2,
-  input wire [11:0] imm,
-  output reg Branch,
-  output reg [11:0] Deviation
+  input  wire [6:0] opcode,
+  input  wire [2:0] funct3,
+  input  wire [31:0] rs1,
+  input  wire [31:0] rs2,
+  input  wire [11:0] imm,
+  output reg  Branch,
+  output reg  [11:0] Deviation
 );
   always @(*) begin
-    if (opcode == 7b'1100011) begin
-      
-      if (funct3 == 3'b0) begin
-        if (rs1 == rs2) begin
-          Deviation <= imm;
-          Branch <= 1'b1;
-        end
-        if (rs1 != rs2) begin
-          Branch <= 1'b0;
-        end
-      end
-      
-      if (funct3 == 3'b001) begin
-        if (rs1 != rs2) begin
-          Deviation <= imm;
-          Branch <= 1'b1;
-        end
-        if (rs1 == rs2) begin
-          Branch <= 1'b0;
-        end
-      end
-      
-      if (funct3 == 3'b100) begin
-        if (rs1 < rs2) begin
-          Deviation <= imm;
-          Branch <= 1'b1;
-        end
-        if (rs1 >= rs2) begin
-          Branch <= 1'b0;
-        end
-      end
-      
-      if (funct3 == 3'b101) begin
-        if (rs1 >= rs2) begin
-          Deviation <= imm;
-          Branch <= 1'b1;
-        end
-        if (rs1 < rs2) begin
-          Branch <= 1'b0;
-        end
-      end
-      if (funct3 == 3'b110) begin
-        if ($signed(rs1) < $signed(rs2)) begin
-          Deviation <= imm;
-          Branch <= 1'b1;
-        end
-        if ($signed(rs1) >= $signed(rs2)) begin
-          Branch <= 1'b0;
-        end
-      end
-      
-      if (funct3 == 3'b111) begin
-        if ($signed(rs1) >= $signed(rs2)) begin
-          Deviation <= imm;
-          branch <= 1'b1;
-        end else begin
-          Branch <= 1'b0;
-        end
-      end
+    // valores padrão
+    Branch    = 1'b0;
+    Deviation = 12'b0;
+
+    if (opcode == 7'b1100011) begin
+      case (funct3)
+        3'b000: Branch = (rs1 == rs2);   // BEQ
+        3'b001: Branch = (rs1 != rs2);   // BNE
+        3'b100: Branch = (rs1 < rs2);    // BLT
+        3'b101: Branch = (rs1 >= rs2);   // BGE
+        3'b110: Branch = ($signed(rs1) < $signed(rs2)) // BLT signed
+        3'b111: Branch = ($signed(rs1) >= $signed(rs2)) // BGE signed
+        default: Branch = 1'b0;
+      endcase
+
+      if (Branch)
+        Deviation = imm;
     end
   end
 endmodule
