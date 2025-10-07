@@ -5,12 +5,12 @@ module BranchDecider (
   input  wire [31:0] rs2,
   input  wire [11:0] imm,
   output reg  Branch,
-  output reg  [11:0] Deviation
+  output reg  [31:0] Deviation
 );
   always @(*) begin
     // valores padrão
     Branch    = 1'b0;
-    Deviation = 12'b0;
+    Deviation = 31'b0;
 
     if (opcode == 7'b1100011) begin
       case (funct3)
@@ -24,7 +24,7 @@ module BranchDecider (
       endcase
 
       if (Branch)
-        Deviation = imm;
+        Deviation = {{19{imm[11]}}, imm, 1'b0};
     end
   end
 endmodule
