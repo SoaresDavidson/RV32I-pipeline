@@ -1,5 +1,5 @@
 Analysis & Synthesis report for R232i
-Fri Oct 03 13:24:10 2025
+Tue Oct 07 16:16:03 2025
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -10,18 +10,8 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Port Connectivity Checks: "forward_unit:fwd"
- 12. Port Connectivity Checks: "ULA:ULA"
- 13. Post-Synthesis Netlist Statistics for Top Partition
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
- 16. Analysis & Synthesis Suppressed Messages
+  5. Analysis & Synthesis Messages
+  6. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -45,27 +35,22 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+-------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                  ;
-+---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Oct 03 13:24:10 2025       ;
-; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
-; Revision Name                   ; R232i                                       ;
-; Top-level Entity Name           ; R232i                                       ;
-; Family                          ; Cyclone V                                   ;
-; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 992                                         ;
-; Total pins                      ; 138                                         ;
-; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 0                                           ;
-; Total DSP Blocks                ; 0                                           ;
-; Total HSSI RX PCSs              ; 0                                           ;
-; Total HSSI PMA RX Deserializers ; 0                                           ;
-; Total HSSI TX PCSs              ; 0                                           ;
-; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 0                                           ;
-; Total DLLs                      ; 0                                           ;
-+---------------------------------+---------------------------------------------+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Failed - Tue Oct 07 16:16:03 2025           ;
+; Quartus Prime Version       ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Revision Name               ; R232i                                       ;
+; Top-level Entity Name       ; RV32i                                       ;
+; Family                      ; Cyclone V                                   ;
+; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
+; Total registers             ; N/A until Partition Merge                   ;
+; Total pins                  ; N/A until Partition Merge                   ;
+; Total virtual pins          ; N/A until Partition Merge                   ;
+; Total block memory bits     ; N/A until Partition Merge                   ;
+; Total PLLs                  ; N/A until Partition Merge                   ;
+; Total DLLs                  ; N/A until Partition Merge                   ;
++-----------------------------+---------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -74,7 +59,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
-; Top-level entity name                                                           ; R232i              ; R232i              ;
+; Top-level entity name                                                           ; RV32i              ; R232i              ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -164,184 +149,11 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 14          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 14          ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processor 3            ;   0.0%      ;
-;     Processor 4            ;   0.0%      ;
-;     Processor 5            ;   0.0%      ;
-;     Processor 6            ;   0.0%      ;
-;     Processors 7-14        ;   0.0%      ;
 +----------------------------+-------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                            ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                              ; Library ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------------+---------+
-; verilog_code/R232i.v             ; yes             ; User Verilog HDL File  ; C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i.v         ;         ;
-; verilog_code/ULA.v               ; yes             ; User Verilog HDL File  ; C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/ULA.v           ;         ;
-; verilog_code/forward_unit.v      ; yes             ; User Verilog HDL File  ; C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/forward_unit.v  ;         ;
-; verilog_code/register_bank.v     ; yes             ; User Verilog HDL File  ; C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/register_bank.v ;         ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------------+---------+
-
-
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 848       ;
-;                                             ;           ;
-; Combinational ALUT usage for logic          ; 799       ;
-;     -- 7 input functions                    ; 0         ;
-;     -- 6 input functions                    ; 607       ;
-;     -- 5 input functions                    ; 96        ;
-;     -- 4 input functions                    ; 32        ;
-;     -- <=3 input functions                  ; 64        ;
-;                                             ;           ;
-; Dedicated logic registers                   ; 992       ;
-;                                             ;           ;
-; I/O pins                                    ; 138       ;
-;                                             ;           ;
-; Total DSP Blocks                            ; 0         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 992       ;
-; Total fan-out                               ; 8675      ;
-; Average fan-out                             ; 4.20      ;
-+---------------------------------------------+-----------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                 ;
-+-----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------+---------------+--------------+
-; Compilation Hierarchy Node  ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name           ; Entity Name   ; Library Name ;
-+-----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------+---------------+--------------+
-; |R232i                      ; 799 (0)             ; 992 (0)                   ; 0                 ; 0          ; 138  ; 0            ; |R232i                        ; R232i         ; work         ;
-;    |ULA:ULA|                ; 64 (64)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |R232i|ULA:ULA                ; ULA           ; work         ;
-;    |register_bank:reg_bank| ; 735 (735)           ; 992 (992)                 ; 0                 ; 0          ; 0    ; 0            ; |R232i|register_bank:reg_bank ; register_bank ; work         ;
-+-----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------+---------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+---------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                    ;
-+-----------------------------------------+---------------------------------------------+
-; Register name                           ; Reason for Removal                          ;
-+-----------------------------------------+---------------------------------------------+
-; register_bank:reg_bank|registers[0][0]  ; Stuck at GND due to stuck port clock_enable ;
-; register_bank:reg_bank|registers[0][1]  ; Stuck at GND due to stuck port clock_enable ;
-; register_bank:reg_bank|registers[0][2]  ; Stuck at GND due to stuck port clock_enable ;
-; register_bank:reg_bank|registers[0][3]  ; Stuck at GND due to stuck port clock_enable ;
-; register_bank:reg_bank|registers[0][4]  ; Stuck at GND due to stuck port clock_enable ;
-; register_bank:reg_bank|registers[0][5]  ; Stuck at GND due to stuck port clock_enable ;
-; register_bank:reg_bank|registers[0][6]  ; Stuck at GND due to stuck port clock_enable ;
-; register_bank:reg_bank|registers[0][7]  ; Stuck at GND due to stuck port clock_enable ;
-; register_bank:reg_bank|registers[0][8]  ; Stuck at GND due to stuck port clock_enable ;
-; register_bank:reg_bank|registers[0][9]  ; Stuck at GND due to stuck port clock_enable ;
-; register_bank:reg_bank|registers[0][10] ; Stuck at GND due to stuck port clock_enable ;
-; register_bank:reg_bank|registers[0][11] ; Stuck at GND due to stuck port clock_enable ;
-; register_bank:reg_bank|registers[0][12] ; Stuck at GND due to stuck port clock_enable ;
-; register_bank:reg_bank|registers[0][13] ; Stuck at GND due to stuck port clock_enable ;
-; register_bank:reg_bank|registers[0][14] ; Stuck at GND due to stuck port clock_enable ;
-; register_bank:reg_bank|registers[0][15] ; Stuck at GND due to stuck port clock_enable ;
-; register_bank:reg_bank|registers[0][16] ; Stuck at GND due to stuck port clock_enable ;
-; register_bank:reg_bank|registers[0][17] ; Stuck at GND due to stuck port clock_enable ;
-; register_bank:reg_bank|registers[0][18] ; Stuck at GND due to stuck port clock_enable ;
-; register_bank:reg_bank|registers[0][19] ; Stuck at GND due to stuck port clock_enable ;
-; register_bank:reg_bank|registers[0][20] ; Stuck at GND due to stuck port clock_enable ;
-; register_bank:reg_bank|registers[0][21] ; Stuck at GND due to stuck port clock_enable ;
-; register_bank:reg_bank|registers[0][22] ; Stuck at GND due to stuck port clock_enable ;
-; register_bank:reg_bank|registers[0][23] ; Stuck at GND due to stuck port clock_enable ;
-; register_bank:reg_bank|registers[0][24] ; Stuck at GND due to stuck port clock_enable ;
-; register_bank:reg_bank|registers[0][25] ; Stuck at GND due to stuck port clock_enable ;
-; register_bank:reg_bank|registers[0][26] ; Stuck at GND due to stuck port clock_enable ;
-; register_bank:reg_bank|registers[0][27] ; Stuck at GND due to stuck port clock_enable ;
-; register_bank:reg_bank|registers[0][28] ; Stuck at GND due to stuck port clock_enable ;
-; register_bank:reg_bank|registers[0][29] ; Stuck at GND due to stuck port clock_enable ;
-; register_bank:reg_bank|registers[0][30] ; Stuck at GND due to stuck port clock_enable ;
-; register_bank:reg_bank|registers[0][31] ; Stuck at GND due to stuck port clock_enable ;
-; Total Number of Removed Registers = 32  ;                                             ;
-+-----------------------------------------+---------------------------------------------+
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 992   ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 992   ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 992   ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |R232i|ULA:ULA|Mux31                ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |R232i|register_bank:reg_bank|Mux16 ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |R232i|register_bank:reg_bank|Mux63 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "forward_unit:fwd"                                                                       ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-; Port     ; Type   ; Severity ; Details                                                                             ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-; forwardA ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; forwardB ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "ULA:ULA"                                                                            ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; z    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; arriav_ff             ; 992                         ;
-;     ENA CLR           ; 992                         ;
-; arriav_lcell_comb     ; 799                         ;
-;     arith             ; 32                          ;
-;         4 data inputs ; 32                          ;
-;     normal            ; 767                         ;
-;         3 data inputs ; 64                          ;
-;         5 data inputs ; 96                          ;
-;         6 data inputs ; 607                         ;
-; boundary_port         ; 138                         ;
-;                       ;                             ;
-; Max LUT depth         ; 8.10                        ;
-; Average LUT depth     ; 6.24                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:01     ;
-+----------------+--------------+
 
 
 +-------------------------------+
@@ -350,61 +162,85 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Fri Oct 03 13:24:03 2025
+    Info: Processing started: Tue Oct 07 16:15:54 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off R232i -c R232i
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file verilog_code/r232i.v
-    Info (12023): Found entity 1: R232i File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file verilog_code/ula.v
     Info (12023): Found entity 1: ULA File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/ULA.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file verilog_code/forward_unit.v
     Info (12023): Found entity 1: forward_unit File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/forward_unit.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file verilog_code/register_bank.v
     Info (12023): Found entity 1: register_bank File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/register_bank.v Line: 1
-Info (12127): Elaborating entity "R232i" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at R232i.v(66): object "ULArs1" assigned a value but never read File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i.v Line: 66
-Warning (10036): Verilog HDL or VHDL warning at R232i.v(67): object "ULArs2" assigned a value but never read File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i.v Line: 67
-Info (12128): Elaborating entity "register_bank" for hierarchy "register_bank:reg_bank" File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i.v Line: 35
+Info (12021): Found 1 design units, including 1 entities, in source file verilog_code/branch decider.v
+    Info (12023): Found entity 1: BranchDecider File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/Branch Decider.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file verilog_code/id_ex.v
+    Info (12023): Found entity 1: ID_EX File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/ID_EX.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file verilog_code/rv32i.v
+    Info (12023): Found entity 1: RV32i File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/RV32i.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file verilog_code/pc.v
+    Info (12023): Found entity 1: ProgramCounter File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file verilog_code/if_id.v
+    Info (12023): Found entity 1: IF_ID File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/IF_ID.v Line: 3
+Warning (10236): Verilog HDL Implicit Net warning at RV32i.v(53): created implicit net for "rs1" File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/RV32i.v Line: 53
+Warning (10236): Verilog HDL Implicit Net warning at RV32i.v(54): created implicit net for "rs2" File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/RV32i.v Line: 54
+Warning (10236): Verilog HDL Implicit Net warning at RV32i.v(70): created implicit net for "mux_ula" File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/RV32i.v Line: 70
+Info (12127): Elaborating entity "RV32i" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at RV32i.v(137): object "ULArs1" assigned a value but never read File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/RV32i.v Line: 137
+Warning (10036): Verilog HDL or VHDL warning at RV32i.v(138): object "ULArs2" assigned a value but never read File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/RV32i.v Line: 138
+Info (12128): Elaborating entity "IF_ID" for hierarchy "IF_ID:IF_ID" File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/RV32i.v Line: 45
+Info (12128): Elaborating entity "register_bank" for hierarchy "register_bank:reg_bank" File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/RV32i.v Line: 60
 Warning (10240): Verilog HDL Always Construct warning at register_bank.v(17): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/register_bank.v Line: 17
-Info (12128): Elaborating entity "ULA" for hierarchy "ULA:ULA" File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i.v Line: 47
-Info (12128): Elaborating entity "forward_unit" for hierarchy "forward_unit:fwd" File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i.v Line: 64
-Info (286030): Timing-Driven Synthesis is running
+Info (12128): Elaborating entity "BranchDecider" for hierarchy "BranchDecider:branch_decider" File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/RV32i.v Line: 84
+Warning (10240): Verilog HDL Always Construct warning at Branch Decider.v(11): inferring latch(es) for variable "Branch", which holds its previous value in one or more paths through the always construct File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/Branch Decider.v Line: 11
+Info (10041): Inferred latch for "Branch" at Branch Decider.v(11) File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/Branch Decider.v Line: 11
+Info (12128): Elaborating entity "ProgramCounter" for hierarchy "ProgramCounter:PC" File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/RV32i.v Line: 105
+Error (10122): Verilog HDL Event Control error at PC.v(10): mixed single- and double-edge expressions are not supported File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v Line: 10
+Warning (10235): Verilog HDL Always Construct warning at PC.v(14): variable "Enable" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v Line: 14
+Warning (10235): Verilog HDL Always Construct warning at PC.v(15): variable "Control" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v Line: 15
+Warning (10235): Verilog HDL Always Construct warning at PC.v(16): variable "pc" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v Line: 16
+Warning (10235): Verilog HDL Always Construct warning at PC.v(16): variable "Target" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v Line: 16
+Warning (10235): Verilog HDL Always Construct warning at PC.v(19): variable "pc" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v Line: 19
+Warning (10240): Verilog HDL Always Construct warning at PC.v(10): inferring latch(es) for variable "pc", which holds its previous value in one or more paths through the always construct File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v Line: 10
+Info (10041): Inferred latch for "pc[0]" at PC.v(10) File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v Line: 10
+Info (10041): Inferred latch for "pc[1]" at PC.v(10) File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v Line: 10
+Info (10041): Inferred latch for "pc[2]" at PC.v(10) File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v Line: 10
+Info (10041): Inferred latch for "pc[3]" at PC.v(10) File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v Line: 10
+Info (10041): Inferred latch for "pc[4]" at PC.v(10) File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v Line: 10
+Info (10041): Inferred latch for "pc[5]" at PC.v(10) File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v Line: 10
+Info (10041): Inferred latch for "pc[6]" at PC.v(10) File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v Line: 10
+Info (10041): Inferred latch for "pc[7]" at PC.v(10) File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v Line: 10
+Info (10041): Inferred latch for "pc[8]" at PC.v(10) File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v Line: 10
+Info (10041): Inferred latch for "pc[9]" at PC.v(10) File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v Line: 10
+Info (10041): Inferred latch for "pc[10]" at PC.v(10) File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v Line: 10
+Info (10041): Inferred latch for "pc[11]" at PC.v(10) File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v Line: 10
+Info (10041): Inferred latch for "pc[12]" at PC.v(10) File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v Line: 10
+Info (10041): Inferred latch for "pc[13]" at PC.v(10) File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v Line: 10
+Info (10041): Inferred latch for "pc[14]" at PC.v(10) File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v Line: 10
+Info (10041): Inferred latch for "pc[15]" at PC.v(10) File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v Line: 10
+Info (10041): Inferred latch for "pc[16]" at PC.v(10) File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v Line: 10
+Info (10041): Inferred latch for "pc[17]" at PC.v(10) File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v Line: 10
+Info (10041): Inferred latch for "pc[18]" at PC.v(10) File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v Line: 10
+Info (10041): Inferred latch for "pc[19]" at PC.v(10) File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v Line: 10
+Info (10041): Inferred latch for "pc[20]" at PC.v(10) File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v Line: 10
+Info (10041): Inferred latch for "pc[21]" at PC.v(10) File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v Line: 10
+Info (10041): Inferred latch for "pc[22]" at PC.v(10) File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v Line: 10
+Info (10041): Inferred latch for "pc[23]" at PC.v(10) File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v Line: 10
+Info (10041): Inferred latch for "pc[24]" at PC.v(10) File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v Line: 10
+Info (10041): Inferred latch for "pc[25]" at PC.v(10) File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v Line: 10
+Info (10041): Inferred latch for "pc[26]" at PC.v(10) File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v Line: 10
+Info (10041): Inferred latch for "pc[27]" at PC.v(10) File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v Line: 10
+Info (10041): Inferred latch for "pc[28]" at PC.v(10) File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v Line: 10
+Info (10041): Inferred latch for "pc[29]" at PC.v(10) File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v Line: 10
+Info (10041): Inferred latch for "pc[30]" at PC.v(10) File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v Line: 10
+Info (10041): Inferred latch for "pc[31]" at PC.v(10) File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v Line: 10
+Error (12152): Can't elaborate user hierarchy "ProgramCounter:PC" File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/RV32i.v Line: 105
 Info (144001): Generated suppressed messages file C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/output_files/R232i.map.smsg
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 22 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "IDEXrs1[0]" File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i.v Line: 9
-    Warning (15610): No output dependent on input pin "IDEXrs1[1]" File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i.v Line: 9
-    Warning (15610): No output dependent on input pin "IDEXrs1[2]" File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i.v Line: 9
-    Warning (15610): No output dependent on input pin "IDEXrs1[3]" File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i.v Line: 9
-    Warning (15610): No output dependent on input pin "IDEXrs1[4]" File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i.v Line: 9
-    Warning (15610): No output dependent on input pin "IDEXrs2[0]" File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i.v Line: 10
-    Warning (15610): No output dependent on input pin "IDEXrs2[1]" File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i.v Line: 10
-    Warning (15610): No output dependent on input pin "IDEXrs2[2]" File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i.v Line: 10
-    Warning (15610): No output dependent on input pin "IDEXrs2[3]" File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i.v Line: 10
-    Warning (15610): No output dependent on input pin "IDEXrs2[4]" File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i.v Line: 10
-    Warning (15610): No output dependent on input pin "MEMWBrd[0]" File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i.v Line: 11
-    Warning (15610): No output dependent on input pin "MEMWBrd[1]" File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i.v Line: 11
-    Warning (15610): No output dependent on input pin "MEMWBrd[2]" File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i.v Line: 11
-    Warning (15610): No output dependent on input pin "MEMWBrd[3]" File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i.v Line: 11
-    Warning (15610): No output dependent on input pin "MEMWBrd[4]" File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i.v Line: 11
-    Warning (15610): No output dependent on input pin "EXMEMrd[0]" File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i.v Line: 12
-    Warning (15610): No output dependent on input pin "EXMEMrd[1]" File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i.v Line: 12
-    Warning (15610): No output dependent on input pin "EXMEMrd[2]" File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i.v Line: 12
-    Warning (15610): No output dependent on input pin "EXMEMrd[3]" File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i.v Line: 12
-    Warning (15610): No output dependent on input pin "EXMEMrd[4]" File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i.v Line: 12
-    Warning (15610): No output dependent on input pin "EXMEM_RegWrite" File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i.v Line: 13
-    Warning (15610): No output dependent on input pin "MEMWB_RegWrite" File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i.v Line: 14
-Info (21057): Implemented 1929 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 42 input pins
-    Info (21059): Implemented 96 output pins
-    Info (21061): Implemented 1791 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 27 warnings
-    Info: Peak virtual memory: 4907 megabytes
-    Info: Processing ended: Fri Oct 03 13:24:10 2025
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:16
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 2 errors, 14 warnings
+    Error: Peak virtual memory: 4774 megabytes
+    Error: Processing ended: Tue Oct 07 16:16:03 2025
+    Error: Elapsed time: 00:00:09
+    Error: Total CPU time (on all processors): 00:00:26
 
 
 +------------------------------------------+

@@ -1,4 +1,4 @@
-module RV32i(
+module R232i(
     input wire clk,
     input wire rst,
     input wire enable,
@@ -17,7 +17,7 @@ module RV32i(
     output wire [31:0] out_read_B,
     output wire [31:0] out_ULA_C
 );
-  wire [31:0] pc;
+  reg [31:0] pc;
   //IF/ID
   wire [6:0] opcode; 
   wire [4:0] rd, IFID_rs1, IFID_rs2; //registadores de destino e fonte
@@ -80,18 +80,18 @@ module RV32i(
     .rs1(read_A),
     .rs2(read_B),
     .imm(imm_B),
-    .Branch(sinal_jump)
+    .Branch(sinal_jump),
   );
   // imm gen
   reg [31:0] imm_gen_output;
   always @(*) begin
-    case (opcode)
+    case opcode
       7'b0110011: imm_gen_output = {32{1'b0}}; // tipo R
       7'b0010011, 7'b0000011: imm_gen_output = {{20{imm_I[11]}}, imm_I}; //tipo I
       7'b0100011: imm_gen_output = {{20{imm_S[11]}}, imm_S}; //tipo S
       7'b1100011: imm_gen_output = {{19{imm_B[11]}}, imm_B, 1'b0}; //tipo B
       7'b1101111: imm_gen_output = {{12{imm_J[19]}}, imm_J}; //tipo J
-      7'b0010111, 7'b0110111: imm_gen_output = {imm_U, 12'b0}; //tipo U
+      7'b0010111, 7'b0110111: imm_gen_output = {imm_U, 12{1'b0}}; //tipo U
       default: imm_gen_output = 32'b0;
     endcase
   end

@@ -93,7 +93,7 @@ always @(posedge clk or posedge rst) begin
  		mux_res_ula <= 1'b0;
  		mem_rd <= 1'b0;
  		mem_wr <= 1'b0;
- 		reg_wr <= '0;	
+ 		reg_wr <= 1'b0;	
 		mux_reg_wr <= 1'b0;
 	end else if (enable) begin
 		imm <= imm_in;

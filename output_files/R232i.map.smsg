@@ -1,1 +1,2 @@
 Warning (10268): Verilog HDL information at ULA.v(10): always construct contains both blocking and non-blocking assignments File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/ULA.v Line: 10
+Info (10281): Verilog HDL Declaration information at RV32i.v(20): object "pc" differs only in case from object "PC" in the same scope File: C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/RV32i.v Line: 20

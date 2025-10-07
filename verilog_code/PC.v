@@ -11,7 +11,7 @@ module ProgramCounter (
     if (Reset == 1) begin
       pc <= 32'b0;
     end
-    else if (Enable ==1) begin
+    else if (Enable == 1) begin
       if (Control == 1) begin
         pc <= pc + Target;
       end

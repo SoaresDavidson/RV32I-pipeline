@@ -1,5 +1,5 @@
 module control(
-    input wire [31:0] instruction,
+    input wire [6:0] opcode,
     // controle MEM
     output	wire mem_rd, //le memoria
 	output	wire mem_wr, //escreve memoria
@@ -14,8 +14,6 @@ module control(
 
     output wire branch
 );
-wire [6:0] opcode;
-assign opcode = instruction[6:0]; 
 case opcode 
     7'b0110011: begin //tipo R
         branch = 1'b0;
@@ -80,9 +78,6 @@ case opcode
         mux_reg_wr = 1'b0; 
         mux_ula = 1'b1;
     end
-
-
-
 endcase
 
 endmodule

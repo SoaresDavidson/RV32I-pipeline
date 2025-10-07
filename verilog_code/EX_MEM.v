@@ -7,7 +7,7 @@ module EX_MEM (
 	// controle WB
 	input	wire reg_wr_in,
 	input	wire mux_reg_wr_in,
-
+    
     // dados
     input   wire [31:0] ula_res_in,
     input   wire [31:0] val_B_in,
