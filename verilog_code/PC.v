@@ -1,4 +1,4 @@
-module ProgramCounter (
+module PC (
   input wire Clk,
   input wire Reset,
   input wire Control,
@@ -6,8 +6,9 @@ module ProgramCounter (
   input wire [31:0] Target,
   output reg [31:0] pc
 );
+	
   
-  always @(posedge Clk or Reset) begin
+  always @(posedge Clk or posedge Reset) begin
     if (Reset == 1) begin
       pc <= 32'b0;
     end

@@ -1,30 +1,82 @@
+`default_nettype none
 module RV32i(
     input wire clk,
     input wire rst,
     input wire enable,
-
-    input wire [31:0] instruction,
-    input wire RegWrite,
-    input wire [1:0]sel,
-    input [4:0]IDEXrs1,
-    input [4:0]IDEXrs2,
-    input [4:0]MEMWBrd,
-    input [4:0]EXMEMrd,
-    input EXMEM_RegWrite,
-    input MEMWB_RegWrite,
-
-    output wire [31:0] out_read_A,
-    output wire [31:0] out_read_B,
-    output wire [31:0] out_ULA_C
+    input wire [31:0] mem_data_out, //tirar quando implementar a memoria
+    
+    //so para testes
+    output wire [31:0] pc_out,
+    output wire [31:0] out_instruction
 );
+  //program counter
   wire [31:0] pc;
+  //instruction memory
+  wire [31:0] instruction;
   //IF/ID
   wire [6:0] opcode; 
-  wire [4:0] rd, IFID_rs1, IFID_rs2; //registadores de destino e fonte
+  wire [4:0] IFID_rd, IFID_rs1, IFID_rs2; //registadores de destino e fonte
   wire [2:0] funct3; 
   wire [6:0] funct7;
   wire [11:0] imm_I, imm_S, imm_B; //imediatos tipo I, S e B
   wire [19:0] imm_U, imm_J; //imediatos tipo U e J
+  //sinais de controle
+  wire mem_rd, mem_wr, reg_wr, mux_reg_wr, mux_ula, branch;
+  wire [1:0]ula_op;
+  //foward unit
+  reg [31:0] fowarding_A, fowarding_B;
+  //ID/EX
+  wire IDEXmem_rd, IDEXmem_wr, IDEXreg_wr, IDEXmux_reg_wr, IDEXmux_ula;
+  wire [1:0]IDEXula;
+  wire [31:0] IDEXimm;
+  wire [4:0] IDEXrs1, IDEXrs2, IDEXrd;
+  wire [6:0] IDEXfunct7;
+  wire [2:0] IDEXfunct3;
+  wire [31:0] IDEXval_A, IDEXval_B;
+  //Banco de registradores
+  wire [31:0]read_A;
+  wire [31:0]read_B;
+  wire [31:0]ULA_C;
+  //branch decider
+  wire sinal_jump;
+  // imm gen
+  reg [31:0] imm_gen_output;
+  //forward unit
+  wire [1:0]forwardA;
+  wire [1:0]forwardB;
+  //ULA
+  wire z;
+  //EX/MEM
+  wire EXMEMmem_rd,EXMEMmem_wr, EXMEMreg_wr, EXMEMmux_reg_wr;
+  wire [31:0] EXMEMula_res, EXMEMval_B;
+  wire [4:0] EXMEMrd;
+  //MEM/WB
+  wire [4:0] MEMWBrd;
+  wire MEMWBreg_wr, MEMWBmem_rd, MEMWBmem_wr, MEMWBmux_reg_wr;
+  wire [31:0] MEMWBula_res, MEMWBmem_data;
+  //mux final
+  reg [31:0] reg_MEMWBrd;
+  assign pc_out = pc;
+  assign out_instruction = instruction;
+
+  PC dut_pc(
+    .Clk(clk),
+    .Reset(rst),
+    .Control(sinal_jump),
+    .Enable(enable),
+    .Target(imm_gen_output),
+    .pc(pc)
+  );
+
+  instruction_memory im(
+    .clk(clk),
+    .addr(pc),
+    .instruction(instruction),
+    .jump_addr(imm_gen_output), 
+    .we(1'b0), 
+    .re(1'b1)
+  );
+
 
   IF_ID IF_ID(
     .instruction(instruction),
@@ -32,7 +84,7 @@ module RV32i(
     .rst(rst),
     .enable(enable),
     .opcode(opcode),
-    .rd(rd),
+    .rd(IFID_rd),
     .rs1(IFID_rs1),
     .rs2(IFID_rs2),
     .funct3(funct3),
@@ -43,26 +95,9 @@ module RV32i(
     .imm_U(imm_U),
     .imm_J(imm_J)
   );
-  //Banco de registradores
-  wire [31:0]read_A;
-  wire [31:0]read_B;
-  wire [31:0]ULA_C;
-  register_bank reg_bank (
-    .clk(clk),
-    .rst(rst),
-    .rs1(rs1),
-    .rs2(rs2),
-    .rd(rd),
-    .RegWrite(RegWrite),
-    .C(ULA_C),
-    .A(read_A),
-    .B(read_B)
-  );
 
-  wire mem_rd, mem_wr, reg_wr, mux_reg_wr, branch;
-  wire [1:0]ula_op;
   control ctrl(
-    .instruction(opcode),
+    .opcode(opcode),
     .mem_rd(mem_rd),
     .mem_wr(mem_wr),
     .reg_wr(reg_wr),
@@ -71,19 +106,7 @@ module RV32i(
     .ula_op(ula_op),
     .branch(branch)
   );
-
-  //branch decider
-  wire sinal_jump;
-  BranchDecider branch_decider(
-    .opcode(opcode),
-    .funct3(funct3),
-    .rs1(read_A),
-    .rs2(read_B),
-    .imm(imm_B),
-    .Branch(sinal_jump)
-  );
   // imm gen
-  reg [31:0] imm_gen_output;
   always @(*) begin
     case (opcode)
       7'b0110011: imm_gen_output = {32{1'b0}}; // tipo R
@@ -95,63 +118,143 @@ module RV32i(
       default: imm_gen_output = 32'b0;
     endcase
   end
-  ProgramCounter PC(
-    .Clk(clk),
-    .Reset(rst),
-    .Enable(enable),
-    .Control(sinal_jump),
-    .Target(imm_gen_output),
-    .pc(pc)
+  //mudar para C receber do pipeline de MEMWB
+  register_bank reg_bank (
+    .clk(clk),
+    .rst(rst),
+    .rs1(IFID_rs1),
+    .rs2(IFID_rs2),
+    .rd(MEMWBrd),
+    .RegWrite(MEMWBmem_wr),
+    .C(MEMWBmux_reg_wr ? MEMWBmem_data : MEMWBula_res),
+    .A(read_A),
+    .B(read_B)
   );
-  //todos esse sinais vão vir dos registradores de pipeline so estou com eles aqui 
-  //para teste
-  EX_MEM EX_MEM(
-    .mem_rd_in()
+  
+  BranchDecider branch_decider(
+    .opcode(opcode),
+    .funct3(funct3),
+    .rs1(read_A),
+    .rs2(read_B),
+    .imm(imm_B),
+    .Branch(sinal_jump)
   );
-  //ULA
-  wire z;
-  ULA ULA ( 
-    .A (read_A),
-    .B (read_B),
-		.C (ULA_C),
-		.z (z),
-		.sel (sel)
-	);
-  assign out_read_A = read_A;
-  assign out_read_B = read_B;
-  assign out_ULA_C = ULA_C;
+  
 
-  wire [1:0]forwardA;
-  wire [1:0]forwardB;
+  ID_EX ID_EX (
+    .ula_in(ula_op),
+    .mux_ula_in(mux_ula),
+    .mem_rd_in(mem_rd),
+    .mem_wr_in(mem_wr),
+    .reg_wr_in(reg_wr),
+    .mux_reg_wr_in(mux_reg_wr),
+    .imm_in(imm_gen_output),
+    .rs1_in(IFID_rs1),
+    .rs2_in(IFID_rs2),
+    .rd_in(IFID_rd),
+    .funct7_in(funct7),
+    .funct3_in(funct3),
+    .val_A_in(read_A),
+    .val_B_in(read_B),
+    .clk(clk),
+    .rst(rst),
+    .enable(enable),
+    .imm_out(IDEXimm),
+    .rs1_out(IDEXrs1),
+    .rs2_out(IDEXrs2),
+    .rd_out(IDEXrd),
+    .funct7_out(IDEXfunct7),
+    .funct3_out(IDEXfunct3),
+    .val_A_out(IDEXval_A),
+    .val_B_out(IDEXval_B),
+    .ula_out(IDEXula),
+    .mux_ula_out(IDEXmux_ula),
+    .mem_rd_out(IDEXmem_rd),
+    .mem_wr_out(IDEXmem_wr),
+    .reg_wr_out(IDEXreg_wr),
+    .mux_reg_wr_out(IDEXmux_reg_wr)
+  );
+  //forward unit
   forward_unit fwd (
     .IDEXrs1(IDEXrs1),
     .IDEXrs2(IDEXrs2),
     .EXMEMrd(EXMEMrd),
     .MEMWBrd(MEMWBrd),
-    .EXMEM_RegWrite(EXMEM_RegWrite),
-    .MEMWB_RegWrite(MEMWB_RegWrite),
+    .EXMEM_RegWrite(EXMEMreg_wr),
+    .MEMWB_RegWrite(MEMWBreg_wr),
     .forwardA(forwardA),
     .forwardB(forwardB)
   );
 
-  reg [31:0]ULArs1;
-  reg [31:0]ULArs2;
+  always @(*) begin
+    case (forwardA)
+        2'b00: fowarding_A = IDEXval_A; // Normal
+        2'b10: fowarding_A = EXMEMula_res; // MEM/WB sei la não implementei isso ainda
+        2'b01: fowarding_A = MEMWBmem_data; // EX/MEM
+        default: fowarding_A = IDEXval_A;
+    endcase
+    case (forwardB)
+        2'b00: fowarding_B = IDEXval_B; // Normal
+        2'b10: fowarding_B = EXMEMula_res; // MEM/WB sei la não implementei isso ainda
+        2'b01: fowarding_B = MEMWBmem_data; // EX/MEM
+        default: fowarding_B = IDEXval_B;
+    endcase
+  end
+
+  ULA ULA ( 
+    .A (fowarding_A),
+    .B (fowarding_B),
+		.C (ULA_C),
+		.z (z),
+		.sel (IDEXula)
+	);
+
+  EX_MEM EX_MEM(
+    .mem_rd_in(IDEXmem_rd),
+    .mem_wr_in(IDEXmem_wr),
+    .reg_wr_in(IDEXreg_wr),
+    .mux_reg_wr_in(IDEXmux_reg_wr),
+    .ula_res_in(ULA_C),
+    .val_B_in(IDEXval_B),
+    .rd_in(IDEXrd),
+    .clk(clk),
+    .rst(rst),
+    .enable(enable),
+    .mem_rd_out(EXMEMmem_rd),
+    .mem_wr_out(EXMEMmem_wr),
+    .reg_wr_out(EXMEMreg_wr),
+    .mux_reg_wr_out(EXMEMmux_reg_wr),
+    .ula_res_out(EXMEMula_res),
+    .val_B_out(EXMEMval_B),
+    .rd_out(EXMEMrd)
+
+  );
+
+  MEM_WB MEM_WB(
+    .mem_rd_in(EXMEMmem_rd),
+    .reg_wr_in(EXMEMreg_wr),
+    .mux_reg_wr_in(EXMEMmux_reg_wr),
+    .rd_in(EXMEMrd),
+    .ula_res_in(EXMEMula_res),
+    .mem_res_in(), //falta a memoria
+    .clk(clk),
+    .rst(rst),
+    .enable(enable),
+    .mem_rd_out(MEMWBmem_rd),
+    .reg_wr_out(MEMWBreg_wr),
+    .mux_reg_wr_out(MEMWBmux_reg_wr),
+    .ula_res_out(MEMWBula_res),
+    .mem_res_out(MEMWBmem_data),
+    .rd_out(MEMWBrd)
+  );
+  //main memory
+  //falta a memoria :/
+
 	always @(posedge clk) begin
     //IF/ID
 
     //ID/EX
-    case (forwardA)
-      2'b00: ULArs1 <= read_A ; // Normal
-      2'b01: ULArs1 <= 32'h00000000 ; // EX/MEM
-      2'b10: ULArs1 <= ULA_C; // MEM/WB sei la não implementei isso ainda
-      default: ULArs1 <= read_A;
-    endcase
-    case (forwardB)
-      2'b00: ULArs2 <= read_B; // Normal
-      2'b01: ULArs2 <= 32'h00000000; // EX/MEM
-      2'b10: ULArs2 <= ULA_C; // MEM/WB sei la não implementei isso ainda
-      default: ULArs2 <= read_B;
-    endcase
+
 
 
     //EX/MEM

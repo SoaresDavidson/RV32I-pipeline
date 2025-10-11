@@ -3,8 +3,8 @@
 
 module ID_EX(
 	// controle EX
-	input	wire ula_in,
-	input	wire mux_res_ula_in,
+	input	wire [1:0] ula_in,
+	input	wire mux_ula_in,
 
 	// controle MEM
 	input	wire mem_rd_in,
@@ -37,8 +37,8 @@ module ID_EX(
 	output  wire  [2:0] funct3_out,
 	output	wire  [31:0] val_A_out,
 	output	wire  [31:0] val_B_out,
-	output	wire ula_out,
-	output	wire mux_res_ula_out,
+	output	wire [1:0] ula_out,
+	output	wire mux_ula_out,
 	output	wire mem_rd_out,
 	output	wire mem_wr_out,
 	output	wire reg_wr_out,
@@ -55,8 +55,8 @@ reg [6:0] funct7;
 reg [2:0] funct3;
 reg [31:0] val_A;
 reg [31:0] val_B;
-reg ula;
-reg mux_res_ula;
+reg [1:0] ula;
+reg mux_ula;
 reg mem_rd;
 reg mem_wr;
 reg reg_wr;
@@ -72,7 +72,7 @@ assign funct3_out = funct3;
 assign val_A_out = val_A;
 assign val_B_out = val_B;
 assign ula_out = ula;
-assign mux_res_ula_out = mux_res_ula;
+assign mux_ula_out = mux_ula;
 assign mem_rd_out = mem_rd;
 assign mem_wr_out = mem_wr;
 assign reg_wr_out = reg_wr;
@@ -90,7 +90,7 @@ always @(posedge clk or posedge rst) begin
  		val_A <= 32'b0;
  		val_B <= 32'b0;
  		ula <= 1'b0;
- 		mux_res_ula <= 1'b0;
+ 		mux_ula <= 1'b0;
  		mem_rd <= 1'b0;
  		mem_wr <= 1'b0;
  		reg_wr <= 1'b0;	
@@ -105,7 +105,7 @@ always @(posedge clk or posedge rst) begin
 		val_A <= val_A_in;
 		val_B <= val_B_in;
 		ula <= ula_in;
-		mux_res_ula <= mux_res_ula_in;
+		mux_ula <= mux_ula_in;
 		mem_rd <= mem_rd_in;
 		mem_wr <= mem_wr_in;
 		reg_wr <= reg_wr_in;

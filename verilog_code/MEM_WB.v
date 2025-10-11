@@ -1,10 +1,11 @@
-
 module MEM_WB(
     // controle WB
+    input   wire mem_rd_in,
 	input	wire reg_wr_in,
 	input	wire mux_reg_wr_in,
 
     // dados
+    input   wire [4:0]  rd_in,
     input   wire [31:0] ula_res_in,
     input   wire [31:0] mem_res_in,
 
@@ -13,10 +14,12 @@ module MEM_WB(
 	input	wire rst,
 	input	wire enable,
 
+    output  wire mem_rd_out,
 	output	wire reg_wr_out,
 	output	wire mux_reg_wr_out,
-    output   wire [31:0] ula_res_out,
-    output   wire [31:0] mem_res_out
+    output  wire [31:0] ula_res_out,
+    output  wire [31:0] mem_res_out,
+    output  wire [4:0] rd_out
 );
 
 // registradores
@@ -30,6 +33,8 @@ assign reg_wr_out = reg_wr;
 assign mux_reg_wr_out = mux_reg_wr;
 assign ula_res_out = ula_res;
 assign mem_res_out = mem_res;
+assign rd_out = rd_in;
+assign mem_rd_out = mem_rd_in;
 
 // escrita
 always @(posedge clk or posedge rst) begin
