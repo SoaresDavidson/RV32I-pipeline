@@ -1,13 +1,13 @@
-Fitter Status : Successful - Fri Oct 03 13:27:17 2025
+Fitter Status : Successful - Mon Oct 13 22:32:35 2025
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : R232i
-Top-level Entity Name : R232i
+Top-level Entity Name : RV32i
 Family : Cyclone V
 Device : 5CGXFC7C7F23C8
 Timing Models : Final
-Logic utilization (in ALMs) : 764 / 56,480 ( 1 % )
-Total registers : 992
-Total pins : 138 / 268 ( 51 % )
+Logic utilization (in ALMs) : 16 / 56,480 ( < 1 % )
+Total registers : 30
+Total pins : 99 / 268 ( 37 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 7,024,640 ( 0 % )
 Total RAM Blocks : 0 / 686 ( 0 % )

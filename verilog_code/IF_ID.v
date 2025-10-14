@@ -5,6 +5,8 @@ module IF_ID (
 	input	wire clk,
 	input	wire rst,
 	input	wire enable,
+	input   wire IFIDWrite,
+	input   wire Flush,
 
 	output	wire [6:0] opcode,
 	output	wire [4:0] rd,
@@ -39,7 +41,9 @@ assign imm_J  = {register[31], register[19:12], register[20], register[30:21]};
 always @(posedge clk or posedge rst) begin
 	if (rst) begin
 		register <= 32'b0;
-	end else if (enable) begin
+	end else if (Flush) begin
+		register <= 32'b0;
+	end else if (enable && IFIDWrite) begin
 		register <= instruction;
 	end
 end

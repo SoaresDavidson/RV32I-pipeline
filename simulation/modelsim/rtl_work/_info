@@ -9,82 +9,254 @@ z2
 !i10f 100
 cModel Technology
 Z0 dC:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/simulation/modelsim
-vforward_unit
-Z1 !s110 1759508867
+vBranchDecider
+Z1 !s110 1760405597
 !i10b 1
-!s100 65Uz31FIa:>V0UcmgW0BS0
+!s100 ]0fL_Cej[c5?B5NN;FVBF3
 Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
-I^[WHZ@>DD@XHXiDS?5gK83
+I;`VOXAnHl=RV[0_=jOkhU2
 Z3 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1759444689
-8C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/forward_unit.v
-FC:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/forward_unit.v
-!i122 2
-L0 1 36
+w1760403714
+8C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/Branch Decider.v
+FC:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/Branch Decider.v
+!i122 7
+L0 1 24
 Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z5 !s108 1759508867.000000
-!s107 C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/forward_unit.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code|C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/forward_unit.v|
+Z5 !s108 1760405597.000000
+!s107 C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/Branch Decider.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code|C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/Branch Decider.v|
 !i113 1
 Z6 o-vlog01compat -work work
 Z7 !s92 -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code
 Z8 tCvgOpt 0
-vR232i
-Z9 !s110 1759508866
-!i10b 1
-!s100 GO<NXT32inE7d@14B>0V52
-R2
-I=8BCUUd;XT6:OeG]RR06o3
-R3
-R0
-w1759508642
-8C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i.v
-FC:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i.v
-!i122 0
-L0 1 90
-R4
-r1
-!s85 0
-31
-Z10 !s108 1759508866.000000
-!s107 C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code|C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i.v|
-!i113 1
-R6
-R7
-R8
-n@r232i
-vR232i_tb
+n@branch@decider
+vcontrol
 R1
 !i10b 1
-!s100 m8N[S2g_]FiS9nh>gl^QP3
+!s100 oPBZM[VDD:N>hZ[:RUJ?[2
 R2
-Ib8l^XHDfaNLWGQoSabKmU2
+Ie5gYUdELHK0m5IBimaleg0
 R3
 R0
-w1759508574
-8C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i_tb.v
-FC:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i_tb.v
-!i122 4
-L0 3 93
+w1760405359
+8C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/control.v
+FC:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/control.v
+!i122 11
+L0 1 103
 R4
 r1
 !s85 0
 31
 R5
-!s107 C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i_tb.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code|C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/R232i_tb.v|
+!s107 C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/control.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code|C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/control.v|
 !i113 1
 R6
 R7
 R8
-n@r232i_tb
-vregister_bank
+vEX_MEM
+Z9 !s110 1760405596
+!i10b 1
+!s100 15U^RYhfz9_PB15SfiB^;3
+R2
+I1jX4OBBVk`R3Zo]4WSW;h3
+R3
+R0
+w1760097060
+8C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/EX_MEM.v
+FC:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/EX_MEM.v
+!i122 3
+L0 2 69
+R4
+r1
+!s85 0
+31
+Z10 !s108 1760405596.000000
+!s107 C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/EX_MEM.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code|C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/EX_MEM.v|
+!i113 1
+R6
+R7
+R8
+n@e@x_@m@e@m
+vforward_unit
+R9
+!i10b 1
+!s100 65Uz31FIa:>V0UcmgW0BS0
+R2
+I^[WHZ@>DD@XHXiDS?5gK83
+R3
+R0
+w1759444689
+8C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/forward_unit.v
+FC:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/forward_unit.v
+!i122 5
+L0 1 36
+R4
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/forward_unit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code|C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/forward_unit.v|
+!i113 1
+R6
+R7
+R8
+vhazard_detection_unit
+R9
+!i10b 1
+!s100 ^j3PF5e5_9:HIaQGOk7ll3
+R2
+I<=]ln2GczbWZ[FLEbeWDC2
+R3
+R0
+w1760389120
+8C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/hazard_detection_unit.v
+FC:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/hazard_detection_unit.v
+!i122 2
+L0 1 39
+R4
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/hazard_detection_unit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code|C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/hazard_detection_unit.v|
+!i113 1
+R6
+R7
+R8
+vID_EX
 R1
+!i10b 1
+!s100 4@c`]^GjFik40JMNk1hF?1
+R2
+IKHo?j;14R0b]TWcJLnIU:1
+R3
+R0
+w1760395582
+8C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/ID_EX.v
+FC:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/ID_EX.v
+!i122 8
+L0 4 113
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/ID_EX.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code|C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/ID_EX.v|
+!i113 1
+R6
+R7
+R8
+n@i@d_@e@x
+vIF_ID
+R1
+!i10b 1
+!s100 ZKID_OaRjJmUId[RZ5UCL0
+R2
+IgenPNRnC`27nC7FZiLaoV1
+R3
+R0
+w1760389345
+8C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/IF_ID.v
+FC:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/IF_ID.v
+!i122 10
+L0 3 49
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/IF_ID.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code|C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/IF_ID.v|
+!i113 1
+R6
+R7
+R8
+n@i@f_@i@d
+vinstruction_memory
+R9
+!i10b 1
+!s100 QZT:HK;UlbH`knk;jF7RE0
+R2
+I^>3=3_mHak`hKzaioc1ke1
+R3
+R0
+w1760403787
+8C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/instruction_memory.v
+FC:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/instruction_memory.v
+!i122 1
+L0 1 20
+R4
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/instruction_memory.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code|C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/instruction_memory.v|
+!i113 1
+R6
+R7
+R8
+vMEM_WB
+R9
+!i10b 1
+!s100 UMIDBVJ_fM=OnfGUZUM1a3
+R2
+IKR:47m78jW1JL=6RcP7:@3
+R3
+R0
+w1760146748
+8C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/MEM_WB.v
+FC:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/MEM_WB.v
+!i122 0
+L0 1 54
+R4
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/MEM_WB.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code|C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/MEM_WB.v|
+!i113 1
+R6
+R7
+R8
+n@m@e@m_@w@b
+vPC
+R1
+!i10b 1
+!s100 o6DM`=MS?;86;]bQ0`jNe1
+R2
+IlgQ<Mz7mD;CYFV_dJ1oDK0
+R3
+R0
+w1760387902
+8C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v
+FC:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v
+!i122 12
+L0 1 25
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code|C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v|
+!i113 1
+R6
+R7
+R8
+n@p@c
+vregister_bank
+R9
 !i10b 1
 !s100 ]27ZfiBIWR]_VW<`Y?kaj1
 R2
@@ -94,19 +266,69 @@ R0
 w1759508521
 8C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/register_bank.v
 FC:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/register_bank.v
-!i122 3
+!i122 6
 L0 1 28
 R4
 r1
 !s85 0
 31
-R5
+R10
 !s107 C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/register_bank.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code|C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/register_bank.v|
 !i113 1
 R6
 R7
 R8
+vRV32i
+R1
+!i10b 1
+!s100 mSJQh=M<nZ5;C1_SRU0Hm0
+R2
+IEOZ>Si>BWYOG_7jiZQP8k2
+R3
+R0
+w1760405502
+8C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/RV32i.v
+FC:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/RV32i.v
+!i122 9
+L0 2 295
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/RV32i.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code|C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/RV32i.v|
+!i113 1
+R6
+R7
+R8
+n@r@v32i
+vtb_RV32i
+R1
+!i10b 1
+!s100 ;^N::O9FDf=;;A1b7i2E^1
+R2
+IbNn1UHfWj5n1fCPDI>=BJ0
+R3
+R0
+w1760404932
+8C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/simulation/modelsim/tb_RV32i.v
+FC:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/simulation/modelsim/tb_RV32i.v
+!i122 13
+L0 3 59
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/simulation/modelsim/tb_RV32i.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/simulation/modelsim|C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/simulation/modelsim/tb_RV32i.v|
+!i113 1
+R6
+!s92 -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/simulation/modelsim
+R8
+ntb_@r@v32i
 vULA
 R9
 !i10b 1
@@ -118,7 +340,7 @@ R0
 w1759508497
 8C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/ULA.v
 FC:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/ULA.v
-!i122 1
+!i122 4
 L0 1 23
 R4
 r1

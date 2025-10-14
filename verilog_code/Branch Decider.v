@@ -6,8 +6,9 @@ module BranchDecider (
   input  wire [11:0] imm,
   output reg  Branch
 );
+  
   always @(*) begin
-    // valores padrão
+	 Branch = 1'b0;  
     if (opcode == 7'b1100011) begin
       case (funct3)
         3'b000: Branch = (rs1 == rs2);   // BEQ

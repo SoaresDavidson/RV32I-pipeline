@@ -89,7 +89,7 @@ always @(posedge clk or posedge rst) begin
  		funct3 <= 3'b0;
  		val_A <= 32'b0;
  		val_B <= 32'b0;
- 		ula <= 1'b0;
+ 		ula <= 2'b0;
  		mux_ula <= 1'b0;
  		mem_rd <= 1'b0;
  		mem_wr <= 1'b0;

@@ -32,7 +32,7 @@ always @(*) begin
             mem_wr_ = 1'b0;
             ula_op_ = 2'b10; 
             reg_wr_ = 1'b1;
-            mux_reg_wr_ = 1'b1; 
+            mux_reg_wr_ = 1'b0; 
             mux_ula_ = 1'b0;
         end 
         7'b0010011: begin // tipo I
@@ -41,7 +41,7 @@ always @(*) begin
             mem_wr_ = 1'b0;
             ula_op_ = 2'b00;
             reg_wr_ = 1'b1;
-            mux_reg_wr_ = 1'b1; 
+            mux_reg_wr_ = 1'b0; 
             mux_ula_ = 1'b1;
         end
         7'b0000011: begin // tipo I load
@@ -50,7 +50,7 @@ always @(*) begin
             mem_wr_ = 1'b0;
             ula_op_ = 2'b00;
             reg_wr_ = 1'b1;
-            mux_reg_wr_ = 1'b1; 
+            mux_reg_wr_ = 1'b0; 
             mux_ula_ = 1'b1;
         end
         7'b0100011: begin // tipo S load
@@ -59,7 +59,7 @@ always @(*) begin
             mem_wr_ = 1'b1;
             ula_op_ = 2'b00;
             reg_wr_ = 1'b0;
-            mux_reg_wr_ = 1'b0; 
+            mux_reg_wr_ = 1'b1; 
             mux_ula_ = 1'b1;
         end
         7'b1100011: begin // tipo B load
@@ -68,7 +68,7 @@ always @(*) begin
             mem_wr_ = 1'b0;
             ula_op_ = 2'b01;
             reg_wr_ = 1'b1;
-            mux_reg_wr_ = 1'b1; 
+            mux_reg_wr_ = 1'b0; 
             mux_ula_ = 1'b1;
         end
         7'b0110111, 7'b0010111: begin // tipo U load
@@ -77,7 +77,7 @@ always @(*) begin
             mem_wr_ = 1'b0;
             ula_op_ = 2'b00;
             reg_wr_ = 1'b1;
-            mux_reg_wr_ = 1'b1; 
+            mux_reg_wr_ = 1'b0; 
             mux_ula_ = 1'b1;
         end
         7'b1101111: begin // tipo J load
@@ -86,9 +86,18 @@ always @(*) begin
             mem_wr_ = 1'b0;
             ula_op_ = 2'b00;
             reg_wr_ = 1'b1;
-            mux_reg_wr_ = 1'b0; 
+            mux_reg_wr_ = 1'b1; 
             mux_ula_ = 1'b1;
         end
+		  default: begin
+				branch_ = 1'b0;
+            mem_rd_ = 1'b0;
+            mem_wr_ = 1'b0;
+            ula_op_ = 2'b00;
+            reg_wr_ = 1'b0;
+            mux_reg_wr_ = 1'b0; 
+            mux_ula_ = 1'b0;
+			end
     endcase
     end
 endmodule

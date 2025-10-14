@@ -7,7 +7,8 @@ module hazard_detection_unit (
     input wire       Jump, 
     output reg       PCWrite,
     output reg       IFIDWrite,
-    output reg       Bolha
+    output reg       Bolha,
+	 output reg       Flush
 );
 
 
@@ -21,7 +22,7 @@ module hazard_detection_unit (
         // Hazard (caso do load)
         if (IDEX_MemRead &&
             (IDEX_RegisterRt != 5'b00000) &&
-            ((IDEX_RegisterRt == IFID_RegisterRs) || (IDEX_RegisterRt == IFID_RegisterRt))) begin
+            ((IDEX_RegisterRt == IFID_Register1) || (IDEX_RegisterRt == IFID_Register2))) begin
 
             PCWrite   = 1'b0;
             IFIDWrite = 1'b0;

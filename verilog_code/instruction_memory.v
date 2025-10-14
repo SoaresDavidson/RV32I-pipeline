@@ -9,6 +9,7 @@ module instruction_memory(
     reg [31:0] memory [1023:0]; // memoria de instruções
 
     always @(*) begin
+	 instruction = 32'b0;
         if (we) begin //escrita
             memory[addr] = jump_addr;
         end
