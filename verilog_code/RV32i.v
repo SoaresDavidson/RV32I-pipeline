@@ -2,9 +2,7 @@
 module RV32i(
     input wire clk,
     input wire rst,
-    input wire enable,
-    input wire [31:0] mem_data_out, //tirar quando implementar a memoria
-    
+    input wire enable,    
     //so para testes
     output wire [31:0] pc_out,
     output wire [31:0] out_instruction
@@ -60,8 +58,9 @@ module RV32i(
   wire [4:0] MEMWBrd;
   wire MEMWBreg_wr, MEMWBmem_rd, MEMWBmem_wr, MEMWBmux_reg_wr;
   wire [31:0] MEMWBula_res, MEMWBmem_data;
+  //main memory
+  wire [31:0]MEMWBdata;
   //mux final
-  reg [31:0] reg_MEMWBrd;
   assign pc_out = pc;
   assign out_instruction = instruction;
 
@@ -137,7 +136,6 @@ module RV32i(
       7'b1100011: imm_gen_output = {{19{imm_B[11]}}, imm_B, 1'b0}; //tipo B
       7'b1101111: imm_gen_output = {{12{imm_J[19]}}, imm_J}; //tipo J
       7'b0010111, 7'b0110111: imm_gen_output = {imm_U, 12'b0}; //tipo U
-      // 7'b0000000: imm_gen_output = 32'b0;
       default: imm_gen_output = 32'b0;
     endcase
   end
@@ -162,8 +160,6 @@ module RV32i(
     .imm(imm_B),
     .Branch(sinal_jump)
   );
-
-
 
   ID_EX ID_EX (
     .ula_in(~Bolha ? ula_op : 2'b0), // se for bolha, zera o sinal de controle
@@ -229,9 +225,6 @@ module RV32i(
         default: forwarding_B = IDEXval_B;
     endcase
   end
-  always @(*) begin
-    
-  end
 
   ULA ULA ( 
     .A (forwarding_A),
@@ -261,6 +254,15 @@ module RV32i(
     .rd_out(EXMEMrd)
 
   );
+  //main memory
+  main_memory m_m(
+    .clk(clk),
+    .memRead(EXMEMmem_rd),
+    .memWrite(EXMEMmem_wr),
+    .addr(EXMEMula_res),
+    .writeData(EXMEMval_B),
+    .data(MEMWBdata)
+  );
 
   MEM_WB MEM_WB(
     .mem_rd_in(EXMEMmem_rd),
@@ -268,7 +270,7 @@ module RV32i(
     .mux_reg_wr_in(EXMEMmux_reg_wr),
     .rd_in(EXMEMrd),
     .ula_res_in(EXMEMula_res),
-    .mem_res_in(), //falta a memoria
+    .mem_res_in(MEMWBdata), 
     .clk(clk),
     .rst(rst),
     .enable(enable),
@@ -279,7 +281,7 @@ module RV32i(
     .mem_res_out(MEMWBmem_data),
     .rd_out(MEMWBrd)
   );
-  //main memory
+
   //falta a memoria :/
 
 	always @(posedge clk) begin
@@ -294,3 +296,4 @@ module RV32i(
     //MEM/WB
   end
 endmodule
+

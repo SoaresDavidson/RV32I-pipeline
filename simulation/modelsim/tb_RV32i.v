@@ -15,7 +15,6 @@ module tb_RV32i;
         .clk(clk),
         .rst(rst),
         .enable(enable),
-        .mem_data_out(32'b0), // Memória de dados não implementada neste teste
         .pc_out(pc_out),
         .out_instruction(out_instruction)
     );
@@ -26,11 +25,14 @@ module tb_RV32i;
         clk = 0;
         forever #5 clk = ~clk;
     end
-
+    
     // --- Sequência de Teste Principal ---
     initial begin
         // 4. Carrega o programa na memória ANTES de começar a simulação.
-        $readmemb("program.bin", dut.im.memory);
+        $readmemb("tipoR.bin", dut.im.instruction_memory);
+        $readmemb("program.bin", dut.m_m.memory);
+        assign dut.reg_bank.registers[{31'b0, 1'b1}] = 10;
+        assign dut.reg_bank.registers[{30'b0, 2'b10}] = 20;
         // $monitor("Time=%0t | PC=%h | Instruction=%0b", $time, pc_out, out_instruction);
         // 5. Inicia o processador
         rst = 1;
@@ -40,22 +42,55 @@ module tb_RV32i;
         enable = 1; // Habilita o processador
 
         // 6. Deixa a simulação rodar o programa por um tempo
-        #100;
+        #70;
         $display("\n--- Simulação Finalizada ---");
         $finish;
     end
 
-    always @(pc_out) begin
-        $display("Time=%0t | PC=%d | Instruction=%32b", $time, pc_out, out_instruction);
-        $display("IFID --> Opcode: %7b | rs1: %0d | rs2: %0d | rd: %0d | funct3: %0b | funct7: %0b | imm_gen: %0b", 
-        dut.IF_ID.opcode, dut.IF_ID.rs1, dut.IF_ID.rs2, dut.IF_ID.rd, dut.IF_ID.funct3, dut.IF_ID.funct7, dut.imm_gen_output);        
-        $display("IDEX --> rs1: %0d | rs2: %0d | rd: %0d | imm: %0d | funct7: %0b | mem_rd: %0b | mem_wr: %0b | reg_wr: %0b | mux_reg_wr: %0b | mux_ula: %0b | ula_op: %0b",
-        dut.ID_EX.rs1_out, dut.ID_EX.rs2_out, dut.ID_EX.rd_out, dut.ID_EX.imm_out, dut.ID_EX.funct7_out, dut.ID_EX.mem_rd_out, dut.ID_EX.mem_wr_out, dut.ID_EX.reg_wr_out, dut.ID_EX.mux_reg_wr_out, dut.ID_EX.mux_ula_out, dut.ID_EX.ula_out);
-        $display("EXMEM --> rd: %0d | ula_res: %0d | val_B: %0d | mem_rd: %0b | mem_wr: %0b | reg_wr: %0b | mux_reg_wr: %0b",
-        dut.EX_MEM.rd_out, dut.EX_MEM.ula_res_out, dut.EX_MEM.val_B_out, dut.EX_MEM.mem_rd_out, dut.EX_MEM.mem_wr_out, dut.EX_MEM.reg_wr_out, dut.EX_MEM.mux_reg_wr_out);
-        $display("MEMWB --> ");
-        // $display("EXMEM --> rd: %0d | ula_res: %0d
-        $display("===================================================================================================\n");
+    // Use a borda de descida do clock para garantir que todos os valores
+// do ciclo já foram calculados e registrados.
+always @(negedge clk) begin
+    // Não imprima nada durante o reset ou se o processador estiver desabilitado
+    if (rst == 0 && enable == 1) begin
+
+        // --- CABEÇALHO DO CICLO ---
+        // Adiciona um cabeçalho claro para cada ciclo de clock
+        $display("\n//--------------------[ CICLO @ %0t ]--------------------//", $time);
+
+        // --- ESTÁGIO IF ---
+        $display("PC: %8h   |   Instruction: %8h", pc_out, out_instruction);
+        
+        // --- ESTÁGIO ID ---
+        $display("-----------------------------------------------------------------");
+        $display("  [ID] Opcode: %7b | rd: %2d, rs1: %2d, rs2: %2d", dut.IF_ID.opcode, dut.IF_ID.rd, dut.IF_ID.rs1, dut.IF_ID.rs2);
+        $display("       Funct3: %3b  | Funct7: %7b | Branch: %b", dut.IF_ID.funct3, dut.IF_ID.funct7, dut.branch_decider.Branch);
+        $display("       Imm Gen: %8h", dut.imm_gen_output);
+        $display("       RegBank Read -> A: %10d | B: %10d", dut.reg_bank.A, dut.reg_bank.B);
+
+        // --- ESTÁGIO EX ---
+        $display("-----------------------------------------------------------------");
+        // Mostra os valores que SAEM do registrador ID/EX
+        $display("  [EX] Control -> RegWr: %b, MemRd: %b, MemWr: %b, MuxReg: %b, MuxULA: %b, ULAOp: %2b",
+                 dut.ID_EX.reg_wr_out, dut.ID_EX.mem_rd_out, dut.ID_EX.mem_wr_out, dut.ID_EX.mux_reg_wr_out, dut.ID_EX.mux_ula_out, dut.ID_EX.ula_out);
+        $display("       Data    -> val_A: %10d | val_B: %10d | rd: %2d | imm: %h",
+                 dut.ID_EX.val_A_out, dut.ID_EX.val_B_out, dut.ID_EX.rd_out, dut.ID_EX.imm_out);
+        $display("       Forward -> Fwd_A: %2b, Fwd_B: %2b", dut.fwd.forwardA, dut.fwd.forwardB);
+        $display("       ULA Out -> C: %10d", dut.ULA.C);
+
+        // // --- ESTÁGIO MEM ---
+        // $display("-----------------------------------------------------------------");
+        // $display("  [MEM] Control -> RegWr: %b, MemRd: %b, MemWr: %b, MuxReg: %b",
+        //           dut.EX_MEM.reg_wr_out, dut.EX_MEM.mem_rd_out, dut.EX_MEM.mem_wr_out, dut.EX_MEM.mux_reg_wr_out);
+        // $display("        Data    -> ULA_Res: %10d | val_B: %10d | rd: %2d",
+        //           dut.EX_MEM.ula_res_out, dut.EX_MEM.val_B_out, dut.EX_MEM.rd_out);
+        
+        // // --- ESTÁGIO WB ---
+        // $display("-----------------------------------------------------------------");
+        // $display("  [WB] Control -> RegWr: %b, MuxReg: %b", dut.MEM_WB.reg_wr_out, dut.MEM_WB.mux_reg_wr_out);
+        // $display("       Data    -> ULA_Res: %10d | Mem_Data: %10d | rd: %2d",
+        //          dut.MEM_WB.ula_res_out, dut.MEM_WB.mem_res_out, dut.MEM_WB.rd_out);
     end
+end
+
 
 endmodule

@@ -6,15 +6,15 @@ module instruction_memory(
     input re, //read enable
     output reg [31:0] instruction
 );
-    reg [31:0] memory [1023:0]; // memoria de instruções
+    reg [31:0] instruction_memory [1023:0]; // memoria de instruções
 
     always @(*) begin
 	 instruction = 32'b0;
         if (we) begin //escrita
-            memory[addr] = jump_addr;
+            instruction_memory[addr] = jump_addr;
         end
         else if (re) begin //leitura
-            instruction = memory[addr >> 2];
+            instruction = instruction_memory[addr >> 2];
         end
     end
 endmodule

@@ -61,6 +61,11 @@ set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH tb_RV32i -secti
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name EDA_TEST_BENCH_NAME tb_RV32i -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_RV32i
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_RV32i -section_id tb_RV32i
+set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/tb_RV32i.v -section_id tb_RV32i
+set_global_assignment -name VERILOG_FILE verilog_code/main_memory.v
 set_global_assignment -name VERILOG_FILE "verilog_code/Register Mux For Branch.v"
 set_global_assignment -name VERILOG_FILE verilog_code/MEM_WB.v
 set_global_assignment -name VERILOG_FILE verilog_code/instruction_memory.v
@@ -75,8 +80,4 @@ set_global_assignment -name VERILOG_FILE verilog_code/RV32i.v
 set_global_assignment -name VERILOG_FILE verilog_code/IF_ID.v
 set_global_assignment -name VERILOG_FILE verilog_code/control.v
 set_global_assignment -name VERILOG_FILE verilog_code/PC.v
-set_global_assignment -name EDA_TEST_BENCH_NAME tb_RV32i -section_id eda_simulation
-set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_RV32i
-set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_RV32i -section_id tb_RV32i
-set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/tb_RV32i.v -section_id tb_RV32i
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

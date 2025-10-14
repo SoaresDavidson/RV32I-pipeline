@@ -1,0 +1,9 @@
+/db
+/incremental_db
+/output_files
+/rtl_work
+*.xrf
+*.ini
+*.rpt
+*.qsf
+*.bak

@@ -30,7 +30,7 @@ always @(*) begin
             branch_ = 1'b0;
             mem_rd_ = 1'b0;
             mem_wr_ = 1'b0;
-            ula_op_ = 2'b10; 
+            ula_op_ = 2'b01; 
             reg_wr_ = 1'b1;
             mux_reg_wr_ = 1'b0; 
             mux_ula_ = 1'b0;

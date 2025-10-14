@@ -13,10 +13,10 @@ module register_bank(
     assign A = registers[rs1];
     assign B = registers[rs2];
 
-    integer i;
     always @(posedge clk, posedge rst) begin
-        if (rst) begin
+        if (rst) begin :reset_loop
             // Inicializa todos os registradores com 0
+            integer i;  
             for (i = 0; i < 32; i = i + 1) begin
                 registers[i] <= 32'b0;
             end
