@@ -21,7 +21,7 @@ module RV32i(
   wire [11:0] imm_I, imm_S, imm_B; //imediatos tipo I, S e B
   wire [19:0] imm_U, imm_J; //imediatos tipo U e J
   //sinais de controle
-  wire mem_rd, mem_wr, reg_wr, mux_reg_wr, mux_ula, branch;
+  wire mem_rd, mem_wr, reg_wr, mux_reg_wr, mux_ula, branch, jalReg;
   wire [1:0]ula_op;
   //foward unit
   reg [31:0] forwarding_A, forwarding_B;
@@ -110,6 +110,8 @@ module RV32i(
     .mem_wr(mem_wr),
     .reg_wr(reg_wr),
     .mux_reg_wr(mux_reg_wr),
+	 .jalReg(jalReg),
+	 .jump(jump),
     .mux_ula(mux_ula),
     .ula_op(ula_op),
     .branch(branch)
@@ -131,7 +133,7 @@ module RV32i(
   always @(*) begin
     case (opcode)
       7'b0110011: imm_gen_output = {32{1'b0}}; // tipo R
-      7'b0010011, 7'b0000011: imm_gen_output = {{20{imm_I[11]}}, imm_I}; //tipo I
+      7'b0010011, 7'b0000011, 7'b1100111: imm_gen_output = {{20{imm_I[11]}}, imm_I}; //tipo I
       7'b0100011: imm_gen_output = {{20{imm_S[11]}}, imm_S}; //tipo S
       7'b1100011: imm_gen_output = {{19{imm_B[11]}}, imm_B, 1'b0}; //tipo B
       7'b1101111: imm_gen_output = {{12{imm_J[19]}}, imm_J}; //tipo J
@@ -151,6 +153,7 @@ module RV32i(
     .A(read_A),
     .B(read_B)
   );
+  
   
   BranchDecider branch_decider(
     .opcode(opcode),
@@ -282,18 +285,6 @@ module RV32i(
     .rd_out(MEMWBrd)
   );
 
-  //falta a memoria :/
 
-	always @(posedge clk) begin
-    //IF/ID
-
-    //ID/EX
-
-
-
-    //EX/MEM
-
-    //MEM/WB
-  end
 endmodule
 
