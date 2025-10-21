@@ -29,10 +29,12 @@ module tb_RV32i;
     // --- Sequência de Teste Principal ---
     initial begin
         // 4. Carrega o programa na memória ANTES de começar a simulação.
-        $readmemb("tipoR.bin", dut.im.instruction_memory);
-        $readmemb("program.bin", dut.m_m.memory);
+        $readmemb("binarios/tiposBasicos/tipoR.bin", dut.im.instruction_memory);		  
+        $readmemb("binarios/exemplos/program.bin", dut.m_m.memory);
         assign dut.reg_bank.registers[{31'b0, 1'b1}] = 10;
         assign dut.reg_bank.registers[{30'b0, 2'b10}] = 20;
+
+        assign dut.m_m.memory[31'd16] = {30'b0, 2'b11};
         // $monitor("Time=%0t | PC=%h | Instruction=%0b", $time, pc_out, out_instruction);
         // 5. Inicia o processador
         rst = 1;
@@ -77,18 +79,18 @@ always @(negedge clk) begin
         $display("       Forward -> Fwd_A: %2b, Fwd_B: %2b", dut.fwd.forwardA, dut.fwd.forwardB);
         $display("       ULA Out -> C: %10d", dut.ULA.C);
 
-        // // --- ESTÁGIO MEM ---
-        // $display("-----------------------------------------------------------------");
-        // $display("  [MEM] Control -> RegWr: %b, MemRd: %b, MemWr: %b, MuxReg: %b",
-        //           dut.EX_MEM.reg_wr_out, dut.EX_MEM.mem_rd_out, dut.EX_MEM.mem_wr_out, dut.EX_MEM.mux_reg_wr_out);
-        // $display("        Data    -> ULA_Res: %10d | val_B: %10d | rd: %2d",
-        //           dut.EX_MEM.ula_res_out, dut.EX_MEM.val_B_out, dut.EX_MEM.rd_out);
+        // --- ESTÁGIO MEM ---
+        $display("-----------------------------------------------------------------");
+        $display("  [MEM] Control -> RegWr: %b, MemRd: %b, MemWr: %b, MuxReg: %b",
+                  dut.EX_MEM.reg_wr_out, dut.EX_MEM.mem_rd_out, dut.EX_MEM.mem_wr_out, dut.EX_MEM.mux_reg_wr_out);
+        $display("        Data    -> ULA_Res: %10d | val_B: %10d | rd: %2d",
+                  dut.EX_MEM.ula_res_out, dut.EX_MEM.val_B_out, dut.EX_MEM.rd_out);
         
-        // // --- ESTÁGIO WB ---
-        // $display("-----------------------------------------------------------------");
-        // $display("  [WB] Control -> RegWr: %b, MuxReg: %b", dut.MEM_WB.reg_wr_out, dut.MEM_WB.mux_reg_wr_out);
-        // $display("       Data    -> ULA_Res: %10d | Mem_Data: %10d | rd: %2d",
-        //          dut.MEM_WB.ula_res_out, dut.MEM_WB.mem_res_out, dut.MEM_WB.rd_out);
+        // --- ESTÁGIO WB ---
+        $display("-----------------------------------------------------------------");
+        $display("  [WB] Control -> RegWr: %b, MuxReg: %b", dut.MEM_WB.reg_wr_out, dut.MEM_WB.mux_reg_wr_out);
+        $display("       Data    -> ULA_Res: %10d | Mem_Data: %10d | rd: %2d",
+                 dut.MEM_WB.ula_res_out, dut.MEM_WB.mem_res_out, dut.MEM_WB.rd_out);
     end
 end
 

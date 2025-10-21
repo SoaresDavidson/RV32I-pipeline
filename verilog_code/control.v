@@ -30,7 +30,7 @@ always @(*) begin
             branch_ = 1'b0;
             mem_rd_ = 1'b0;
             mem_wr_ = 1'b0;
-            ula_op_ = 2'b01; 
+            ula_op_ = 2'b00; 
             reg_wr_ = 1'b1;
             mux_reg_wr_ = 1'b0; 
             mux_ula_ = 1'b0;
@@ -66,7 +66,7 @@ always @(*) begin
             branch_ = 1'b1;
             mem_rd_ = 1'b0;
             mem_wr_ = 1'b0;
-            ula_op_ = 2'b01;
+            ula_op_ = 2'b00;
             reg_wr_ = 1'b1;
             mux_reg_wr_ = 1'b0; 
             mux_ula_ = 1'b1;
@@ -90,7 +90,7 @@ always @(*) begin
             mux_ula_ = 1'b1;
         end
 		  default: begin
-				branch_ = 1'b0;
+            branch_ = 1'b0;
             mem_rd_ = 1'b0;
             mem_wr_ = 1'b0;
             ula_op_ = 2'b00;
