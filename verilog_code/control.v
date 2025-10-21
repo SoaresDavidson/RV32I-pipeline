@@ -10,8 +10,8 @@ module control(
 
     // EX
     output   wire jalReg,
-	 output   wire jump,
-	 output   wire mux_ula, // mux da ula (rs2 ou imm)
+    output   wire jump,
+    output   wire mux_ula, // mux da ula (rs2 ou imm)
     output   wire [1:0] ula_op, // escolhe operação
 
     output wire branch
