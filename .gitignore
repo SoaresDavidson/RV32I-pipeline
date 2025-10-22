@@ -7,6 +7,9 @@ rtl_work
 *.rpt
 *.qsf
 *.bak
+*.qpf
+*.qws
+*.v.bak
 R232i_nativelink_simulation.rpt
 R232i.qpf
 R232i.qws

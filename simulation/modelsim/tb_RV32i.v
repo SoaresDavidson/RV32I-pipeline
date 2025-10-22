@@ -29,12 +29,12 @@ module tb_RV32i;
     // --- Sequência de Teste Principal ---
     initial begin
         // 4. Carrega o programa na memória ANTES de começar a simulação.
-        $readmemb("binarios/tiposBasicos/tipoR.bin", dut.im.instruction_memory);		  
+        $readmemb("binarios/tiposBasicos/tipoU.bin", dut.im.instruction_memory);		  
         $readmemb("binarios/exemplos/program.bin", dut.m_m.memory);
-        assign dut.reg_bank.registers[{31'b0, 1'b1}] = 10;
-        assign dut.reg_bank.registers[{30'b0, 2'b10}] = 20;
+        // assign dut.reg_bank.registers[{31'b0, 1'b1}] = 10;
+        // assign dut.reg_bank.registers[{30'b0, 2'b10}] = 20;
 
-        assign dut.m_m.memory[31'd16] = {30'b0, 2'b11};
+        // assign dut.m_m.memory[31'd16] = {30'b0, 2'b11};
         // $monitor("Time=%0t | PC=%h | Instruction=%0b", $time, pc_out, out_instruction);
         // 5. Inicia o processador
         rst = 1;
@@ -72,10 +72,10 @@ always @(negedge clk) begin
         // --- ESTÁGIO EX ---
         $display("-----------------------------------------------------------------");
         // Mostra os valores que SAEM do registrador ID/EX
-        $display("  [EX] Control -> RegWr: %b, MemRd: %b, MemWr: %b, MuxReg: %b, MuxULA: %b, ULAOp: %2b",
-                 dut.ID_EX.reg_wr_out, dut.ID_EX.mem_rd_out, dut.ID_EX.mem_wr_out, dut.ID_EX.mux_reg_wr_out, dut.ID_EX.mux_ula_out, dut.ID_EX.ula_out);
-        $display("       Data    -> val_A: %10d | val_B: %10d | rd: %2d | imm: %h",
-                 dut.ID_EX.val_A_out, dut.ID_EX.val_B_out, dut.ID_EX.rd_out, dut.ID_EX.imm_out);
+        $display("  [EX] Control -> RegWr: %b, MemRd: %b, MemWr: %b, MuxReg: %b, MuxULA: %b, ULAOp: %2b, PcULA: %b",
+                 dut.ID_EX.reg_wr_out, dut.ID_EX.mem_rd_out, dut.ID_EX.mem_wr_out, dut.ID_EX.mux_reg_wr_out, dut.ID_EX.mux_ula_out, dut.ID_EX.ula_out, dut.ID_EX.pc_ula_out);
+        $display("       Data    -> val_A: %10d | val_B: %10d | rd: %2d | imm: %h | pc: %h",
+                 dut.ID_EX.val_A_out, dut.ID_EX.val_B_out, dut.ID_EX.rd_out, dut.ID_EX.imm_out, dut.ID_EX.pc_out);
         $display("       Forward -> Fwd_A: %2b, Fwd_B: %2b", dut.fwd.forwardA, dut.fwd.forwardB);
         $display("       ULA Out -> C: %10d", dut.ULA.C);
 

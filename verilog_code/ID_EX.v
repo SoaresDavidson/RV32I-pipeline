@@ -5,6 +5,7 @@ module ID_EX(
 	// controle EX
 	input	wire [1:0] ula_in,
 	input	wire mux_ula_in,
+	input	wire pc_ula_in,
 
 	// controle MEM
 	input	wire mem_rd_in,
@@ -15,6 +16,7 @@ module ID_EX(
 	input	wire mux_reg_wr_in,
 
 	// dados
+	input   wire [31:0] pc_in,
 	input	wire [31:0] imm_in,
 	input	wire [4:0] rs1_in,
 	input	wire [4:0] rs2_in,
@@ -29,6 +31,7 @@ module ID_EX(
 	input	wire rst,
 	input	wire enable,
 
+	output  wire  [31:0] pc_out,
 	output	wire  [31:0] imm_out,
 	output	wire  [4:0] rs1_out,
 	output	wire  [4:0] rs2_out,
@@ -38,6 +41,7 @@ module ID_EX(
 	output	wire  [31:0] val_A_out,
 	output	wire  [31:0] val_B_out,
 	output	wire [1:0] ula_out,
+	output	wire pc_ula_out,
 	output	wire mux_ula_out,
 	output	wire mem_rd_out,
 	output	wire mem_wr_out,
@@ -47,7 +51,7 @@ module ID_EX(
 
 
 // registradores
-reg [31:0] imm;
+reg [31:0] imm, pc;
 reg [4:0] rs1;
 reg [4:0] rs2;
 reg [4:0] rd;
@@ -56,12 +60,10 @@ reg [2:0] funct3;
 reg [31:0] val_A;
 reg [31:0] val_B;
 reg [1:0] ula;
-reg mux_ula;
-reg mem_rd;
-reg mem_wr;
-reg reg_wr;
-reg mux_reg_wr;
+//sinais de controle
+reg mux_ula, mem_rd, mem_wr, reg_wr, mux_reg_wr, pc_ula;
 
+assign pc_out = pc;
 // leitura
 assign imm_out = imm;
 assign rs1_out = rs1;
@@ -77,10 +79,12 @@ assign mem_rd_out = mem_rd;
 assign mem_wr_out = mem_wr;
 assign reg_wr_out = reg_wr;
 assign mux_reg_wr_out = mux_reg_wr;
+assign pc_ula_out = pc_ula;
 
 // escrita
 always @(posedge clk or posedge rst) begin
 	if(rst) begin
+		pc <= 32'b0;
 		imm <= 32'b0;
  		rs1 <= 5'b0;
  		rs2 <= 5'b0;
@@ -95,7 +99,9 @@ always @(posedge clk or posedge rst) begin
  		mem_wr <= 1'b0;
  		reg_wr <= 1'b0;	
 		mux_reg_wr <= 1'b0;
+		pc_ula <= 1'b0;
 	end else if (enable) begin
+		pc <= pc_in;
 		imm <= imm_in;
 		rs1 <= rs1_in;
 		rs2 <= rs2_in;
@@ -110,6 +116,7 @@ always @(posedge clk or posedge rst) begin
 		mem_wr <= mem_wr_in;
 		reg_wr <= reg_wr_in;
 		mux_reg_wr <= mux_reg_wr_in;
+		pc_ula <= pc_ula_in;
 	end
 end
 

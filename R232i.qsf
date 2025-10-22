@@ -65,6 +65,7 @@ set_global_assignment -name EDA_TEST_BENCH_NAME tb_RV32i -section_id eda_simulat
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_RV32i
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_RV32i -section_id tb_RV32i
 set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/tb_RV32i.v -section_id tb_RV32i
+set_global_assignment -name VERILOG_FILE verilog_code/Ula_controler.v
 set_global_assignment -name VERILOG_FILE verilog_code/main_memory.v
 set_global_assignment -name VERILOG_FILE "verilog_code/Register Mux For Branch.v"
 set_global_assignment -name VERILOG_FILE verilog_code/MEM_WB.v
