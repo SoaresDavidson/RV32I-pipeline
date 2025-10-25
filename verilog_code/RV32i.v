@@ -20,15 +20,16 @@ module RV32i(
   wire [6:0] funct7;
   wire [11:0] imm_I, imm_S, imm_B; //imediatos tipo I, S e B
   wire [19:0] imm_U, imm_J; //imediatos tipo U e J
+  wire [31:0] IFID_pc;
   //sinais de controle
-  wire mem_rd, mem_wr, reg_wr, mux_reg_wr, mux_ula, branch;
+  wire mem_rd, mem_wr, reg_wr, mux_reg_wr, mux_ula, branch, pc_ula;
   wire [1:0]ula_op;
   //foward unit
   reg [31:0] forwarding_A, forwarding_B;
   //ID/EX
-  wire IDEXmem_rd, IDEXmem_wr, IDEXreg_wr, IDEXmux_reg_wr, IDEXmux_ula;
+  wire IDEXmem_rd, IDEXmem_wr, IDEXreg_wr, IDEXmux_reg_wr, IDEXmux_ula, IDEXpc_ula;
   wire [1:0]IDEXula;
-  wire [31:0] IDEXimm;
+  wire [31:0] IDEXimm, IDEXpc;
   wire [4:0] IDEXrs1, IDEXrs2, IDEXrd;
   wire [6:0] IDEXfunct7;
   wire [2:0] IDEXfunct3;
@@ -48,6 +49,9 @@ module RV32i(
   wire Jump;
   wire Bolha;
   wire Flush;
+  //ULA controler
+  wire [3:0]operation;
+  wire ula_err;
   //ULA
   wire z;
   //EX/MEM
@@ -91,6 +95,8 @@ module RV32i(
     .Flush(Flush),
     .enable(enable),
     .IFIDWrite(IFIDWrite),
+    .pc_in(pc),
+    .pc_out(IFID_pc),
     .opcode(opcode),
     .rd(IFID_rd),
     .rs1(IFID_rs1),
@@ -112,6 +118,7 @@ module RV32i(
     .mux_reg_wr(mux_reg_wr),
     .mux_ula(mux_ula),
     .ula_op(ula_op),
+    .pc_ula(pc_ula),
     .branch(branch)
   );
 
@@ -146,7 +153,7 @@ module RV32i(
     .rs1(IFID_rs1),
     .rs2(IFID_rs2),
     .rd(MEMWBrd),
-    .RegWrite(MEMWBmem_wr),
+    .RegWrite(MEMWBreg_wr),
     .C(MEMWBmux_reg_wr ? MEMWBmem_data : MEMWBula_res),
     .A(read_A),
     .B(read_B)
@@ -164,10 +171,12 @@ module RV32i(
   ID_EX ID_EX (
     .ula_in(~Bolha ? ula_op : 2'b0), // se for bolha, zera o sinal de controle
     .mux_ula_in(~Bolha ? mux_ula : 1'b0),
+    .pc_ula_in(~Bolha ? pc_ula : 1'b0),
     .mem_rd_in(~Bolha ? mem_rd : 1'b0),
     .mem_wr_in(~Bolha ? mem_wr : 1'b0),
     .reg_wr_in(~Bolha ? reg_wr : 1'b0),
     .mux_reg_wr_in(~Bolha ? mux_reg_wr : 1'b0),
+    .pc_in(IFID_pc),
     .imm_in(imm_gen_output),
     .rs1_in(IFID_rs1),
     .rs2_in(IFID_rs2),
@@ -179,6 +188,7 @@ module RV32i(
     .clk(clk),
     .rst(rst),
     .enable(enable),
+    .pc_out(IDEXpc),
     .imm_out(IDEXimm),
     .rs1_out(IDEXrs1),
     .rs2_out(IDEXrs2),
@@ -188,6 +198,7 @@ module RV32i(
     .val_A_out(IDEXval_A),
     .val_B_out(IDEXval_B),
     .ula_out(IDEXula),
+    .pc_ula_out(IDEXpc_ula),
     .mux_ula_out(IDEXmux_ula),
     .mem_rd_out(IDEXmem_rd),
     .mem_wr_out(IDEXmem_wr),
@@ -208,7 +219,12 @@ module RV32i(
 
   always @(*) begin
     case (forwardA)
-        2'b00: forwarding_A = IDEXval_A; // Normal
+        2'b00: begin
+          case (IDEXpc_ula)
+            1'b0: forwarding_A = IDEXval_A;
+            1'b1: forwarding_A = IDEXpc;
+          endcase
+        end
         2'b10: forwarding_A = EXMEMula_res; // MEM/WB sei la não implementei isso ainda
         2'b01: forwarding_A = MEMWBmem_data; // EX/MEM
         default: forwarding_A = IDEXval_A;
@@ -216,8 +232,8 @@ module RV32i(
     case (forwardB)
         2'b00: begin 
             case (IDEXmux_ula)
-              1'b0: forwarding_B = IDEXimm;
-              1'b1: forwarding_B = IDEXval_B;
+              1'b0: forwarding_B = IDEXval_B;
+              1'b1: forwarding_B = IDEXimm;
             endcase // Normal
           end
         2'b10: forwarding_B = EXMEMula_res; // MEM/WB sei la não implementei isso ainda
@@ -226,12 +242,21 @@ module RV32i(
     endcase
   end
 
+  ULA_controler ula_ctrl (
+    .rst(rst),
+    .ula_op(IDEXula),
+    .funct7(IDEXfunct7),
+    .funct3(IDEXfunct3),
+    .operation(operation),
+    .err(ula_err)
+  );
+
   ULA ULA ( 
     .A (forwarding_A),
     .B (forwarding_B),
 		.C (ULA_C),
 		.z (z),
-		.sel (IDEXula)
+		.ula_op (operation)
 	);
 
   EX_MEM EX_MEM(

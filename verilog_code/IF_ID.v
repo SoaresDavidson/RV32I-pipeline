@@ -6,8 +6,10 @@ module IF_ID (
 	input	wire rst,
 	input	wire enable,
 	input   wire IFIDWrite,
+	input   wire [31:0] pc_in,
 	input   wire Flush,
 
+	output  wire [31:0] pc_out,
 	output	wire [6:0] opcode,
 	output	wire [4:0] rd,
 	output	wire [4:0] rs1,
@@ -21,8 +23,7 @@ module IF_ID (
 	output  wire [19:0] imm_J
 );
 
-reg [31:0] register;
-
+reg [31:0] register, pc_out_reg;
 // campos
 assign opcode = register[6:0];
 assign rd     = register[11:7];
@@ -38,13 +39,16 @@ assign imm_B  = {register[31], register[7], register[30:25], register[11:8]};
 assign imm_U  = register[31:12];
 assign imm_J  = {register[31], register[19:12], register[20], register[30:21]};
 
+assign pc_out = pc_out_reg;
 always @(posedge clk or posedge rst) begin
 	if (rst) begin
 		register <= 32'b0;
 	end else if (Flush) begin
 		register <= 32'b0;
+		pc_out_reg <= 32'b0;
 	end else if (enable && IFIDWrite) begin
 		register <= instruction;
+		pc_out_reg <= pc_in;
 	end
 end
 

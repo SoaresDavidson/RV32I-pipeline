@@ -10,161 +10,171 @@
 # Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
+# vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/Ula_controler.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:08:17 on Oct 21,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/Ula_controler.v 
+# -- Compiling module ULA_controler
+# 
+# Top level modules:
+# 	ULA_controler
+# End time: 23:08:17 on Oct 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/main_memory.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:14:19 on Oct 21,2025
+# Start time: 23:08:17 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/main_memory.v 
 # -- Compiling module main_memory
 # 
 # Top level modules:
 # 	main_memory
-# End time: 13:14:19 on Oct 21,2025, Elapsed time: 0:00:00
+# End time: 23:08:17 on Oct 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/MEM_WB.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:14:20 on Oct 21,2025
+# Start time: 23:08:17 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/MEM_WB.v 
 # -- Compiling module MEM_WB
 # 
 # Top level modules:
 # 	MEM_WB
-# End time: 13:14:20 on Oct 21,2025, Elapsed time: 0:00:00
+# End time: 23:08:17 on Oct 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/instruction_memory.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:14:20 on Oct 21,2025
+# Start time: 23:08:17 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/instruction_memory.v 
 # -- Compiling module instruction_memory
 # 
 # Top level modules:
 # 	instruction_memory
-# End time: 13:14:20 on Oct 21,2025, Elapsed time: 0:00:00
+# End time: 23:08:17 on Oct 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/hazard_detection_unit.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:14:20 on Oct 21,2025
+# Start time: 23:08:17 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/hazard_detection_unit.v 
 # -- Compiling module hazard_detection_unit
 # 
 # Top level modules:
 # 	hazard_detection_unit
-# End time: 13:14:20 on Oct 21,2025, Elapsed time: 0:00:00
+# End time: 23:08:17 on Oct 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/EX_MEM.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:14:20 on Oct 21,2025
+# Start time: 23:08:18 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/EX_MEM.v 
 # -- Compiling module EX_MEM
 # 
 # Top level modules:
 # 	EX_MEM
-# End time: 13:14:20 on Oct 21,2025, Elapsed time: 0:00:00
+# End time: 23:08:18 on Oct 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/ULA.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:14:21 on Oct 21,2025
+# Start time: 23:08:18 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/ULA.v 
 # -- Compiling module ULA
 # 
 # Top level modules:
 # 	ULA
-# End time: 13:14:21 on Oct 21,2025, Elapsed time: 0:00:00
+# End time: 23:08:18 on Oct 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/forward_unit.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:14:21 on Oct 21,2025
+# Start time: 23:08:18 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/forward_unit.v 
 # -- Compiling module forward_unit
 # 
 # Top level modules:
 # 	forward_unit
-# End time: 13:14:21 on Oct 21,2025, Elapsed time: 0:00:00
+# End time: 23:08:18 on Oct 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/register_bank.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:14:21 on Oct 21,2025
+# Start time: 23:08:18 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/register_bank.v 
 # -- Compiling module register_bank
 # 
 # Top level modules:
 # 	register_bank
-# End time: 13:14:21 on Oct 21,2025, Elapsed time: 0:00:00
+# End time: 23:08:18 on Oct 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/Branch Decider.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:14:21 on Oct 21,2025
+# Start time: 23:08:18 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/Branch Decider.v 
 # -- Compiling module BranchDecider
 # 
 # Top level modules:
 # 	BranchDecider
-# End time: 13:14:21 on Oct 21,2025, Elapsed time: 0:00:00
+# End time: 23:08:18 on Oct 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/ID_EX.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:14:21 on Oct 21,2025
+# Start time: 23:08:18 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/ID_EX.v 
 # -- Compiling module ID_EX
 # 
 # Top level modules:
 # 	ID_EX
-# End time: 13:14:22 on Oct 21,2025, Elapsed time: 0:00:01
+# End time: 23:08:18 on Oct 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/RV32i.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:14:22 on Oct 21,2025
+# Start time: 23:08:18 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/RV32i.v 
 # -- Compiling module RV32i
 # 
 # Top level modules:
 # 	RV32i
-# End time: 13:14:22 on Oct 21,2025, Elapsed time: 0:00:00
+# End time: 23:08:18 on Oct 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/IF_ID.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:14:22 on Oct 21,2025
+# Start time: 23:08:18 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/IF_ID.v 
 # -- Compiling module IF_ID
 # 
 # Top level modules:
 # 	IF_ID
-# End time: 13:14:22 on Oct 21,2025, Elapsed time: 0:00:00
+# End time: 23:08:18 on Oct 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/control.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:14:22 on Oct 21,2025
+# Start time: 23:08:19 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/control.v 
 # -- Compiling module control
 # 
 # Top level modules:
 # 	control
-# End time: 13:14:22 on Oct 21,2025, Elapsed time: 0:00:00
+# End time: 23:08:19 on Oct 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:14:23 on Oct 21,2025
+# Start time: 23:08:19 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v 
 # -- Compiling module PC
 # 
 # Top level modules:
 # 	PC
-# End time: 13:14:23 on Oct 21,2025, Elapsed time: 0:00:00
+# End time: 23:08:19 on Oct 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/simulation/modelsim {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/simulation/modelsim/tb_RV32i.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:14:23 on Oct 21,2025
+# Start time: 23:08:19 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/simulation/modelsim" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/simulation/modelsim/tb_RV32i.v 
 # -- Compiling module tb_RV32i
 # 
 # Top level modules:
 # 	tb_RV32i
-# End time: 13:14:23 on Oct 21,2025, Elapsed time: 0:00:00
+# End time: 23:08:19 on Oct 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_RV32i
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_RV32i 
-# Start time: 13:14:24 on Oct 21,2025
+# Start time: 23:08:19 on Oct 21,2025
 # Loading work.tb_RV32i
 # Loading work.RV32i
 # Loading work.PC
@@ -176,6 +186,7 @@
 # Loading work.BranchDecider
 # Loading work.ID_EX
 # Loading work.forward_unit
+# Loading work.ULA_controler
 # Loading work.ULA
 # Loading work.EX_MEM
 # Loading work.main_memory
@@ -187,15 +198,9 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# ** Error (suppressible): (vsim-10504) Illegal use of bit-select of variable "registers" in left-hand side in procedural cont. assignment.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_RV32i
-# ** Error (suppressible): (vsim-10504) Illegal use of bit-select of variable "registers" in left-hand side in procedural cont. assignment.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_RV32i
-# ** Error (suppressible): (vsim-10504) Illegal use of bit-select of variable "memory" in left-hand side in procedural cont. assignment.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_RV32i
 # 
 # //--------------------[ CICLO @ 20000 ]--------------------//
-# PC: 00000000   |   Instruction: 0100a183
+# PC: 00000000   |   Instruction: 12345197
 # -----------------------------------------------------------------
 #   [ID] Opcode: 0000000 | rd:  0, rs1:  0, rs2:  0
 #        Funct3: 000  | Funct7: 0000000 | Branch: 0
@@ -214,12 +219,12 @@
 #        Data    -> ULA_Res:          0 | Mem_Data:          0 | rd:  0
 # 
 # //--------------------[ CICLO @ 30000 ]--------------------//
-# PC: 00000004   |   Instruction: 002180b3
+# PC: 00000004   |   Instruction: 00000000
 # -----------------------------------------------------------------
-#   [ID] Opcode: 0000011 | rd:  3, rs1:  1, rs2: 16
-#        Funct3: 010  | Funct7: 0000000 | Branch: 0
-#        Imm Gen: 00000010
-#        RegBank Read -> A:         10 | B:          0
+#   [ID] Opcode: 0010111 | rd:  3, rs1:  8, rs2:  3
+#        Funct3: 101  | Funct7: 0001001 | Branch: 0
+#        Imm Gen: 12345000
+#        RegBank Read -> A:          0 | B:          0
 # -----------------------------------------------------------------
 #   [EX] Control -> RegWr: 0, MemRd: 0, MemWr: 0, MuxReg: 0, MuxULA: 0, ULAOp: 00
 #        Data    -> val_A:          0 | val_B:          0 | rd:  0 | imm: 00000000
@@ -233,17 +238,17 @@
 #        Data    -> ULA_Res:          0 | Mem_Data:          0 | rd:  0
 # 
 # //--------------------[ CICLO @ 40000 ]--------------------//
-# PC: 00000008   |   Instruction: 00a00113
+# PC: 00000008   |   Instruction: 00000000
 # -----------------------------------------------------------------
-#   [ID] Opcode: 0110011 | rd:  1, rs1:  3, rs2:  2
+#   [ID] Opcode: 0000000 | rd:  0, rs1:  0, rs2:  0
 #        Funct3: 000  | Funct7: 0000000 | Branch: 0
 #        Imm Gen: 00000000
-#        RegBank Read -> A:          0 | B:         20
+#        RegBank Read -> A:          0 | B:          0
 # -----------------------------------------------------------------
-#   [EX] Control -> RegWr: 1, MemRd: 1, MemWr: 0, MuxReg: 0, MuxULA: 1, ULAOp: 00
-#        Data    -> val_A:         10 | val_B:          0 | rd:  3 | imm: 00000010
+#   [EX] Control -> RegWr: 1, MemRd: 0, MemWr: 0, MuxReg: 0, MuxULA: 1, ULAOp: 00
+#        Data    -> val_A:          0 | val_B:          0 | rd:  3 | imm: 12345000
 #        Forward -> Fwd_A: 00, Fwd_B: 00
-#        ULA Out -> C:         10
+#        ULA Out -> C:  305418240
 # -----------------------------------------------------------------
 #   [MEM] Control -> RegWr: 0, MemRd: 0, MemWr: 0, MuxReg: 0
 #         Data    -> ULA_Res:          0 | val_B:          0 | rd:  0
@@ -252,80 +257,80 @@
 #        Data    -> ULA_Res:          0 | Mem_Data:          0 | rd:  0
 # 
 # //--------------------[ CICLO @ 50000 ]--------------------//
-# PC: 00000008   |   Instruction: 00a00113
+# PC: 0000000c   |   Instruction: 00000000
 # -----------------------------------------------------------------
-#   [ID] Opcode: 0110011 | rd:  1, rs1:  3, rs2:  2
+#   [ID] Opcode: 0000000 | rd:  0, rs1:  0, rs2:  0
 #        Funct3: 000  | Funct7: 0000000 | Branch: 0
 #        Imm Gen: 00000000
-#        RegBank Read -> A:          0 | B:         20
+#        RegBank Read -> A:          0 | B:          0
 # -----------------------------------------------------------------
 #   [EX] Control -> RegWr: 0, MemRd: 0, MemWr: 0, MuxReg: 0, MuxULA: 0, ULAOp: 00
-#        Data    -> val_A:          0 | val_B:         20 | rd:  1 | imm: 00000000
-#        Forward -> Fwd_A: 10, Fwd_B: 00
-#        ULA Out -> C:         10
+#        Data    -> val_A:          0 | val_B:          0 | rd:  0 | imm: 00000000
+#        Forward -> Fwd_A: 00, Fwd_B: 00
+#        ULA Out -> C:          0
 # -----------------------------------------------------------------
-#   [MEM] Control -> RegWr: 1, MemRd: 1, MemWr: 0, MuxReg: 0
-#         Data    -> ULA_Res:         10 | val_B:          0 | rd:  3
+#   [MEM] Control -> RegWr: 1, MemRd: 0, MemWr: 0, MuxReg: 0
+#         Data    -> ULA_Res:  305418240 | val_B:          0 | rd:  3
 # -----------------------------------------------------------------
 #   [WB] Control -> RegWr: 0, MuxReg: 0
 #        Data    -> ULA_Res:          0 | Mem_Data:          0 | rd:  0
 # 
 # //--------------------[ CICLO @ 60000 ]--------------------//
-# PC: 0000000c   |   Instruction: 00a00113
+# PC: 00000010   |   Instruction: 00418193
 # -----------------------------------------------------------------
-#   [ID] Opcode: 0010011 | rd:  2, rs1:  0, rs2: 10
+#   [ID] Opcode: 0000000 | rd:  0, rs1:  0, rs2:  0
 #        Funct3: 000  | Funct7: 0000000 | Branch: 0
-#        Imm Gen: 0000000a
+#        Imm Gen: 00000000
 #        RegBank Read -> A:          0 | B:          0
 # -----------------------------------------------------------------
-#   [EX] Control -> RegWr: 1, MemRd: 0, MemWr: 0, MuxReg: 0, MuxULA: 0, ULAOp: 00
-#        Data    -> val_A:          0 | val_B:         20 | rd:  1 | imm: 00000000
-#        Forward -> Fwd_A: 01, Fwd_B: 00
-#        ULA Out -> C:          x
+#   [EX] Control -> RegWr: 0, MemRd: 0, MemWr: 0, MuxReg: 0, MuxULA: 0, ULAOp: 00
+#        Data    -> val_A:          0 | val_B:          0 | rd:  0 | imm: 00000000
+#        Forward -> Fwd_A: 00, Fwd_B: 00
+#        ULA Out -> C:          0
 # -----------------------------------------------------------------
 #   [MEM] Control -> RegWr: 0, MemRd: 0, MemWr: 0, MuxReg: 0
-#         Data    -> ULA_Res:         10 | val_B:         20 | rd:  1
+#         Data    -> ULA_Res:          0 | val_B:          0 | rd:  0
 # -----------------------------------------------------------------
 #   [WB] Control -> RegWr: 1, MuxReg: 0
-#        Data    -> ULA_Res:         10 | Mem_Data:          x | rd:  3
+#        Data    -> ULA_Res:  305418240 | Mem_Data:          0 | rd:  3
 # 
 # //--------------------[ CICLO @ 70000 ]--------------------//
-# PC: 00000010   |   Instruction: xxxxxxxx
+# PC: 00000014   |   Instruction: 00418193
 # -----------------------------------------------------------------
-#   [ID] Opcode: 0010011 | rd:  2, rs1:  0, rs2: 10
+#   [ID] Opcode: 0010011 | rd:  3, rs1:  3, rs2:  4
 #        Funct3: 000  | Funct7: 0000000 | Branch: 0
-#        Imm Gen: 0000000a
-#        RegBank Read -> A:          0 | B:          0
+#        Imm Gen: 00000004
+#        RegBank Read -> A:  305418240 | B:          0
 # -----------------------------------------------------------------
-#   [EX] Control -> RegWr: 1, MemRd: 0, MemWr: 0, MuxReg: 0, MuxULA: 1, ULAOp: 00
-#        Data    -> val_A:          0 | val_B:          0 | rd:  2 | imm: 0000000a
+#   [EX] Control -> RegWr: 0, MemRd: 0, MemWr: 0, MuxReg: 0, MuxULA: 0, ULAOp: 00
+#        Data    -> val_A:          0 | val_B:          0 | rd:  0 | imm: 00000000
 #        Forward -> Fwd_A: 00, Fwd_B: 00
 #        ULA Out -> C:          0
 # -----------------------------------------------------------------
-#   [MEM] Control -> RegWr: 1, MemRd: 0, MemWr: 0, MuxReg: 0
-#         Data    -> ULA_Res:          x | val_B:         20 | rd:  1
+#   [MEM] Control -> RegWr: 0, MemRd: 0, MemWr: 0, MuxReg: 0
+#         Data    -> ULA_Res:          0 | val_B:          0 | rd:  0
 # -----------------------------------------------------------------
 #   [WB] Control -> RegWr: 0, MuxReg: 0
-#        Data    -> ULA_Res:         10 | Mem_Data:          0 | rd:  1
+#        Data    -> ULA_Res:          0 | Mem_Data:          0 | rd:  0
 # 
 # //--------------------[ CICLO @ 80000 ]--------------------//
-# PC: 00000014   |   Instruction: xxxxxxxx
+# PC: 00000018   |   Instruction: 00418193
 # -----------------------------------------------------------------
-#   [ID] Opcode: xxxxxxx | rd:  x, rs1:  x, rs2:  x
-#        Funct3: xxx  | Funct7: xxxxxxx | Branch: 0
-#        Imm Gen: 00000000
-#        RegBank Read -> A:          x | B:          x
+#   [ID] Opcode: 0010011 | rd:  3, rs1:  3, rs2:  4
+#        Funct3: 000  | Funct7: 0000000 | Branch: 0
+#        Imm Gen: 00000004
+#        RegBank Read -> A:  305418240 | B:          0
 # -----------------------------------------------------------------
-#   [EX] Control -> RegWr: 1, MemRd: 0, MemWr: 0, MuxReg: 0, MuxULA: 1, ULAOp: 00
-#        Data    -> val_A:          0 | val_B:          0 | rd:  2 | imm: 0000000a
+#   [EX] Control -> RegWr: 1, MemRd: 0, MemWr: 0, MuxReg: 0, MuxULA: 1, ULAOp: 10
+#        Data    -> val_A:  305418240 | val_B:          0 | rd:  3 | imm: 00000004
 #        Forward -> Fwd_A: 00, Fwd_B: 00
-#        ULA Out -> C:          0
+#        ULA Out -> C:  305418244
 # -----------------------------------------------------------------
-#   [MEM] Control -> RegWr: 1, MemRd: 0, MemWr: 0, MuxReg: 0
-#         Data    -> ULA_Res:          0 | val_B:          0 | rd:  2
+#   [MEM] Control -> RegWr: 0, MemRd: 0, MemWr: 0, MuxReg: 0
+#         Data    -> ULA_Res:          0 | val_B:          0 | rd:  0
 # -----------------------------------------------------------------
-#   [WB] Control -> RegWr: 1, MuxReg: 0
-#        Data    -> ULA_Res:          x | Mem_Data:          0 | rd:  1
+#   [WB] Control -> RegWr: 0, MuxReg: 0
+#        Data    -> ULA_Res:          0 | Mem_Data:          0 | rd:  0
 # 
 # --- Simulação Finalizada ---
 # ** Note: $finish    : C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/simulation/modelsim/tb_RV32i.v(49)
@@ -344,163 +349,173 @@ do R232i_run_msim_rtl_verilog.do
 # vmap work rtl_work 
 # Modifying modelsim.ini
 # 
+# vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/Ula_controler.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:09:15 on Oct 21,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/Ula_controler.v 
+# -- Compiling module ULA_controler
+# 
+# Top level modules:
+# 	ULA_controler
+# End time: 23:09:15 on Oct 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/main_memory.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:36:53 on Oct 21,2025
+# Start time: 23:09:15 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/main_memory.v 
 # -- Compiling module main_memory
 # 
 # Top level modules:
 # 	main_memory
-# End time: 13:36:53 on Oct 21,2025, Elapsed time: 0:00:00
+# End time: 23:09:15 on Oct 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/MEM_WB.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:36:53 on Oct 21,2025
+# Start time: 23:09:15 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/MEM_WB.v 
 # -- Compiling module MEM_WB
 # 
 # Top level modules:
 # 	MEM_WB
-# End time: 13:36:53 on Oct 21,2025, Elapsed time: 0:00:00
+# End time: 23:09:15 on Oct 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/instruction_memory.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:36:54 on Oct 21,2025
+# Start time: 23:09:15 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/instruction_memory.v 
 # -- Compiling module instruction_memory
 # 
 # Top level modules:
 # 	instruction_memory
-# End time: 13:36:54 on Oct 21,2025, Elapsed time: 0:00:00
+# End time: 23:09:15 on Oct 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/hazard_detection_unit.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:36:54 on Oct 21,2025
+# Start time: 23:09:15 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/hazard_detection_unit.v 
 # -- Compiling module hazard_detection_unit
 # 
 # Top level modules:
 # 	hazard_detection_unit
-# End time: 13:36:54 on Oct 21,2025, Elapsed time: 0:00:00
+# End time: 23:09:15 on Oct 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/EX_MEM.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:36:54 on Oct 21,2025
+# Start time: 23:09:15 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/EX_MEM.v 
 # -- Compiling module EX_MEM
 # 
 # Top level modules:
 # 	EX_MEM
-# End time: 13:36:54 on Oct 21,2025, Elapsed time: 0:00:00
+# End time: 23:09:16 on Oct 21,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/ULA.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:36:54 on Oct 21,2025
+# Start time: 23:09:16 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/ULA.v 
 # -- Compiling module ULA
 # 
 # Top level modules:
 # 	ULA
-# End time: 13:36:55 on Oct 21,2025, Elapsed time: 0:00:01
+# End time: 23:09:16 on Oct 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/forward_unit.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:36:55 on Oct 21,2025
+# Start time: 23:09:16 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/forward_unit.v 
 # -- Compiling module forward_unit
 # 
 # Top level modules:
 # 	forward_unit
-# End time: 13:36:55 on Oct 21,2025, Elapsed time: 0:00:00
+# End time: 23:09:16 on Oct 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/register_bank.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:36:55 on Oct 21,2025
+# Start time: 23:09:16 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/register_bank.v 
 # -- Compiling module register_bank
 # 
 # Top level modules:
 # 	register_bank
-# End time: 13:36:55 on Oct 21,2025, Elapsed time: 0:00:00
+# End time: 23:09:16 on Oct 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/Branch Decider.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:36:56 on Oct 21,2025
+# Start time: 23:09:16 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/Branch Decider.v 
 # -- Compiling module BranchDecider
 # 
 # Top level modules:
 # 	BranchDecider
-# End time: 13:36:56 on Oct 21,2025, Elapsed time: 0:00:00
+# End time: 23:09:16 on Oct 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/ID_EX.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:36:56 on Oct 21,2025
+# Start time: 23:09:16 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/ID_EX.v 
 # -- Compiling module ID_EX
 # 
 # Top level modules:
 # 	ID_EX
-# End time: 13:36:56 on Oct 21,2025, Elapsed time: 0:00:00
+# End time: 23:09:16 on Oct 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/RV32i.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:36:56 on Oct 21,2025
+# Start time: 23:09:16 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/RV32i.v 
 # -- Compiling module RV32i
 # 
 # Top level modules:
 # 	RV32i
-# End time: 13:36:56 on Oct 21,2025, Elapsed time: 0:00:00
+# End time: 23:09:16 on Oct 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/IF_ID.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:36:57 on Oct 21,2025
+# Start time: 23:09:16 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/IF_ID.v 
 # -- Compiling module IF_ID
 # 
 # Top level modules:
 # 	IF_ID
-# End time: 13:36:57 on Oct 21,2025, Elapsed time: 0:00:00
+# End time: 23:09:16 on Oct 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/control.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:36:57 on Oct 21,2025
+# Start time: 23:09:17 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/control.v 
 # -- Compiling module control
 # 
 # Top level modules:
 # 	control
-# End time: 13:36:57 on Oct 21,2025, Elapsed time: 0:00:00
+# End time: 23:09:17 on Oct 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:36:57 on Oct 21,2025
+# Start time: 23:09:17 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v 
 # -- Compiling module PC
 # 
 # Top level modules:
 # 	PC
-# End time: 13:36:57 on Oct 21,2025, Elapsed time: 0:00:00
+# End time: 23:09:17 on Oct 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/simulation/modelsim {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/simulation/modelsim/tb_RV32i.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:36:58 on Oct 21,2025
+# Start time: 23:09:17 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/simulation/modelsim" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/simulation/modelsim/tb_RV32i.v 
 # -- Compiling module tb_RV32i
 # 
 # Top level modules:
 # 	tb_RV32i
-# End time: 13:36:58 on Oct 21,2025, Elapsed time: 0:00:00
+# End time: 23:09:17 on Oct 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_RV32i
-# End time: 13:37:07 on Oct 21,2025, Elapsed time: 0:22:43
-# Errors: 3, Warnings: 0
+# End time: 23:09:19 on Oct 21,2025, Elapsed time: 0:01:00
+# Errors: 0, Warnings: 0
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_RV32i 
-# Start time: 13:37:07 on Oct 21,2025
+# Start time: 23:09:19 on Oct 21,2025
 # Loading work.tb_RV32i
 # Loading work.RV32i
 # Loading work.PC
@@ -512,6 +527,7 @@ do R232i_run_msim_rtl_verilog.do
 # Loading work.BranchDecider
 # Loading work.ID_EX
 # Loading work.forward_unit
+# Loading work.ULA_controler
 # Loading work.ULA
 # Loading work.EX_MEM
 # Loading work.main_memory
@@ -523,21 +539,9 @@ do R232i_run_msim_rtl_verilog.do
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# ** Warning: (vsim-7) Failed to open readmem file "tiposBasicos/tipoR.bin" in read mode.
-# No such file or directory. (errno = ENOENT)    : C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/simulation/modelsim/tb_RV32i.v(32)
-#    Time: 0 ps  Iteration: 0  Instance: /tb_RV32i
-# ** Warning: (vsim-7) Failed to open readmem file "exemplos/program.bin" in read mode.
-# No such file or directory. (errno = ENOENT)    : C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/simulation/modelsim/tb_RV32i.v(33)
-#    Time: 0 ps  Iteration: 0  Instance: /tb_RV32i
-# ** Error (suppressible): (vsim-10504) Illegal use of bit-select of variable "registers" in left-hand side in procedural cont. assignment.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_RV32i
-# ** Error (suppressible): (vsim-10504) Illegal use of bit-select of variable "registers" in left-hand side in procedural cont. assignment.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_RV32i
-# ** Error (suppressible): (vsim-10504) Illegal use of bit-select of variable "memory" in left-hand side in procedural cont. assignment.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_RV32i
 # 
 # //--------------------[ CICLO @ 20000 ]--------------------//
-# PC: 00000000   |   Instruction: xxxxxxxx
+# PC: 00000000   |   Instruction: 00001197
 # -----------------------------------------------------------------
 #   [ID] Opcode: 0000000 | rd:  0, rs1:  0, rs2:  0
 #        Funct3: 000  | Funct7: 0000000 | Branch: 0
@@ -556,12 +560,12 @@ do R232i_run_msim_rtl_verilog.do
 #        Data    -> ULA_Res:          0 | Mem_Data:          0 | rd:  0
 # 
 # //--------------------[ CICLO @ 30000 ]--------------------//
-# PC: 00000004   |   Instruction: xxxxxxxx
+# PC: 00000004   |   Instruction: 00000000
 # -----------------------------------------------------------------
-#   [ID] Opcode: xxxxxxx | rd:  x, rs1:  x, rs2:  x
-#        Funct3: xxx  | Funct7: xxxxxxx | Branch: 0
-#        Imm Gen: 00000000
-#        RegBank Read -> A:          x | B:          x
+#   [ID] Opcode: 0010111 | rd:  3, rs1:  0, rs2:  0
+#        Funct3: 001  | Funct7: 0000000 | Branch: 0
+#        Imm Gen: 00001000
+#        RegBank Read -> A:          0 | B:          0
 # -----------------------------------------------------------------
 #   [EX] Control -> RegWr: 0, MemRd: 0, MemWr: 0, MuxReg: 0, MuxULA: 0, ULAOp: 00
 #        Data    -> val_A:          0 | val_B:          0 | rd:  0 | imm: 00000000
@@ -575,17 +579,17 @@ do R232i_run_msim_rtl_verilog.do
 #        Data    -> ULA_Res:          0 | Mem_Data:          0 | rd:  0
 # 
 # //--------------------[ CICLO @ 40000 ]--------------------//
-# PC: 00000008   |   Instruction: xxxxxxxx
+# PC: 00000008   |   Instruction: 00000000
 # -----------------------------------------------------------------
-#   [ID] Opcode: xxxxxxx | rd:  x, rs1:  x, rs2:  x
-#        Funct3: xxx  | Funct7: xxxxxxx | Branch: 0
+#   [ID] Opcode: 0000000 | rd:  0, rs1:  0, rs2:  0
+#        Funct3: 000  | Funct7: 0000000 | Branch: 0
 #        Imm Gen: 00000000
-#        RegBank Read -> A:          x | B:          x
+#        RegBank Read -> A:          0 | B:          0
 # -----------------------------------------------------------------
-#   [EX] Control -> RegWr: 0, MemRd: 0, MemWr: 0, MuxReg: 0, MuxULA: 0, ULAOp: 00
-#        Data    -> val_A:          x | val_B:          x | rd:  x | imm: 00000000
+#   [EX] Control -> RegWr: 1, MemRd: 0, MemWr: 0, MuxReg: 0, MuxULA: 1, ULAOp: 00
+#        Data    -> val_A:          0 | val_B:          0 | rd:  3 | imm: 00001000
 #        Forward -> Fwd_A: 00, Fwd_B: 00
-#        ULA Out -> C:          x
+#        ULA Out -> C:       4096
 # -----------------------------------------------------------------
 #   [MEM] Control -> RegWr: 0, MemRd: 0, MemWr: 0, MuxReg: 0
 #         Data    -> ULA_Res:          0 | val_B:          0 | rd:  0
@@ -594,80 +598,80 @@ do R232i_run_msim_rtl_verilog.do
 #        Data    -> ULA_Res:          0 | Mem_Data:          0 | rd:  0
 # 
 # //--------------------[ CICLO @ 50000 ]--------------------//
-# PC: 0000000c   |   Instruction: xxxxxxxx
+# PC: 0000000c   |   Instruction: 00000000
 # -----------------------------------------------------------------
-#   [ID] Opcode: xxxxxxx | rd:  x, rs1:  x, rs2:  x
-#        Funct3: xxx  | Funct7: xxxxxxx | Branch: 0
+#   [ID] Opcode: 0000000 | rd:  0, rs1:  0, rs2:  0
+#        Funct3: 000  | Funct7: 0000000 | Branch: 0
 #        Imm Gen: 00000000
-#        RegBank Read -> A:          x | B:          x
+#        RegBank Read -> A:          0 | B:          0
 # -----------------------------------------------------------------
 #   [EX] Control -> RegWr: 0, MemRd: 0, MemWr: 0, MuxReg: 0, MuxULA: 0, ULAOp: 00
-#        Data    -> val_A:          x | val_B:          x | rd:  x | imm: 00000000
+#        Data    -> val_A:          0 | val_B:          0 | rd:  0 | imm: 00000000
 #        Forward -> Fwd_A: 00, Fwd_B: 00
-#        ULA Out -> C:          x
+#        ULA Out -> C:          0
 # -----------------------------------------------------------------
-#   [MEM] Control -> RegWr: 0, MemRd: 0, MemWr: 0, MuxReg: 0
-#         Data    -> ULA_Res:          x | val_B:          x | rd:  x
+#   [MEM] Control -> RegWr: 1, MemRd: 0, MemWr: 0, MuxReg: 0
+#         Data    -> ULA_Res:       4096 | val_B:          0 | rd:  3
 # -----------------------------------------------------------------
 #   [WB] Control -> RegWr: 0, MuxReg: 0
 #        Data    -> ULA_Res:          0 | Mem_Data:          0 | rd:  0
 # 
 # //--------------------[ CICLO @ 60000 ]--------------------//
-# PC: 00000010   |   Instruction: xxxxxxxx
+# PC: 00000010   |   Instruction: 00418193
 # -----------------------------------------------------------------
-#   [ID] Opcode: xxxxxxx | rd:  x, rs1:  x, rs2:  x
-#        Funct3: xxx  | Funct7: xxxxxxx | Branch: 0
+#   [ID] Opcode: 0000000 | rd:  0, rs1:  0, rs2:  0
+#        Funct3: 000  | Funct7: 0000000 | Branch: 0
 #        Imm Gen: 00000000
-#        RegBank Read -> A:          x | B:          x
+#        RegBank Read -> A:          0 | B:          0
 # -----------------------------------------------------------------
 #   [EX] Control -> RegWr: 0, MemRd: 0, MemWr: 0, MuxReg: 0, MuxULA: 0, ULAOp: 00
-#        Data    -> val_A:          x | val_B:          x | rd:  x | imm: 00000000
+#        Data    -> val_A:          0 | val_B:          0 | rd:  0 | imm: 00000000
 #        Forward -> Fwd_A: 00, Fwd_B: 00
-#        ULA Out -> C:          x
+#        ULA Out -> C:          0
 # -----------------------------------------------------------------
 #   [MEM] Control -> RegWr: 0, MemRd: 0, MemWr: 0, MuxReg: 0
-#         Data    -> ULA_Res:          x | val_B:          x | rd:  x
+#         Data    -> ULA_Res:          0 | val_B:          0 | rd:  0
 # -----------------------------------------------------------------
-#   [WB] Control -> RegWr: 0, MuxReg: 0
-#        Data    -> ULA_Res:          x | Mem_Data:          0 | rd:  x
+#   [WB] Control -> RegWr: 1, MuxReg: 0
+#        Data    -> ULA_Res:       4096 | Mem_Data:          0 | rd:  3
 # 
 # //--------------------[ CICLO @ 70000 ]--------------------//
-# PC: 00000014   |   Instruction: xxxxxxxx
+# PC: 00000014   |   Instruction: 00418193
 # -----------------------------------------------------------------
-#   [ID] Opcode: xxxxxxx | rd:  x, rs1:  x, rs2:  x
-#        Funct3: xxx  | Funct7: xxxxxxx | Branch: 0
-#        Imm Gen: 00000000
-#        RegBank Read -> A:          x | B:          x
+#   [ID] Opcode: 0010011 | rd:  3, rs1:  3, rs2:  4
+#        Funct3: 000  | Funct7: 0000000 | Branch: 0
+#        Imm Gen: 00000004
+#        RegBank Read -> A:       4096 | B:          0
 # -----------------------------------------------------------------
 #   [EX] Control -> RegWr: 0, MemRd: 0, MemWr: 0, MuxReg: 0, MuxULA: 0, ULAOp: 00
-#        Data    -> val_A:          x | val_B:          x | rd:  x | imm: 00000000
+#        Data    -> val_A:          0 | val_B:          0 | rd:  0 | imm: 00000000
 #        Forward -> Fwd_A: 00, Fwd_B: 00
-#        ULA Out -> C:          x
+#        ULA Out -> C:          0
 # -----------------------------------------------------------------
 #   [MEM] Control -> RegWr: 0, MemRd: 0, MemWr: 0, MuxReg: 0
-#         Data    -> ULA_Res:          x | val_B:          x | rd:  x
+#         Data    -> ULA_Res:          0 | val_B:          0 | rd:  0
 # -----------------------------------------------------------------
 #   [WB] Control -> RegWr: 0, MuxReg: 0
-#        Data    -> ULA_Res:          x | Mem_Data:          0 | rd:  x
+#        Data    -> ULA_Res:          0 | Mem_Data:          0 | rd:  0
 # 
 # //--------------------[ CICLO @ 80000 ]--------------------//
-# PC: 00000018   |   Instruction: xxxxxxxx
+# PC: 00000018   |   Instruction: 00418193
 # -----------------------------------------------------------------
-#   [ID] Opcode: xxxxxxx | rd:  x, rs1:  x, rs2:  x
-#        Funct3: xxx  | Funct7: xxxxxxx | Branch: 0
-#        Imm Gen: 00000000
-#        RegBank Read -> A:          x | B:          x
+#   [ID] Opcode: 0010011 | rd:  3, rs1:  3, rs2:  4
+#        Funct3: 000  | Funct7: 0000000 | Branch: 0
+#        Imm Gen: 00000004
+#        RegBank Read -> A:       4096 | B:          0
 # -----------------------------------------------------------------
-#   [EX] Control -> RegWr: 0, MemRd: 0, MemWr: 0, MuxReg: 0, MuxULA: 0, ULAOp: 00
-#        Data    -> val_A:          x | val_B:          x | rd:  x | imm: 00000000
+#   [EX] Control -> RegWr: 1, MemRd: 0, MemWr: 0, MuxReg: 0, MuxULA: 1, ULAOp: 10
+#        Data    -> val_A:       4096 | val_B:          0 | rd:  3 | imm: 00000004
 #        Forward -> Fwd_A: 00, Fwd_B: 00
-#        ULA Out -> C:          x
+#        ULA Out -> C:       4100
 # -----------------------------------------------------------------
 #   [MEM] Control -> RegWr: 0, MemRd: 0, MemWr: 0, MuxReg: 0
-#         Data    -> ULA_Res:          x | val_B:          x | rd:  x
+#         Data    -> ULA_Res:          0 | val_B:          0 | rd:  0
 # -----------------------------------------------------------------
 #   [WB] Control -> RegWr: 0, MuxReg: 0
-#        Data    -> ULA_Res:          x | Mem_Data:          0 | rd:  x
+#        Data    -> ULA_Res:          0 | Mem_Data:          0 | rd:  0
 # 
 # --- Simulação Finalizada ---
 # ** Note: $finish    : C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/simulation/modelsim/tb_RV32i.v(49)
@@ -687,163 +691,173 @@ do R232i_run_msim_rtl_verilog.do
 # vmap work rtl_work 
 # Modifying modelsim.ini
 # 
+# vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/Ula_controler.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:11:53 on Oct 21,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/Ula_controler.v 
+# -- Compiling module ULA_controler
+# 
+# Top level modules:
+# 	ULA_controler
+# End time: 23:11:53 on Oct 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/main_memory.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:38:59 on Oct 21,2025
+# Start time: 23:11:53 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/main_memory.v 
 # -- Compiling module main_memory
 # 
 # Top level modules:
 # 	main_memory
-# End time: 13:38:59 on Oct 21,2025, Elapsed time: 0:00:00
+# End time: 23:11:53 on Oct 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/MEM_WB.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:38:59 on Oct 21,2025
+# Start time: 23:11:54 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/MEM_WB.v 
 # -- Compiling module MEM_WB
 # 
 # Top level modules:
 # 	MEM_WB
-# End time: 13:38:59 on Oct 21,2025, Elapsed time: 0:00:00
+# End time: 23:11:54 on Oct 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/instruction_memory.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:39:00 on Oct 21,2025
+# Start time: 23:11:54 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/instruction_memory.v 
 # -- Compiling module instruction_memory
 # 
 # Top level modules:
 # 	instruction_memory
-# End time: 13:39:00 on Oct 21,2025, Elapsed time: 0:00:00
+# End time: 23:11:54 on Oct 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/hazard_detection_unit.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:39:00 on Oct 21,2025
+# Start time: 23:11:54 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/hazard_detection_unit.v 
 # -- Compiling module hazard_detection_unit
 # 
 # Top level modules:
 # 	hazard_detection_unit
-# End time: 13:39:00 on Oct 21,2025, Elapsed time: 0:00:00
+# End time: 23:11:55 on Oct 21,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/EX_MEM.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:39:00 on Oct 21,2025
+# Start time: 23:11:55 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/EX_MEM.v 
 # -- Compiling module EX_MEM
 # 
 # Top level modules:
 # 	EX_MEM
-# End time: 13:39:00 on Oct 21,2025, Elapsed time: 0:00:00
+# End time: 23:11:55 on Oct 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/ULA.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:39:00 on Oct 21,2025
+# Start time: 23:11:55 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/ULA.v 
 # -- Compiling module ULA
 # 
 # Top level modules:
 # 	ULA
-# End time: 13:39:00 on Oct 21,2025, Elapsed time: 0:00:00
+# End time: 23:11:55 on Oct 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/forward_unit.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:39:01 on Oct 21,2025
+# Start time: 23:11:55 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/forward_unit.v 
 # -- Compiling module forward_unit
 # 
 # Top level modules:
 # 	forward_unit
-# End time: 13:39:01 on Oct 21,2025, Elapsed time: 0:00:00
+# End time: 23:11:55 on Oct 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/register_bank.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:39:01 on Oct 21,2025
+# Start time: 23:11:55 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/register_bank.v 
 # -- Compiling module register_bank
 # 
 # Top level modules:
 # 	register_bank
-# End time: 13:39:01 on Oct 21,2025, Elapsed time: 0:00:00
+# End time: 23:11:55 on Oct 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/Branch Decider.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:39:01 on Oct 21,2025
+# Start time: 23:11:55 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/Branch Decider.v 
 # -- Compiling module BranchDecider
 # 
 # Top level modules:
 # 	BranchDecider
-# End time: 13:39:01 on Oct 21,2025, Elapsed time: 0:00:00
+# End time: 23:11:55 on Oct 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/ID_EX.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:39:01 on Oct 21,2025
+# Start time: 23:11:56 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/ID_EX.v 
 # -- Compiling module ID_EX
 # 
 # Top level modules:
 # 	ID_EX
-# End time: 13:39:01 on Oct 21,2025, Elapsed time: 0:00:00
+# End time: 23:11:56 on Oct 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/RV32i.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:39:02 on Oct 21,2025
+# Start time: 23:11:56 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/RV32i.v 
 # -- Compiling module RV32i
 # 
 # Top level modules:
 # 	RV32i
-# End time: 13:39:02 on Oct 21,2025, Elapsed time: 0:00:00
+# End time: 23:11:56 on Oct 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/IF_ID.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:39:02 on Oct 21,2025
+# Start time: 23:11:56 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/IF_ID.v 
 # -- Compiling module IF_ID
 # 
 # Top level modules:
 # 	IF_ID
-# End time: 13:39:02 on Oct 21,2025, Elapsed time: 0:00:00
+# End time: 23:11:56 on Oct 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/control.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:39:02 on Oct 21,2025
+# Start time: 23:11:56 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/control.v 
 # -- Compiling module control
 # 
 # Top level modules:
 # 	control
-# End time: 13:39:02 on Oct 21,2025, Elapsed time: 0:00:00
+# End time: 23:11:56 on Oct 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:39:02 on Oct 21,2025
+# Start time: 23:11:56 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v 
 # -- Compiling module PC
 # 
 # Top level modules:
 # 	PC
-# End time: 13:39:02 on Oct 21,2025, Elapsed time: 0:00:00
+# End time: 23:11:56 on Oct 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/simulation/modelsim {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/simulation/modelsim/tb_RV32i.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:39:02 on Oct 21,2025
+# Start time: 23:11:56 on Oct 21,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/simulation/modelsim" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/simulation/modelsim/tb_RV32i.v 
 # -- Compiling module tb_RV32i
 # 
 # Top level modules:
 # 	tb_RV32i
-# End time: 13:39:03 on Oct 21,2025, Elapsed time: 0:00:01
+# End time: 23:11:57 on Oct 21,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_RV32i
-# End time: 13:39:10 on Oct 21,2025, Elapsed time: 0:02:03
-# Errors: 3, Warnings: 2
+# End time: 23:11:58 on Oct 21,2025, Elapsed time: 0:02:39
+# Errors: 0, Warnings: 0
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_RV32i 
-# Start time: 13:39:10 on Oct 21,2025
+# Start time: 23:11:58 on Oct 21,2025
 # Loading work.tb_RV32i
 # Loading work.RV32i
 # Loading work.PC
@@ -855,6 +869,7 @@ do R232i_run_msim_rtl_verilog.do
 # Loading work.BranchDecider
 # Loading work.ID_EX
 # Loading work.forward_unit
+# Loading work.ULA_controler
 # Loading work.ULA
 # Loading work.EX_MEM
 # Loading work.main_memory
@@ -866,23 +881,17 @@ do R232i_run_msim_rtl_verilog.do
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# ** Error (suppressible): (vsim-10504) Illegal use of bit-select of variable "registers" in left-hand side in procedural cont. assignment.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_RV32i
-# ** Error (suppressible): (vsim-10504) Illegal use of bit-select of variable "registers" in left-hand side in procedural cont. assignment.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_RV32i
-# ** Error (suppressible): (vsim-10504) Illegal use of bit-select of variable "memory" in left-hand side in procedural cont. assignment.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_RV32i
 # 
 # //--------------------[ CICLO @ 20000 ]--------------------//
-# PC: 00000000   |   Instruction: 002081b3
+# PC: 00000000   |   Instruction: 00001197
 # -----------------------------------------------------------------
 #   [ID] Opcode: 0000000 | rd:  0, rs1:  0, rs2:  0
 #        Funct3: 000  | Funct7: 0000000 | Branch: 0
 #        Imm Gen: 00000000
 #        RegBank Read -> A:          0 | B:          0
 # -----------------------------------------------------------------
-#   [EX] Control -> RegWr: 0, MemRd: 0, MemWr: 0, MuxReg: 0, MuxULA: 0, ULAOp: 00
-#        Data    -> val_A:          0 | val_B:          0 | rd:  0 | imm: 00000000
+#   [EX] Control -> RegWr: 0, MemRd: 0, MemWr: 0, MuxReg: 0, MuxULA: 0, ULAOp: 00, PcULA: 0
+#        Data    -> val_A:          0 | val_B:          0 | rd:  0 | imm: 00000000 | pc: 00000000
 #        Forward -> Fwd_A: 00, Fwd_B: 00
 #        ULA Out -> C:          0
 # -----------------------------------------------------------------
@@ -893,15 +902,15 @@ do R232i_run_msim_rtl_verilog.do
 #        Data    -> ULA_Res:          0 | Mem_Data:          0 | rd:  0
 # 
 # //--------------------[ CICLO @ 30000 ]--------------------//
-# PC: 00000004   |   Instruction: 402081b3
+# PC: 00000004   |   Instruction: 00000000
 # -----------------------------------------------------------------
-#   [ID] Opcode: 0110011 | rd:  3, rs1:  1, rs2:  2
-#        Funct3: 000  | Funct7: 0000000 | Branch: 0
-#        Imm Gen: 00000000
-#        RegBank Read -> A:         10 | B:         20
+#   [ID] Opcode: 0010111 | rd:  3, rs1:  0, rs2:  0
+#        Funct3: 001  | Funct7: 0000000 | Branch: 0
+#        Imm Gen: 00001000
+#        RegBank Read -> A:          0 | B:          0
 # -----------------------------------------------------------------
-#   [EX] Control -> RegWr: 0, MemRd: 0, MemWr: 0, MuxReg: 0, MuxULA: 0, ULAOp: 00
-#        Data    -> val_A:          0 | val_B:          0 | rd:  0 | imm: 00000000
+#   [EX] Control -> RegWr: 0, MemRd: 0, MemWr: 0, MuxReg: 0, MuxULA: 0, ULAOp: 00, PcULA: 0
+#        Data    -> val_A:          0 | val_B:          0 | rd:  0 | imm: 00000000 | pc: xxxxxxxx
 #        Forward -> Fwd_A: 00, Fwd_B: 00
 #        ULA Out -> C:          0
 # -----------------------------------------------------------------
@@ -912,17 +921,17 @@ do R232i_run_msim_rtl_verilog.do
 #        Data    -> ULA_Res:          0 | Mem_Data:          0 | rd:  0
 # 
 # //--------------------[ CICLO @ 40000 ]--------------------//
-# PC: 00000008   |   Instruction: 0020e1b3
+# PC: 00000008   |   Instruction: 00000000
 # -----------------------------------------------------------------
-#   [ID] Opcode: 0110011 | rd:  3, rs1:  1, rs2:  2
-#        Funct3: 000  | Funct7: 0100000 | Branch: 0
+#   [ID] Opcode: 0000000 | rd:  0, rs1:  0, rs2:  0
+#        Funct3: 000  | Funct7: 0000000 | Branch: 0
 #        Imm Gen: 00000000
-#        RegBank Read -> A:         10 | B:         20
+#        RegBank Read -> A:          0 | B:          0
 # -----------------------------------------------------------------
-#   [EX] Control -> RegWr: 1, MemRd: 0, MemWr: 0, MuxReg: 0, MuxULA: 0, ULAOp: 00
-#        Data    -> val_A:         10 | val_B:         20 | rd:  3 | imm: 00000000
+#   [EX] Control -> RegWr: 1, MemRd: 0, MemWr: 0, MuxReg: 0, MuxULA: 1, ULAOp: 00, PcULA: 1
+#        Data    -> val_A:          0 | val_B:          0 | rd:  3 | imm: 00001000 | pc: 00000000
 #        Forward -> Fwd_A: 00, Fwd_B: 00
-#        ULA Out -> C:         10
+#        ULA Out -> C:       4096
 # -----------------------------------------------------------------
 #   [MEM] Control -> RegWr: 0, MemRd: 0, MemWr: 0, MuxReg: 0
 #         Data    -> ULA_Res:          0 | val_B:          0 | rd:  0
@@ -931,80 +940,422 @@ do R232i_run_msim_rtl_verilog.do
 #        Data    -> ULA_Res:          0 | Mem_Data:          0 | rd:  0
 # 
 # //--------------------[ CICLO @ 50000 ]--------------------//
-# PC: 0000000c   |   Instruction: 002091b3
+# PC: 0000000c   |   Instruction: 00000000
 # -----------------------------------------------------------------
-#   [ID] Opcode: 0110011 | rd:  3, rs1:  1, rs2:  2
-#        Funct3: 110  | Funct7: 0000000 | Branch: 0
+#   [ID] Opcode: 0000000 | rd:  0, rs1:  0, rs2:  0
+#        Funct3: 000  | Funct7: 0000000 | Branch: 0
 #        Imm Gen: 00000000
-#        RegBank Read -> A:         10 | B:         20
+#        RegBank Read -> A:          0 | B:          0
 # -----------------------------------------------------------------
-#   [EX] Control -> RegWr: 1, MemRd: 0, MemWr: 0, MuxReg: 0, MuxULA: 0, ULAOp: 00
-#        Data    -> val_A:         10 | val_B:         20 | rd:  3 | imm: 00000000
+#   [EX] Control -> RegWr: 0, MemRd: 0, MemWr: 0, MuxReg: 0, MuxULA: 0, ULAOp: 00, PcULA: 0
+#        Data    -> val_A:          0 | val_B:          0 | rd:  0 | imm: 00000000 | pc: 00000004
 #        Forward -> Fwd_A: 00, Fwd_B: 00
-#        ULA Out -> C:         10
+#        ULA Out -> C:          0
 # -----------------------------------------------------------------
 #   [MEM] Control -> RegWr: 1, MemRd: 0, MemWr: 0, MuxReg: 0
-#         Data    -> ULA_Res:         10 | val_B:         20 | rd:  3
+#         Data    -> ULA_Res:       4096 | val_B:          0 | rd:  3
 # -----------------------------------------------------------------
 #   [WB] Control -> RegWr: 0, MuxReg: 0
 #        Data    -> ULA_Res:          0 | Mem_Data:          0 | rd:  0
 # 
 # //--------------------[ CICLO @ 60000 ]--------------------//
-# PC: 00000010   |   Instruction: 0020d1b3
+# PC: 00000010   |   Instruction: 00418193
 # -----------------------------------------------------------------
-#   [ID] Opcode: 0110011 | rd:  3, rs1:  1, rs2:  2
-#        Funct3: 001  | Funct7: 0000000 | Branch: 0
+#   [ID] Opcode: 0000000 | rd:  0, rs1:  0, rs2:  0
+#        Funct3: 000  | Funct7: 0000000 | Branch: 0
 #        Imm Gen: 00000000
-#        RegBank Read -> A:         10 | B:         20
+#        RegBank Read -> A:          0 | B:          0
 # -----------------------------------------------------------------
-#   [EX] Control -> RegWr: 1, MemRd: 0, MemWr: 0, MuxReg: 0, MuxULA: 0, ULAOp: 00
-#        Data    -> val_A:         10 | val_B:         20 | rd:  3 | imm: 00000000
+#   [EX] Control -> RegWr: 0, MemRd: 0, MemWr: 0, MuxReg: 0, MuxULA: 0, ULAOp: 00, PcULA: 0
+#        Data    -> val_A:          0 | val_B:          0 | rd:  0 | imm: 00000000 | pc: 00000008
 #        Forward -> Fwd_A: 00, Fwd_B: 00
-#        ULA Out -> C:         10
+#        ULA Out -> C:          0
 # -----------------------------------------------------------------
-#   [MEM] Control -> RegWr: 1, MemRd: 0, MemWr: 0, MuxReg: 0
-#         Data    -> ULA_Res:         10 | val_B:         20 | rd:  3
+#   [MEM] Control -> RegWr: 0, MemRd: 0, MemWr: 0, MuxReg: 0
+#         Data    -> ULA_Res:          0 | val_B:          0 | rd:  0
 # -----------------------------------------------------------------
 #   [WB] Control -> RegWr: 1, MuxReg: 0
-#        Data    -> ULA_Res:         10 | Mem_Data:          0 | rd:  3
+#        Data    -> ULA_Res:       4096 | Mem_Data:          0 | rd:  3
 # 
 # //--------------------[ CICLO @ 70000 ]--------------------//
-# PC: 00000014   |   Instruction: 4020d1b3
+# PC: 00000014   |   Instruction: 00418193
 # -----------------------------------------------------------------
-#   [ID] Opcode: 0110011 | rd:  3, rs1:  1, rs2:  2
-#        Funct3: 101  | Funct7: 0000000 | Branch: 0
-#        Imm Gen: 00000000
-#        RegBank Read -> A:         10 | B:         20
+#   [ID] Opcode: 0010011 | rd:  3, rs1:  3, rs2:  4
+#        Funct3: 000  | Funct7: 0000000 | Branch: 0
+#        Imm Gen: 00000004
+#        RegBank Read -> A:       4096 | B:          0
 # -----------------------------------------------------------------
-#   [EX] Control -> RegWr: 1, MemRd: 0, MemWr: 0, MuxReg: 0, MuxULA: 0, ULAOp: 00
-#        Data    -> val_A:         10 | val_B:         20 | rd:  3 | imm: 00000000
+#   [EX] Control -> RegWr: 0, MemRd: 0, MemWr: 0, MuxReg: 0, MuxULA: 0, ULAOp: 00, PcULA: 0
+#        Data    -> val_A:          0 | val_B:          0 | rd:  0 | imm: 00000000 | pc: 0000000c
 #        Forward -> Fwd_A: 00, Fwd_B: 00
-#        ULA Out -> C:         10
+#        ULA Out -> C:          0
 # -----------------------------------------------------------------
-#   [MEM] Control -> RegWr: 1, MemRd: 0, MemWr: 0, MuxReg: 0
-#         Data    -> ULA_Res:         10 | val_B:         20 | rd:  3
+#   [MEM] Control -> RegWr: 0, MemRd: 0, MemWr: 0, MuxReg: 0
+#         Data    -> ULA_Res:          0 | val_B:          0 | rd:  0
 # -----------------------------------------------------------------
-#   [WB] Control -> RegWr: 1, MuxReg: 0
-#        Data    -> ULA_Res:         10 | Mem_Data:          0 | rd:  3
+#   [WB] Control -> RegWr: 0, MuxReg: 0
+#        Data    -> ULA_Res:          0 | Mem_Data:          0 | rd:  0
 # 
 # //--------------------[ CICLO @ 80000 ]--------------------//
-# PC: 00000018   |   Instruction: 0020a1b3
+# PC: 00000018   |   Instruction: 00418193
 # -----------------------------------------------------------------
-#   [ID] Opcode: 0110011 | rd:  3, rs1:  1, rs2:  2
-#        Funct3: 101  | Funct7: 0100000 | Branch: 0
-#        Imm Gen: 00000000
-#        RegBank Read -> A:         10 | B:         20
+#   [ID] Opcode: 0010011 | rd:  3, rs1:  3, rs2:  4
+#        Funct3: 000  | Funct7: 0000000 | Branch: 0
+#        Imm Gen: 00000004
+#        RegBank Read -> A:       4096 | B:          0
 # -----------------------------------------------------------------
-#   [EX] Control -> RegWr: 1, MemRd: 0, MemWr: 0, MuxReg: 0, MuxULA: 0, ULAOp: 00
-#        Data    -> val_A:         10 | val_B:         20 | rd:  3 | imm: 00000000
+#   [EX] Control -> RegWr: 1, MemRd: 0, MemWr: 0, MuxReg: 0, MuxULA: 1, ULAOp: 10, PcULA: 0
+#        Data    -> val_A:       4096 | val_B:          0 | rd:  3 | imm: 00000004 | pc: 00000010
 #        Forward -> Fwd_A: 00, Fwd_B: 00
-#        ULA Out -> C:         10
+#        ULA Out -> C:       4100
+# -----------------------------------------------------------------
+#   [MEM] Control -> RegWr: 0, MemRd: 0, MemWr: 0, MuxReg: 0
+#         Data    -> ULA_Res:          0 | val_B:          0 | rd:  0
+# -----------------------------------------------------------------
+#   [WB] Control -> RegWr: 0, MuxReg: 0
+#        Data    -> ULA_Res:          0 | Mem_Data:          0 | rd:  0
+# 
+# --- Simulação Finalizada ---
+# ** Note: $finish    : C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/simulation/modelsim/tb_RV32i.v(49)
+#    Time: 90 ns  Iteration: 0  Instance: /tb_RV32i
+# 1
+# Break in Module tb_RV32i at C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/simulation/modelsim/tb_RV32i.v line 49
+do R232i_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# Error 31: Unable to unlink file "C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/simulation/modelsim/rtl_work/_lib1_0.qpg".
+# Error 31: Unable to unlink file "C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/simulation/modelsim/rtl_work/_lib1_0.qtl".
+# Error 133: Unable to remove directory "C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/simulation/modelsim/rtl_work".
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/Ula_controler.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:13:36 on Oct 21,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/Ula_controler.v 
+# -- Compiling module ULA_controler
+# 
+# Top level modules:
+# 	ULA_controler
+# End time: 23:13:36 on Oct 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/main_memory.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:13:36 on Oct 21,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/main_memory.v 
+# -- Compiling module main_memory
+# 
+# Top level modules:
+# 	main_memory
+# End time: 23:13:36 on Oct 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/MEM_WB.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:13:36 on Oct 21,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/MEM_WB.v 
+# -- Compiling module MEM_WB
+# 
+# Top level modules:
+# 	MEM_WB
+# End time: 23:13:36 on Oct 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/instruction_memory.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:13:36 on Oct 21,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/instruction_memory.v 
+# -- Compiling module instruction_memory
+# 
+# Top level modules:
+# 	instruction_memory
+# End time: 23:13:37 on Oct 21,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/hazard_detection_unit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:13:37 on Oct 21,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/hazard_detection_unit.v 
+# -- Compiling module hazard_detection_unit
+# 
+# Top level modules:
+# 	hazard_detection_unit
+# End time: 23:13:37 on Oct 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/EX_MEM.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:13:37 on Oct 21,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/EX_MEM.v 
+# -- Compiling module EX_MEM
+# 
+# Top level modules:
+# 	EX_MEM
+# End time: 23:13:37 on Oct 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/ULA.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:13:37 on Oct 21,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/ULA.v 
+# -- Compiling module ULA
+# 
+# Top level modules:
+# 	ULA
+# End time: 23:13:37 on Oct 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/forward_unit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:13:37 on Oct 21,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/forward_unit.v 
+# -- Compiling module forward_unit
+# 
+# Top level modules:
+# 	forward_unit
+# End time: 23:13:37 on Oct 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/register_bank.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:13:37 on Oct 21,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/register_bank.v 
+# -- Compiling module register_bank
+# 
+# Top level modules:
+# 	register_bank
+# End time: 23:13:37 on Oct 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/Branch Decider.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:13:37 on Oct 21,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/Branch Decider.v 
+# -- Compiling module BranchDecider
+# 
+# Top level modules:
+# 	BranchDecider
+# End time: 23:13:37 on Oct 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/ID_EX.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:13:37 on Oct 21,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/ID_EX.v 
+# -- Compiling module ID_EX
+# 
+# Top level modules:
+# 	ID_EX
+# End time: 23:13:37 on Oct 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/RV32i.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:13:38 on Oct 21,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/RV32i.v 
+# -- Compiling module RV32i
+# 
+# Top level modules:
+# 	RV32i
+# End time: 23:13:38 on Oct 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/IF_ID.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:13:38 on Oct 21,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/IF_ID.v 
+# -- Compiling module IF_ID
+# 
+# Top level modules:
+# 	IF_ID
+# End time: 23:13:38 on Oct 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/control.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:13:38 on Oct 21,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/control.v 
+# -- Compiling module control
+# 
+# Top level modules:
+# 	control
+# End time: 23:13:38 on Oct 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:13:38 on Oct 21,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/verilog_code/PC.v 
+# -- Compiling module PC
+# 
+# Top level modules:
+# 	PC
+# End time: 23:13:38 on Oct 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/simulation/modelsim {C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/simulation/modelsim/tb_RV32i.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:13:38 on Oct 21,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/simulation/modelsim" C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/simulation/modelsim/tb_RV32i.v 
+# -- Compiling module tb_RV32i
+# 
+# Top level modules:
+# 	tb_RV32i
+# End time: 23:13:38 on Oct 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_RV32i
+# End time: 23:13:40 on Oct 21,2025, Elapsed time: 0:01:42
+# Errors: 0, Warnings: 0
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_RV32i 
+# Start time: 23:13:40 on Oct 21,2025
+# Loading work.tb_RV32i
+# Loading work.RV32i
+# Loading work.PC
+# Loading work.instruction_memory
+# Loading work.IF_ID
+# Loading work.control
+# Loading work.hazard_detection_unit
+# Loading work.register_bank
+# Loading work.BranchDecider
+# Loading work.ID_EX
+# Loading work.forward_unit
+# Loading work.ULA_controler
+# Loading work.ULA
+# Loading work.EX_MEM
+# Loading work.main_memory
+# Loading work.MEM_WB
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# 
+# //--------------------[ CICLO @ 20000 ]--------------------//
+# PC: 00000000   |   Instruction: 00000000
+# -----------------------------------------------------------------
+#   [ID] Opcode: 0000000 | rd:  0, rs1:  0, rs2:  0
+#        Funct3: 000  | Funct7: 0000000 | Branch: 0
+#        Imm Gen: 00000000
+#        RegBank Read -> A:          0 | B:          0
+# -----------------------------------------------------------------
+#   [EX] Control -> RegWr: 0, MemRd: 0, MemWr: 0, MuxReg: 0, MuxULA: 0, ULAOp: 00, PcULA: 0
+#        Data    -> val_A:          0 | val_B:          0 | rd:  0 | imm: 00000000 | pc: 00000000
+#        Forward -> Fwd_A: 00, Fwd_B: 00
+#        ULA Out -> C:          0
+# -----------------------------------------------------------------
+#   [MEM] Control -> RegWr: 0, MemRd: 0, MemWr: 0, MuxReg: 0
+#         Data    -> ULA_Res:          0 | val_B:          0 | rd:  0
+# -----------------------------------------------------------------
+#   [WB] Control -> RegWr: 0, MuxReg: 0
+#        Data    -> ULA_Res:          0 | Mem_Data:          0 | rd:  0
+# 
+# //--------------------[ CICLO @ 30000 ]--------------------//
+# PC: 00000004   |   Instruction: 00001197
+# -----------------------------------------------------------------
+#   [ID] Opcode: 0000000 | rd:  0, rs1:  0, rs2:  0
+#        Funct3: 000  | Funct7: 0000000 | Branch: 0
+#        Imm Gen: 00000000
+#        RegBank Read -> A:          0 | B:          0
+# -----------------------------------------------------------------
+#   [EX] Control -> RegWr: 0, MemRd: 0, MemWr: 0, MuxReg: 0, MuxULA: 0, ULAOp: 00, PcULA: 0
+#        Data    -> val_A:          0 | val_B:          0 | rd:  0 | imm: 00000000 | pc: xxxxxxxx
+#        Forward -> Fwd_A: 00, Fwd_B: 00
+#        ULA Out -> C:          0
+# -----------------------------------------------------------------
+#   [MEM] Control -> RegWr: 0, MemRd: 0, MemWr: 0, MuxReg: 0
+#         Data    -> ULA_Res:          0 | val_B:          0 | rd:  0
+# -----------------------------------------------------------------
+#   [WB] Control -> RegWr: 0, MuxReg: 0
+#        Data    -> ULA_Res:          0 | Mem_Data:          0 | rd:  0
+# 
+# //--------------------[ CICLO @ 40000 ]--------------------//
+# PC: 00000008   |   Instruction: 00000000
+# -----------------------------------------------------------------
+#   [ID] Opcode: 0010111 | rd:  3, rs1:  0, rs2:  0
+#        Funct3: 001  | Funct7: 0000000 | Branch: 0
+#        Imm Gen: 00001000
+#        RegBank Read -> A:          0 | B:          0
+# -----------------------------------------------------------------
+#   [EX] Control -> RegWr: 0, MemRd: 0, MemWr: 0, MuxReg: 0, MuxULA: 0, ULAOp: 00, PcULA: 0
+#        Data    -> val_A:          0 | val_B:          0 | rd:  0 | imm: 00000000 | pc: 00000000
+#        Forward -> Fwd_A: 00, Fwd_B: 00
+#        ULA Out -> C:          0
+# -----------------------------------------------------------------
+#   [MEM] Control -> RegWr: 0, MemRd: 0, MemWr: 0, MuxReg: 0
+#         Data    -> ULA_Res:          0 | val_B:          0 | rd:  0
+# -----------------------------------------------------------------
+#   [WB] Control -> RegWr: 0, MuxReg: 0
+#        Data    -> ULA_Res:          0 | Mem_Data:          0 | rd:  0
+# 
+# //--------------------[ CICLO @ 50000 ]--------------------//
+# PC: 0000000c   |   Instruction: 00000000
+# -----------------------------------------------------------------
+#   [ID] Opcode: 0000000 | rd:  0, rs1:  0, rs2:  0
+#        Funct3: 000  | Funct7: 0000000 | Branch: 0
+#        Imm Gen: 00000000
+#        RegBank Read -> A:          0 | B:          0
+# -----------------------------------------------------------------
+#   [EX] Control -> RegWr: 1, MemRd: 0, MemWr: 0, MuxReg: 0, MuxULA: 1, ULAOp: 00, PcULA: 1
+#        Data    -> val_A:          0 | val_B:          0 | rd:  3 | imm: 00001000 | pc: 00000004
+#        Forward -> Fwd_A: 00, Fwd_B: 00
+#        ULA Out -> C:       4100
+# -----------------------------------------------------------------
+#   [MEM] Control -> RegWr: 0, MemRd: 0, MemWr: 0, MuxReg: 0
+#         Data    -> ULA_Res:          0 | val_B:          0 | rd:  0
+# -----------------------------------------------------------------
+#   [WB] Control -> RegWr: 0, MuxReg: 0
+#        Data    -> ULA_Res:          0 | Mem_Data:          0 | rd:  0
+# 
+# //--------------------[ CICLO @ 60000 ]--------------------//
+# PC: 00000010   |   Instruction: 00418193
+# -----------------------------------------------------------------
+#   [ID] Opcode: 0000000 | rd:  0, rs1:  0, rs2:  0
+#        Funct3: 000  | Funct7: 0000000 | Branch: 0
+#        Imm Gen: 00000000
+#        RegBank Read -> A:          0 | B:          0
+# -----------------------------------------------------------------
+#   [EX] Control -> RegWr: 0, MemRd: 0, MemWr: 0, MuxReg: 0, MuxULA: 0, ULAOp: 00, PcULA: 0
+#        Data    -> val_A:          0 | val_B:          0 | rd:  0 | imm: 00000000 | pc: 00000008
+#        Forward -> Fwd_A: 00, Fwd_B: 00
+#        ULA Out -> C:          0
 # -----------------------------------------------------------------
 #   [MEM] Control -> RegWr: 1, MemRd: 0, MemWr: 0, MuxReg: 0
-#         Data    -> ULA_Res:         10 | val_B:         20 | rd:  3
+#         Data    -> ULA_Res:       4100 | val_B:          0 | rd:  3
+# -----------------------------------------------------------------
+#   [WB] Control -> RegWr: 0, MuxReg: 0
+#        Data    -> ULA_Res:          0 | Mem_Data:          0 | rd:  0
+# 
+# //--------------------[ CICLO @ 70000 ]--------------------//
+# PC: 00000014   |   Instruction: 00418193
+# -----------------------------------------------------------------
+#   [ID] Opcode: 0010011 | rd:  3, rs1:  3, rs2:  4
+#        Funct3: 000  | Funct7: 0000000 | Branch: 0
+#        Imm Gen: 00000004
+#        RegBank Read -> A:          0 | B:          0
+# -----------------------------------------------------------------
+#   [EX] Control -> RegWr: 0, MemRd: 0, MemWr: 0, MuxReg: 0, MuxULA: 0, ULAOp: 00, PcULA: 0
+#        Data    -> val_A:          0 | val_B:          0 | rd:  0 | imm: 00000000 | pc: 0000000c
+#        Forward -> Fwd_A: 00, Fwd_B: 00
+#        ULA Out -> C:          0
+# -----------------------------------------------------------------
+#   [MEM] Control -> RegWr: 0, MemRd: 0, MemWr: 0, MuxReg: 0
+#         Data    -> ULA_Res:          0 | val_B:          0 | rd:  0
 # -----------------------------------------------------------------
 #   [WB] Control -> RegWr: 1, MuxReg: 0
-#        Data    -> ULA_Res:         10 | Mem_Data:          0 | rd:  3
+#        Data    -> ULA_Res:       4100 | Mem_Data:          0 | rd:  3
+# 
+# //--------------------[ CICLO @ 80000 ]--------------------//
+# PC: 00000018   |   Instruction: 00418193
+# -----------------------------------------------------------------
+#   [ID] Opcode: 0010011 | rd:  3, rs1:  3, rs2:  4
+#        Funct3: 000  | Funct7: 0000000 | Branch: 0
+#        Imm Gen: 00000004
+#        RegBank Read -> A:       4100 | B:          0
+# -----------------------------------------------------------------
+#   [EX] Control -> RegWr: 1, MemRd: 0, MemWr: 0, MuxReg: 0, MuxULA: 1, ULAOp: 10, PcULA: 0
+#        Data    -> val_A:          0 | val_B:          0 | rd:  3 | imm: 00000004 | pc: 00000010
+#        Forward -> Fwd_A: 00, Fwd_B: 00
+#        ULA Out -> C:          4
+# -----------------------------------------------------------------
+#   [MEM] Control -> RegWr: 0, MemRd: 0, MemWr: 0, MuxReg: 0
+#         Data    -> ULA_Res:          0 | val_B:          0 | rd:  0
+# -----------------------------------------------------------------
+#   [WB] Control -> RegWr: 0, MuxReg: 0
+#        Data    -> ULA_Res:          0 | Mem_Data:          0 | rd:  0
 # 
 # --- Simulação Finalizada ---
 # ** Note: $finish    : C:/Users/davi5/UFPI/4_periodo/Topicos/Risc-v-R232I-pipeline-/simulation/modelsim/tb_RV32i.v(49)
