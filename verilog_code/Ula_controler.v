@@ -33,7 +33,8 @@ always @(*) begin
 
                     3'b001: begin                                              // funct3 = 1
                         if (funct7 == 7'b0) begin
-                            operation <= 4'b0101;                                 // SHIFT LEFT LOGICAL 5
+                            operation <= 4'b0101;  
+                            err = 1'b0;                               // SHIFT LEFT LOGICAL 5
                         end else begin
                             err = 1'b1;
                         end   
@@ -52,6 +53,7 @@ always @(*) begin
                     3'b011: operation <= 4'b1001;                                           // funct3 = 3    SET LESS THEN UNSIGNED 9
                 endcase
             end
+            default: operation <= 4'b0000;
         endcase
     end
 end

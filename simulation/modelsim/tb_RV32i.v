@@ -29,12 +29,21 @@ module tb_RV32i;
     // --- Sequência de Teste Principal ---
     initial begin
         // 4. Carrega o programa na memória ANTES de começar a simulação.
-        $readmemb("binarios/tiposBasicos/tipoU.bin", dut.im.instruction_memory);		  
+        $readmemb("binarios/tiposBasicos/load.bin", dut.im.instruction_memory);		  
         $readmemb("binarios/exemplos/program.bin", dut.m_m.memory);
-        // assign dut.reg_bank.registers[{31'b0, 1'b1}] = 10;
-        // assign dut.reg_bank.registers[{30'b0, 2'b10}] = 20;
+        assign dut.reg_bank.registers[{31'b0, 1'b1}] = 0;
+        assign dut.reg_bank.registers[{30'b0, 2'b10}] = 20;
 
-        // assign dut.m_m.memory[31'd16] = {30'b0, 2'b11};
+        assign dut.m_m.memory[0] = 8'b1000;
+        assign dut.m_m.memory[1] = 8'b1;
+        assign dut.m_m.memory[2] = 8'b0;
+        assign dut.m_m.memory[3] = 8'b1;
+
+        assign dut.m_m.memory[16] = 8'b1; 
+        assign dut.m_m.memory[17] = 8'b1; 
+        assign dut.m_m.memory[18] = 8'b1; 
+        assign dut.m_m.memory[19] = 8'b1; 
+
         // $monitor("Time=%0t | PC=%h | Instruction=%0b", $time, pc_out, out_instruction);
         // 5. Inicia o processador
         rst = 1;
@@ -91,6 +100,9 @@ always @(negedge clk) begin
         $display("  [WB] Control -> RegWr: %b, MuxReg: %b", dut.MEM_WB.reg_wr_out, dut.MEM_WB.mux_reg_wr_out);
         $display("       Data    -> ULA_Res: %10d | Mem_Data: %10d | rd: %2d",
                  dut.MEM_WB.ula_res_out, dut.MEM_WB.mem_res_out, dut.MEM_WB.rd_out);
+        
+        $display("-----------------------------------------------------------------");
+        $display("%d %d %d %d %d", dut.m_m.memory[0], dut.m_m.memory[1], dut.m_m.memory[2], dut.m_m.memory[3], dut.m_m.funct3);
     end
 end
 
