@@ -58,6 +58,7 @@ module RV32i(
   wire EXMEMmem_rd,EXMEMmem_wr, EXMEMreg_wr, EXMEMmux_reg_wr;
   wire [31:0] EXMEMula_res, EXMEMval_B;
   wire [4:0] EXMEMrd;
+  wire [2:0] EXMEMfunct3;
   //MEM/WB
   wire [4:0] MEMWBrd;
   wire MEMWBreg_wr, MEMWBmem_rd, MEMWBmem_wr, MEMWBmux_reg_wr;
@@ -264,6 +265,7 @@ module RV32i(
     .mem_wr_in(IDEXmem_wr),
     .reg_wr_in(IDEXreg_wr),
     .mux_reg_wr_in(IDEXmux_reg_wr),
+    .funct3_in(IDEXfunct3),
     .ula_res_in(ULA_C),
     .val_B_in(IDEXval_B),
     .rd_in(IDEXrd),
@@ -274,6 +276,7 @@ module RV32i(
     .mem_wr_out(EXMEMmem_wr),
     .reg_wr_out(EXMEMreg_wr),
     .mux_reg_wr_out(EXMEMmux_reg_wr),
+    .funct3_out(EXMEMfunct3),
     .ula_res_out(EXMEMula_res),
     .val_B_out(EXMEMval_B),
     .rd_out(EXMEMrd)
@@ -282,6 +285,7 @@ module RV32i(
   //main memory
   main_memory m_m(
     .clk(clk),
+    .funct3(EXMEMfunct3),
     .memRead(EXMEMmem_rd),
     .memWrite(EXMEMmem_wr),
     .addr(EXMEMula_res),
