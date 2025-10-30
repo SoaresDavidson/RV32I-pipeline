@@ -18,8 +18,8 @@ module main_memory(
 
     always @(*) begin
         byte = memory[addr];
-        half = {memory[addr + 1], memory[addr]};
-        word = {memory[addr + 3], memory[addr + 2], memory[addr + 1], memory[addr]};
+        half = {memory[addr], memory[addr + 1]};
+        word = {memory[addr], memory[addr + 1], memory[addr + 2], memory[addr + 3]};
         case (memRead)
             1'b0: data = 32'b0;
             1'b1: begin

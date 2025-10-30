@@ -63,12 +63,14 @@ module RV32i(
   wire [4:0] MEMWBrd;
   wire MEMWBreg_wr, MEMWBmem_rd, MEMWBmem_wr, MEMWBmux_reg_wr;
   wire [31:0] MEMWBula_res, MEMWBmem_data;
+  reg [31:0] MEMWBmux_result;
   //main memory
   wire [31:0]MEMWBdata;
   //mux final
   assign pc_out = pc;
   assign out_instruction = instruction;
 
+  
   PC dut_pc(
     .Clk(clk),
     .Reset(rst),
@@ -156,7 +158,7 @@ module RV32i(
     .rs2(IFID_rs2),
     .rd(MEMWBrd),
     .RegWrite(MEMWBreg_wr),
-    .C(MEMWBmux_reg_wr ? MEMWBmem_data : MEMWBula_res),
+    .C(MEMWBmux_result),
     .A(read_A),
     .B(read_B)
   );
@@ -218,29 +220,29 @@ module RV32i(
     .forwardA(forwardA),
     .forwardB(forwardB)
   );
-
+	//logica dos muxes da ula
   always @(*) begin
-    case (forwardA)
-        2'b00: begin
-          case (IDEXpc_ula)
-            1'b0: forwarding_A = IDEXval_A;
-            1'b1: forwarding_A = IDEXpc;
-          endcase
-        end
-        2'b10: forwarding_A = EXMEMula_res; // MEM/WB sei la não implementei isso ainda
-        2'b01: forwarding_A = MEMWBmem_data; // EX/MEM
-        default: forwarding_A = IDEXval_A;
+    case (IDEXpc_ula)
+      1'b1: forwarding_A = IDEXpc;
+      1'b0: begin
+        case (forwardA)
+            2'b00: forwarding_A = IDEXval_A;
+            2'b10: forwarding_A = EXMEMula_res; // MEM/WB sei la não implementei isso ainda
+            2'b01: forwarding_A = MEMWBmux_result; // EX/MEM
+            default: forwarding_A = IDEXval_A;
+        endcase
+      end
     endcase
-    case (forwardB)
-        2'b00: begin 
-            case (IDEXmux_ula)
-              1'b0: forwarding_B = IDEXval_B;
-              1'b1: forwarding_B = IDEXimm;
-            endcase // Normal
-          end
-        2'b10: forwarding_B = EXMEMula_res; // MEM/WB sei la não implementei isso ainda
-        2'b01: forwarding_B = MEMWBmem_data; // EX/MEM
-        default: forwarding_B = IDEXval_B;
+    case (IDEXmux_ula)
+      1'b1: forwarding_B = IDEXimm;
+      1'b0: begin
+        case (forwardB)
+          2'b00: forwarding_B = IDEXval_B;
+          2'b10: forwarding_B = EXMEMula_res; // MEM/WB sei la não implementei isso ainda
+          2'b01: forwarding_B = MEMWBmux_result; // EX/MEM
+          default: forwarding_B = IDEXval_B;
+        endcase
+      end
     endcase
   end
 
@@ -311,19 +313,9 @@ module RV32i(
     .mem_res_out(MEMWBmem_data),
     .rd_out(MEMWBrd)
   );
-
-  //falta a memoria :/
-
-	always @(posedge clk) begin
-    //IF/ID
-
-    //ID/EX
-
-
-
-    //EX/MEM
-
-    //MEM/WB
+  always @(*) begin
+		MEMWBmux_result = MEMWBmux_reg_wr ? MEMWBmem_data : MEMWBula_res;
   end
+
 endmodule
 

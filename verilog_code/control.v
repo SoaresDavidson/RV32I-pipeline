@@ -58,14 +58,14 @@ always @(*) begin
             mem_wr = 1'b0;
             ula_op = 2'b00;
             reg_wr = 1'b1;
-            mux_reg_wr = 1'b0; 
+            mux_reg_wr = 1'b1; 
             mux_ula = 1'b1;
             pc_ula = 1'b0;
             jump = 1'b0;
         end
         7'b0100011: begin // tipo S load
             branch = 1'b0;
-            mem_rd = 1'b1;
+            mem_rd = 1'b0;
             mem_wr = 1'b1;
             ula_op = 2'b00;
             reg_wr = 1'b0;
