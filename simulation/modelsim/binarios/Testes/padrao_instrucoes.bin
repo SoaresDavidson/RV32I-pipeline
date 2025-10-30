@@ -1,0 +1,93 @@
+// Instrucoes R
+// add
+0000000rrrrrRRRRR000DDDDD0110011
+// sub
+0010100rrrrrRRRRR000DDDDD0110011
+// xor
+0000000rrrrrRRRRR100DDDDD0110011
+// or
+0000000rrrrrRRRRR110DDDDD0110011
+// and
+0000000rrrrrRRRRR111DDDDD0110011
+// sll
+0000000rrrrrRRRRR001DDDDD0110011
+// srl
+0000000rrrrrRRRRR101DDDDD0110011
+// sra
+0010100rrrrrRRRRR101DDDDD0110011
+// slt
+0000000rrrrrRRRRR010DDDDD0110011
+// sltu 
+0000000rrrrrRRRRR011DDDDD0110011
+
+// Instrucoes I
+// addi
+iiiiiiiiiiiirrrrr000DDDDD0010011
+// xori
+iiiiiiiiiiiirrrrr100DDDDD0010011
+// ori
+iiiiiiiiiiiirrrrr110DDDDD0010011
+// andi
+iiiiiiiiiiiirrrrr111DDDDD0010011
+// slli
+0000000iiiiirrrrr001DDDDD0010011
+// srli
+0000000iiiiirrrrr101DDDDD0010011
+// srai
+0010100iiiiirrrrr101DDDDD0010011
+// slti
+iiiiiiiiiiiirrrrr010DDDDD0010011
+// sltiu
+iiiiiiiiiiiirrrrr011DDDDD0010011
+
+// Loads
+// lb
+iiiiiiiiiiiirrrrr000DDDDD0000011
+// lh
+iiiiiiiiiiiirrrrr001DDDDD0000011
+// lw
+iiiiiiiiiiiirrrrr010DDDDD0000011
+// lbu
+iiiiiiiiiiiirrrrr100DDDDD0000011
+// lhu
+iiiiiiiiiiiirrrrr101DDDDD0000011
+
+// Stores
+// sb
+iiiiiiirrrrrRRRRR000iiiii0100011
+// sh
+iiiiiiirrrrrRRRRR001iiiii0100011
+// sw
+iiiiiiirrrrrRRRRR010iiiii0100011
+
+// Branchs
+// beq
+iiiiiiirrrrrRRRRR000iiiii1100011
+// bne
+iiiiiiirrrrrRRRRR001iiiii1100011
+// blt
+iiiiiiirrrrrRRRRR100iiiii1100011
+// bge
+iiiiiiirrrrrRRRRR101iiiii1100011
+// bltu
+iiiiiiirrrrrRRRRR110iiiii1100011
+// bgeu
+iiiiiiirrrrrRRRRR111iiiii1100011
+
+// Jumps
+// jal
+iiiiiiiiiiiiiiiiiiiiDDDDD1101111
+// jalr
+iiiiiiiiiiiiRRRRR000DDDDD1100111
+
+// Upper
+// lui
+iiiiiiiiiiiiiiiiiiiiDDDDD0110111
+//auipc
+iiiiiiiiiiiiiiiiiiiiDDDDD0010111
+
+// Enviromental
+// ecall
+000000000000RRRRR000DDDDD1110011
+// ebreak
+000000000001RRRRR000DDDDD1110011
