@@ -22,7 +22,7 @@ module RV32i(
   wire [19:0] imm_U, imm_J; //imediatos tipo U e J
   wire [31:0] IFID_pc;
   //sinais de controle
-  wire mem_rd, mem_wr, reg_wr, mux_reg_wr, mux_ula, branch, pc_ula;
+  wire mem_rd, mem_wr, reg_wr, mux_reg_wr, mux_ula, branch, pc_ula, jump;
   wire [1:0]ula_op;
   //foward unit
   reg [31:0] forwarding_A, forwarding_B;
@@ -72,10 +72,10 @@ module RV32i(
   PC dut_pc(
     .Clk(clk),
     .Reset(rst),
-    .Control(sinal_jump),
+    .Control(sinal_jump || jump),
     .Enable(enable),
     .PCWrite(PCWrite),
-    .Target(imm_gen_output),
+    .Target(imm_gen_output + ((jump && opcode[3]) ? IFID_pc : read_A)),
     .pc(pc)
   );
 
@@ -113,14 +113,15 @@ module RV32i(
 
   control ctrl(
     .opcode(opcode),
-    .mem_rd(mem_rd),
-    .mem_wr(mem_wr),
-    .reg_wr(reg_wr),
-    .mux_reg_wr(mux_reg_wr),
-    .mux_ula(mux_ula),
-    .ula_op(ula_op),
-    .pc_ula(pc_ula),
-    .branch(branch)
+    .mem_rd_out(mem_rd),
+    .mem_wr_out(mem_wr),
+    .reg_wr_out(reg_wr),
+    .mux_reg_wr_out(mux_reg_wr),
+    .mux_ula_out(mux_ula),
+    .ula_op_out(ula_op),
+    .pc_ula_out(pc_ula),
+    .jump_out(jump),
+    .branch_out(branch)
   );
 
   hazard_detection_unit hdu (
@@ -128,7 +129,7 @@ module RV32i(
     .IDEX_RegisterRt(IDEXrd),
     .IFID_Register1(IFID_rs1),
     .IFID_Register2(IFID_rs2),
-    .Jump(sinal_jump), 
+    .Jump(sinal_jump || jump), 
     .PCWrite(PCWrite),
     .IFIDWrite(IFIDWrite),
     .Bolha(Bolha),
@@ -139,10 +140,10 @@ module RV32i(
   always @(*) begin
     case (opcode)
       7'b0110011: imm_gen_output = {32{1'b0}}; // tipo R
-      7'b0010011, 7'b0000011: imm_gen_output = {{20{imm_I[11]}}, imm_I}; //tipo I
+      7'b0010011, 7'b0000011, 7'b1100111: imm_gen_output = {{20{imm_I[11]}}, imm_I}; //tipo I
       7'b0100011: imm_gen_output = {{20{imm_S[11]}}, imm_S}; //tipo S
       7'b1100011: imm_gen_output = {{19{imm_B[11]}}, imm_B, 1'b0}; //tipo B
-      7'b1101111: imm_gen_output = {{12{imm_J[19]}}, imm_J}; //tipo J
+      7'b1101111: imm_gen_output = {{11{imm_J[19]}}, imm_J, 1'b0}; //tipo J
       7'b0010111, 7'b0110111: imm_gen_output = {imm_U, 12'b0}; //tipo U
       default: imm_gen_output = 32'b0;
     endcase
@@ -178,7 +179,7 @@ module RV32i(
     .reg_wr_in(~Bolha ? reg_wr : 1'b0),
     .mux_reg_wr_in(~Bolha ? mux_reg_wr : 1'b0),
     .pc_in(IFID_pc),
-    .imm_in(imm_gen_output),
+    .imm_in(jump ? 4 : imm_gen_output),
     .rs1_in(IFID_rs1),
     .rs2_in(IFID_rs2),
     .rd_in(IFID_rd),

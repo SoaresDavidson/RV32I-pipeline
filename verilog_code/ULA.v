@@ -19,7 +19,7 @@ module ULA (
 		  4'b0111: C <= $signed(A) >>> B;
 		  4'b1000: C <= ( $signed(A) < $signed(B) ) ? 32'b1 : 32'b0;
 		  4'b1001: C <= ( A < B ) ? 32'b1 : 32'b0;
-			default: C <= A;
+			default: C <= A + B;
 		endcase	
 		if (C == 0) begin
 			z = 1;

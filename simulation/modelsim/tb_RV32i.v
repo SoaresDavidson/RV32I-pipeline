@@ -29,10 +29,10 @@ module tb_RV32i;
     // --- Sequência de Teste Principal ---
     initial begin
         // 4. Carrega o programa na memória ANTES de começar a simulação.
-        $readmemb("binarios/tiposBasicos/load.bin", dut.im.instruction_memory);		  
+        $readmemb("binarios/tiposBasicos/tipoJ.bin", dut.im.instruction_memory);		  
         $readmemb("binarios/exemplos/program.bin", dut.m_m.memory);
-        assign dut.reg_bank.registers[{31'b0, 1'b1}] = 0;
-        assign dut.reg_bank.registers[{30'b0, 2'b10}] = 20;
+        // assign dut.reg_bank.registers[1] = 32'd10;
+        assign dut.reg_bank.registers[2] = 32'd20;
 
         assign dut.m_m.memory[0] = 8'b1000;
         assign dut.m_m.memory[1] = 8'b1;
@@ -102,7 +102,8 @@ always @(negedge clk) begin
                  dut.MEM_WB.ula_res_out, dut.MEM_WB.mem_res_out, dut.MEM_WB.rd_out);
         
         $display("-----------------------------------------------------------------");
-        $display("%d %d %d %d %d", dut.m_m.memory[0], dut.m_m.memory[1], dut.m_m.memory[2], dut.m_m.memory[3], dut.m_m.funct3);
+        // $display("%d %d %d %d %d", dut.m_m.memory[0], dut.m_m.memory[1], dut.m_m.memory[2], dut.m_m.memory[3], dut.m_m.funct3);
+        $display("%d %d %d %d %d %d %d", dut.reg_bank.registers[0], dut.reg_bank.registers[1], dut.reg_bank.registers[2], dut.reg_bank.registers[3], dut.reg_bank.registers[4], dut.reg_bank.registers[5], dut.reg_bank.registers[6]);
     end
 end
 

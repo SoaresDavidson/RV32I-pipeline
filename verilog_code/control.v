@@ -1,112 +1,122 @@
 module control(
     input wire [6:0] opcode,
     // controle MEM
-    output	wire mem_rd, //le memoria
-	output	wire mem_wr, //escreve memoria
+    output	wire mem_rd_out, //le memoria
+	output	wire mem_wr_out, //escreve memoria
 
 	// controle WB
-	output	wire reg_wr, // escreve banco de reg
-	output	wire mux_reg_wr, //mux do final
+	output	wire reg_wr_out, // escreve banco de reg
+	output	wire mux_reg_wr_out, //mux do final
 
     // EX
-    output   wire mux_ula, // mux da ula (rs2 ou imm)
-    output   wire [1:0] ula_op, // escolhe operação
-    output   wire pc_ula, // escolhe pc ou val_A
-
-    output wire branch
+    output   wire mux_ula_out, // mux da ula (rs2 ou imm)
+    output   wire [1:0] ula_op_out, // escolhe operação
+    output   wire pc_ula_out, // escolhe pc ou val_A
+    // ID
+    output wire jump_out,
+    output wire branch_out
 );
-reg mem_rd_, mem_wr_, reg_wr_, mux_reg_wr_, mux_ula_, branch_, pc_ula_;
-reg [1:0] ula_op_;
-assign mem_rd = mem_rd_;
-assign mem_wr = mem_wr_;
-assign reg_wr = reg_wr_;
-assign mux_reg_wr = mux_reg_wr_;
-assign mux_ula = mux_ula_;
-assign branch = branch_;
-assign ula_op = ula_op_;
-assign pc_ula = pc_ula_;
+reg mem_rd, mem_wr, reg_wr, mux_reg_wr, mux_ula, branch, pc_ula, jump;
+reg [1:0] ula_op;
+assign mem_rd_out = mem_rd;
+assign mem_wr_out = mem_wr;
+assign reg_wr_out = reg_wr;
+assign mux_reg_wr_out = mux_reg_wr;
+assign mux_ula_out = mux_ula;
+assign branch_out = branch;
+assign ula_op_out = ula_op;
+assign pc_ula_out = pc_ula;
+assign jump_out = jump;
 
 always @(*) begin
     case (opcode)
         7'b0110011: begin //tipo R
-            branch_ = 1'b0;
-            mem_rd_ = 1'b0;
-            mem_wr_ = 1'b0;
-            ula_op_ = 2'b10; 
-            reg_wr_ = 1'b1;
-            mux_reg_wr_ = 1'b0; 
-            mux_ula_ = 1'b0;
-            pc_ula_ = 1'b0;
+            branch = 1'b0;
+            mem_rd = 1'b0;
+            mem_wr = 1'b0;
+            ula_op = 2'b10; 
+            reg_wr = 1'b1;
+            mux_reg_wr = 1'b0; 
+            mux_ula = 1'b0;
+            pc_ula = 1'b0;
+            jump = 1'b0;
         end 
         7'b0010011: begin // tipo I
-            branch_ = 1'b0;
-            mem_rd_ = 1'b0;
-            mem_wr_ = 1'b0;
-            ula_op_ = 2'b10;
-            reg_wr_ = 1'b1;
-            mux_reg_wr_ = 1'b0; 
-            mux_ula_ = 1'b1;
-            pc_ula_ = 1'b0;
+            branch = 1'b0;
+            mem_rd = 1'b0;
+            mem_wr = 1'b0;
+            ula_op = 2'b10;
+            reg_wr = 1'b1;
+            mux_reg_wr = 1'b0; 
+            mux_ula = 1'b1;
+            pc_ula = 1'b0;
+            jump = 1'b0;
         end
         7'b0000011: begin // tipo I load
-            branch_ = 1'b0;
-            mem_rd_ = 1'b1;
-            mem_wr_ = 1'b0;
-            ula_op_ = 2'b00;
-            reg_wr_ = 1'b1;
-            mux_reg_wr_ = 1'b0; 
-            mux_ula_ = 1'b1;
-            pc_ula_ = 1'b0;
+            branch = 1'b0;
+            mem_rd = 1'b1;
+            mem_wr = 1'b0;
+            ula_op = 2'b00;
+            reg_wr = 1'b1;
+            mux_reg_wr = 1'b0; 
+            mux_ula = 1'b1;
+            pc_ula = 1'b0;
+            jump = 1'b0;
         end
         7'b0100011: begin // tipo S load
-            branch_ = 1'b0;
-            mem_rd_ = 1'b1;
-            mem_wr_ = 1'b1;
-            ula_op_ = 2'b00;
-            reg_wr_ = 1'b0;
-            mux_reg_wr_ = 1'b1; 
-            mux_ula_ = 1'b1;
-            pc_ula_ = 1'b0;
+            branch = 1'b0;
+            mem_rd = 1'b1;
+            mem_wr = 1'b1;
+            ula_op = 2'b00;
+            reg_wr = 1'b0;
+            mux_reg_wr = 1'b1; 
+            mux_ula = 1'b1;
+            pc_ula = 1'b0;
+            jump = 1'b0;
         end
         7'b1100011: begin // tipo B load
-            branch_ = 1'b1;
-            mem_rd_ = 1'b0;
-            mem_wr_ = 1'b0;
-            ula_op_ = 2'b00;
-            reg_wr_ = 1'b1;
-            mux_reg_wr_ = 1'b0; 
-            mux_ula_ = 1'b1;
-            pc_ula_ = 1'b0;
+            branch = 1'b1;
+            mem_rd = 1'b0;
+            mem_wr = 1'b0;
+            ula_op = 2'b00;
+            reg_wr = 1'b1;
+            mux_reg_wr = 1'b0; 
+            mux_ula = 1'b1;
+            pc_ula = 1'b0;
+            jump = 1'b0;
         end
         7'b0110111, 7'b0010111: begin // tipo U load
-            branch_ = 1'b0;
-            mem_rd_ = 1'b0;
-            mem_wr_ = 1'b0;
-            ula_op_ = 2'b00;
-            reg_wr_ = 1'b1;
-            mux_reg_wr_ = 1'b0; 
-            mux_ula_ = 1'b1;
-            pc_ula_ = 1'b1;
+            branch = 1'b0;
+            mem_rd = 1'b0;
+            mem_wr = 1'b0;
+            ula_op = 2'b00;
+            reg_wr = 1'b1;
+            mux_reg_wr = 1'b0;
+            mux_ula = 1'b1;
+            pc_ula = 1'b1;
+            jump = 1'b0;
         end
-        7'b1101111: begin // tipo J load
-            branch_ = 1'b1;
-            mem_rd_ = 1'b0;
-            mem_wr_ = 1'b0;
-            ula_op_ = 2'b00;
-            reg_wr_ = 1'b1;
-            mux_reg_wr_ = 1'b1; 
-            mux_ula_ = 1'b1;
-            pc_ula_ = 1'b1;
+        7'b1101111, 7'b1100111: begin // tipo J load
+            branch = 1'b1;
+            mem_rd = 1'b0;
+            mem_wr = 1'b0;
+            ula_op = 2'b00;
+            reg_wr = 1'b1;
+            mux_reg_wr = 1'b0; 
+            mux_ula = 1'b1;
+            pc_ula = 1'b1;
+            jump = 1'b1;
         end
 		  default: begin
-            branch_ = 1'b0;
-            mem_rd_ = 1'b0;
-            mem_wr_ = 1'b0;
-            ula_op_ = 2'b00;
-            reg_wr_ = 1'b0;
-            mux_reg_wr_ = 1'b0; 
-            mux_ula_ = 1'b0;
-            pc_ula_ = 1'b0;
+            branch = 1'b0;
+            mem_rd = 1'b0;
+            mem_wr = 1'b0;
+            ula_op = 2'b00;
+            reg_wr = 1'b0;
+            mux_reg_wr = 1'b0; 
+            mux_ula = 1'b0;
+            pc_ula = 1'b0;
+            jump = 1'b0;
 			end
     endcase
     end

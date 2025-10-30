@@ -43,7 +43,7 @@ module main_memory(
                     memory[addr + 1] = writeData[15:8];
                 end
                 3'b010: begin 
-                    memory[addr] = writeData;
+                    memory[addr] = writeData[7:0];
                     memory[addr + 1] = writeData[15:8];
                     memory[addr + 2] = writeData[23:16];
                     memory[addr + 3] = writeData[31:24];
