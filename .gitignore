@@ -11,6 +11,10 @@ rtl_work
 *.qws
 *.v.bak
 simulation/
+work/
+RV32i.cr.mti
+RV32i.mpf
+transcript
 R232i.sof
 c5_pin_model_dump
 R232i.sof

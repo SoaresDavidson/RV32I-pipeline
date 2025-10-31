@@ -187,7 +187,7 @@ module RV32i(
     .mux_reg_wr_in(~Bolha ? mux_reg_mem : 1'b0),
     .pc_in(IFID_pc),
     .imm_in(jump ? 4 : imm_gen_output),
-    .rs1_in(~Bolha ? (mem_wr ? 1'b0 : rs1_value) : 1'b0),
+    .rs1_in(IFID_rs1),
     .rs2_in(IFID_rs2),
     .rd_in(IFID_rd),
     .funct7_in(funct7),
