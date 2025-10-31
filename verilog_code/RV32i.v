@@ -22,7 +22,7 @@ module RV32i(
   wire [19:0] imm_U, imm_J; //imediatos tipo U e J
   wire [31:0] IFID_pc;
   //sinais de controle
-  wire mem_rd, mem_wr, reg_wr, mux_reg_wr, mux_ula, branch, pc_ula, jump;
+  wire mem_rd, mem_wr, reg_wr, mux_reg_mem, mux_ula, pc_ula, branch, jump;
   wire [1:0]ula_op;
   //foward unit
   reg [31:0] forwarding_A, forwarding_B;
@@ -35,11 +35,11 @@ module RV32i(
   wire [2:0] IDEXfunct3;
   wire [31:0] IDEXval_A, IDEXval_B;
   //Banco de registradores
-  wire [31:0]read_A;
-  wire [31:0]read_B;
+  wire [31:0]rs1_value;
+  wire [31:0]rs2_value;
   wire [31:0]ULA_C;
   //branch decider
-  wire sinal_jump;
+  wire branch_tomado;
   // imm gen
   reg [31:0] imm_gen_output;
   //forward unit
@@ -53,14 +53,14 @@ module RV32i(
   wire [3:0]operation;
   wire ula_err;
   //ULA
-  wire z;
+  wire ULA_zero;
   //EX/MEM
   wire EXMEMmem_rd,EXMEMmem_wr, EXMEMreg_wr, EXMEMmux_reg_wr;
   wire [31:0] EXMEMula_res, EXMEMval_B;
   wire [4:0] EXMEMrd;
   wire [2:0] EXMEMfunct3;
   //MEM/WB
-  wire [4:0] MEMWBrd;
+  wire [4:0] MEMWB_rd;
   wire MEMWBreg_wr, MEMWBmem_rd, MEMWBmem_wr, MEMWBmux_reg_wr;
   wire [31:0] MEMWBula_res, MEMWBmem_data;
   reg [31:0] MEMWBmux_result;
@@ -72,26 +72,28 @@ module RV32i(
 
   
   PC dut_pc(
+    //entradas
     .Clk(clk),
     .Reset(rst),
-    .Control(sinal_jump || jump),
+    .Jump((branch_tomado && branch) || jump), // se for jump ou branch tomado em um instrução do tipo B, pega o target
     .Enable(enable),
-    .PCWrite(PCWrite),
-    .Target(imm_gen_output + ((jump && opcode[3]) ? IFID_pc : read_A)),
-    .pc(pc)
+    .PCWrite(PCWrite), // sinal vindo da hazard unit
+    .Target(imm_gen_output + ((jump && ~opcode[3]) ?  rs1_value : IFID_pc)), // não questione, so comparar o opcode[3] do jalr e do jal a única diferença é esse bit
+    //saída
+    .pc(pc) // saída do PC
   );
 
   instruction_memory im(
+    //entradas
     .clk(clk),
     .addr(pc),
-    .instruction(instruction),
-    .jump_addr(imm_gen_output), 
-    .we(1'b0), 
-    .re(1'b1)
+    //saída
+    .instruction(instruction)
   );
 
 
   IF_ID IF_ID(
+    //entradas
     .instruction(instruction),
     .clk(clk),
     .rst(rst),
@@ -99,6 +101,7 @@ module RV32i(
     .enable(enable),
     .IFIDWrite(IFIDWrite),
     .pc_in(pc),
+    //saídas
     .pc_out(IFID_pc),
     .opcode(opcode),
     .rd(IFID_rd),
@@ -106,6 +109,7 @@ module RV32i(
     .rs2(IFID_rs2),
     .funct3(funct3),
     .funct7(funct7),
+    //imediatos
     .imm_I(imm_I),
     .imm_S(imm_S),
     .imm_B(imm_B),
@@ -114,11 +118,13 @@ module RV32i(
   );
 
   control ctrl(
+    //entrada
     .opcode(opcode),
+    //saídas
     .mem_rd_out(mem_rd),
     .mem_wr_out(mem_wr),
     .reg_wr_out(reg_wr),
-    .mux_reg_wr_out(mux_reg_wr),
+    .mux_reg_wr_out(mux_reg_mem),
     .mux_ula_out(mux_ula),
     .ula_op_out(ula_op),
     .pc_ula_out(pc_ula),
@@ -131,7 +137,7 @@ module RV32i(
     .IDEX_RegisterRt(IDEXrd),
     .IFID_Register1(IFID_rs1),
     .IFID_Register2(IFID_rs2),
-    .Jump(sinal_jump || jump), 
+    .Jump((branch_tomado && branch) || jump), 
     .PCWrite(PCWrite),
     .IFIDWrite(IFIDWrite),
     .Bolha(Bolha),
@@ -156,20 +162,19 @@ module RV32i(
     .rst(rst),
     .rs1(IFID_rs1),
     .rs2(IFID_rs2),
-    .rd(MEMWBrd),
+    .rd(MEMWB_rd),
     .RegWrite(MEMWBreg_wr),
     .C(MEMWBmux_result),
-    .A(read_A),
-    .B(read_B)
+    .A(rs1_value),
+    .B(rs2_value)
   );
   
   BranchDecider branch_decider(
     .opcode(opcode),
     .funct3(funct3),
-    .rs1(read_A),
-    .rs2(read_B),
-    .imm(imm_B),
-    .Branch(sinal_jump)
+    .rs1(rs1_value),
+    .rs2(rs2_value),
+    .Branch(branch_tomado)
   );
 
   ID_EX ID_EX (
@@ -179,16 +184,16 @@ module RV32i(
     .mem_rd_in(~Bolha ? mem_rd : 1'b0),
     .mem_wr_in(~Bolha ? mem_wr : 1'b0),
     .reg_wr_in(~Bolha ? reg_wr : 1'b0),
-    .mux_reg_wr_in(~Bolha ? mux_reg_wr : 1'b0),
+    .mux_reg_wr_in(~Bolha ? mux_reg_mem : 1'b0),
     .pc_in(IFID_pc),
     .imm_in(jump ? 4 : imm_gen_output),
-    .rs1_in(IFID_rs1),
+    .rs1_in(~Bolha ? (mem_wr ? 1'b0 : rs1_value) : 1'b0),
     .rs2_in(IFID_rs2),
     .rd_in(IFID_rd),
     .funct7_in(funct7),
     .funct3_in(funct3),
-    .val_A_in(read_A),
-    .val_B_in(read_B),
+    .val_A_in(rs1_value),
+    .val_B_in(rs2_value),
     .clk(clk),
     .rst(rst),
     .enable(enable),
@@ -214,12 +219,13 @@ module RV32i(
     .IDEXrs1(IDEXrs1),
     .IDEXrs2(IDEXrs2),
     .EXMEMrd(EXMEMrd),
-    .MEMWBrd(MEMWBrd),
+    .MEMWBrd(MEMWB_rd),
     .EXMEM_RegWrite(EXMEMreg_wr),
     .MEMWB_RegWrite(MEMWBreg_wr),
     .forwardA(forwardA),
     .forwardB(forwardB)
-  );
+	 );
+
 	//logica dos muxes da ula
   always @(*) begin
     case (IDEXpc_ula)
@@ -245,7 +251,7 @@ module RV32i(
       end
     endcase
   end
-
+  //alu controler
   ULA_controler ula_ctrl (
     .rst(rst),
     .ula_op(IDEXula),
@@ -256,10 +262,12 @@ module RV32i(
   );
 
   ULA ULA ( 
+    //entradas
     .A (forwarding_A),
     .B (forwarding_B),
+    //saidas
 		.C (ULA_C),
-		.z (z),
+		.ULA_zero (ULA_zero),
 		.ula_op (operation)
 	);
 
@@ -311,7 +319,7 @@ module RV32i(
     .mux_reg_wr_out(MEMWBmux_reg_wr),
     .ula_res_out(MEMWBula_res),
     .mem_res_out(MEMWBmem_data),
-    .rd_out(MEMWBrd)
+    .rd_out(MEMWB_rd)
   );
   always @(*) begin
 		MEMWBmux_result = MEMWBmux_reg_wr ? MEMWBmem_data : MEMWBula_res;

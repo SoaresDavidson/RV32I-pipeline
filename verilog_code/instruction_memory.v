@@ -1,20 +1,11 @@
 module instruction_memory(
     input clk,
     input [31:0] addr,
-    input [31:0] jump_addr, // endereço de pulo
-    input we, //write enable
-    input re, //read enable
-    output reg [31:0] instruction
+    output wire [31:0] instruction
 );
     reg [31:0] instruction_memory [1023:0]; // memoria de instruções
+    assign instruction = instruction_memory[addr >> 2]; // busca a instrução
 
-    always @(*) begin
-	 instruction = 32'b0;
-        if (we) begin //escrita
-            instruction_memory[addr] = jump_addr;
-        end
-        else if (re) begin //leitura
-            instruction = instruction_memory[addr >> 2];
-        end
-    end
+
+
 endmodule

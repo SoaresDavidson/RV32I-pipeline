@@ -8,7 +8,7 @@ module hazard_detection_unit (
     output reg       PCWrite,
     output reg       IFIDWrite,
     output reg       Bolha,
-	 output reg       Flush
+    output reg       Flush
 );
 
 

@@ -3,7 +3,6 @@ module BranchDecider (
   input  wire [2:0] funct3,
   input  wire [31:0] rs1,
   input  wire [31:0] rs2,
-  input  wire [11:0] imm,
   output reg  Branch
 );
   

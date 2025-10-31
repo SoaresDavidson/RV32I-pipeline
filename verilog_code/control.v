@@ -58,7 +58,7 @@ always @(*) begin
             mem_wr = 1'b0;
             ula_op = 2'b00;
             reg_wr = 1'b1;
-            mux_reg_wr = 1'b1; 
+            mux_reg_wr = 1'b0; 
             mux_ula = 1'b1;
             pc_ula = 1'b0;
             jump = 1'b0;
@@ -97,7 +97,7 @@ always @(*) begin
             jump = 1'b0;
         end
         7'b1101111, 7'b1100111: begin // tipo J load
-            branch = 1'b1;
+            branch = 1'b0;
             mem_rd = 1'b0;
             mem_wr = 1'b0;
             ula_op = 2'b00;
