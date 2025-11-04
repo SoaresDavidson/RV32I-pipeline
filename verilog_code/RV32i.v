@@ -22,7 +22,7 @@ module RV32i(
   wire [19:0] imm_U, imm_J; //imediatos tipo U e J
   wire [31:0] IFID_pc;
   //sinais de controle
-  wire mem_rd, mem_wr, reg_wr, mux_reg_mem, mux_ula, branch, jump;
+  wire mem_rd, mem_wr, reg_wr, mux_reg_mem, branch, jump;
   wire [1:0] alu_src1, alu_src2;
   wire [1:0]ula_op;
   //foward unit
