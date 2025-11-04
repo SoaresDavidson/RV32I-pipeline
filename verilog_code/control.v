@@ -108,6 +108,7 @@ always @(*) begin
             alu_src1 = 2'b10;
             alu_src2 = 2'b01;
             jump = 1'b0;
+            jalr = 1'b0;
         end
         7'b0010111: begin // tipo U auipc
             branch = 1'b0;
