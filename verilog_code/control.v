@@ -20,7 +20,7 @@ module control(
 
 );
 
-reg mem_rd, mem_wr, reg_wr, mux_reg_wr, mux_ula, branch, jump, jalr;
+reg mem_rd, mem_wr, reg_wr, mux_reg_wr, branch, jump, jalr;
 reg [1:0] ula_op, alu_src1, alu_src2;
 
 
