@@ -28,7 +28,7 @@ module RV32i(
   //foward unit
   reg [31:0] forwarding_A, forwarding_B;
   //ID/EX
-  wire IDEXmem_rd, IDEXmem_wr, IDEXreg_wr, IDEXmux_reg_wr, IDEXmux_ula;
+  wire IDEXmem_rd, IDEXmem_wr, IDEXreg_wr, IDEXmux_reg_wr;
   wire [1:0] IDEXalu_src1, IDEXalu_src2;
   wire [1:0] IDEXula;
   wire [31:0] IDEXimm, IDEXpc;
