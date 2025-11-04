@@ -96,8 +96,8 @@ always @(negedge clk) begin
         // --- ESTÁGIO EX ---
         $display("-----------------------------------------------------------------");
         // Mostra os valores que SAEM do registrador ID/EX
-        $display("  [ID/EX] Control -> RegWr: %b, MemRd: %b, MemWr: %b, MuxReg: %b, MuxULA: %b, ULAOp: %2b, PcULA: %b",
-                 dut.ID_EX.reg_wr_out, dut.ID_EX.mem_rd_out, dut.ID_EX.mem_wr_out, dut.ID_EX.mux_reg_wr_out, dut.ID_EX.mux_ula_out, dut.ID_EX.ula_out, dut.ID_EX.pc_ula_out);
+        $display("  [ID/EX] Control -> RegWr: %b, MemRd: %b, MemWr: %b, MuxReg: %b, alu_src1: %b, ULAOp: %2b, alu_src2: %b",
+                 dut.ID_EX.reg_wr_out, dut.ID_EX.mem_rd_out, dut.ID_EX.mem_wr_out, dut.ID_EX.mux_reg_wr_out, dut.ID_EX.alu_src1_out, dut.ID_EX.ula_out, dut.ID_EX.alu_src2_out);
         $display("       Data    -> rs1_value: %10d | rs2_value: %10d | rd: %2d | imm: %h | pc: %h",
                  dut.ID_EX.val_A_out, dut.ID_EX.val_B_out, dut.ID_EX.rd_out, dut.ID_EX.imm_out, dut.ID_EX.pc_out);
         $display("       Forward -> Fwd_1: %2b, Fwd_2: %2b", dut.fwd.forwardA, dut.fwd.forwardB);
@@ -120,6 +120,7 @@ always @(negedge clk) begin
         // $display("%d %d %d %d %d", dut.m_m.memory[0], dut.m_m.memory[1], dut.m_m.memory[2], dut.m_m.memory[3], dut.m_m.funct3);
         $display("reg0: %0d reg1: %0d reg2: %0d reg3: %0d reg4: %0d reg5: %0d reg6: %0d, reg7: %0d, reg8: %0d", dut.reg_bank.registers[0], dut.reg_bank.registers[1], dut.reg_bank.registers[2], dut.reg_bank.registers[3], dut.reg_bank.registers[4], dut.reg_bank.registers[5], dut.reg_bank.registers[6], dut.reg_bank.registers[7], dut.reg_bank.registers[8]);
         $display("mem0: %0d mem1: %0d mem2: %0d mem3: %0d mem4: %0d mem5: %0d mem6: %0d, mem7: %0d, mem8: %0d", dut.m_m.memory[0], dut.m_m.memory[1], dut.m_m.memory[2], dut.m_m.memory[3], dut.m_m.memory[4], dut.m_m.memory[5], dut.m_m.memory[6], dut.m_m.memory[7], dut.m_m.memory[8]);
+        // $display("%d", dut.control.mux_reg_wr_out);
 
     end
 end
