@@ -96,8 +96,8 @@ always @(negedge clk) begin
         // --- ESTÁGIO EX ---
         $display("-----------------------------------------------------------------");
         // Mostra os valores que SAEM do registrador ID/EX
-        $display("  [ID/EX] Control -> RegWr: %b, MemRd: %b, MemWr: %b, MuxReg: %b, MuxULA: %b, ULAOp: %2b, PcULA: %b",
-                 dut.ID_EX.reg_wr_out, dut.ID_EX.mem_rd_out, dut.ID_EX.mem_wr_out, dut.ID_EX.mux_reg_wr_out, dut.ID_EX.mux_ula_out, dut.ID_EX.ula_out, dut.ID_EX.pc_ula_out);
+        $display("  [ID/EX] Control -> RegWr: %b, MemRd: %b, MemWr: %b, MuxReg: %b, alu_src1: %b, ULAOp: %2b, alu_src2: %b",
+                 dut.ID_EX.reg_wr_out, dut.ID_EX.mem_rd_out, dut.ID_EX.mem_wr_out, dut.ID_EX.mux_reg_wr_out, dut.ID_EX.alu_src1_out, dut.ID_EX.ula_out, dut.ID_EX.alu_src2_out);
         $display("       Data    -> rs1_value: %10d | rs2_value: %10d | rd: %2d | imm: %h | pc: %h",
                  dut.ID_EX.val_A_out, dut.ID_EX.val_B_out, dut.ID_EX.rd_out, dut.ID_EX.imm_out, dut.ID_EX.pc_out);
         $display("       Forward -> Fwd_1: %2b, Fwd_2: %2b", dut.fwd.forwardA, dut.fwd.forwardB);
