@@ -1,8 +1,8 @@
 module hazard_detection_unit (
     input wire       EXMEM_MemRead,
     input wire       IDEX_MemRead,
-    input wire       B,
-    input wire       Jalr,
+    input wire       branch,
+    input wire       jalr,
     input wire [4:0] EXMEM_RegisterRd,
     input wire [4:0] IDEX_RegisterRd,
     input wire [4:0] IFID_Register1,
@@ -26,7 +26,7 @@ module hazard_detection_unit (
         // Hazard (caso do load seguido de instrucao B)
         if (EXMEM_MemRead &&
             (EXMEM_RegisterRd != 5'b00000) &&
-            (B || Jalr) &&
+            (branch || jalr) &&
             ((EXMEM_RegisterRd == IFID_Register1) || (EXMEM_RegisterRd == IFID_Register2))) begin
 
             PCWrite   = 1'b0;

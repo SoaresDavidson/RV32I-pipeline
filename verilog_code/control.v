@@ -129,8 +129,6 @@ always @(*) begin
             ula_op = 2'b00;
             reg_wr = 1'b1;
             mux_reg_wr = 1'b0; 
-            mux_ula = 1'b1;
-            pc_ula = 1'b1;
             jump = 1'b1;
             jalr = 1'b0;
         end
