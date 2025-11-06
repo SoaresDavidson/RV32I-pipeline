@@ -29,8 +29,8 @@ module tb_RV32i;
     // --- Sequência de Teste Principal ---
     initial begin
         // 4. Carrega o programa na memória ANTES de começar a simulação.
-        $readmemb("testBenchs/binarios/Testes/testes.bin", dut.im.instruction_memory);
-        // $readmemb("testbenchs/binarios/Exemplos/program.bin", dut.im.instruction_memory);
+        // $readmemb("testBenchs/binarios/Testes/testes.bin", dut.im.instruction_memory);
+        $readmemb("testbenchs/binarios/Exemplos/program.bin", dut.im.instruction_memory);
         // $readmemb("testbenchs/binarios/Exemplos/flush.bin", dut.im.instruction_memory);
 
         $readmemb("testbenchs/binarios/memoria.bin", dut.m_m.memory);
@@ -89,15 +89,19 @@ always @(negedge clk) begin
         // --- ESTÁGIO ID ---
         $display("-----------------------------------------------------------------");
         $display("  [IF/ID] Opcode: %7b | tipo: %c | rd: %2d, rs1: %2d, rs2: %2d", dut.IF_ID.opcode, tipo, dut.IF_ID.rd, dut.IF_ID.rs1, dut.IF_ID.rs2);
-        $display("       Funct3: %3b  | Funct7: %7b | Salto?: %b", dut.IF_ID.funct3, dut.IF_ID.funct7, dut.branch_decider.Branch);
+        $display("       Funct3: %3b  | Funct7: %7b", dut.IF_ID.funct3, dut.IF_ID.funct7);
         $display("       Imm Gen: %8h", dut.imm_gen_output);
         $display("       RegBank Read -> rs1_value: %10d | rs2_value: %10d", dut.reg_bank.A, dut.reg_bank.B);
+        $display("       Forwarding -> Fwd_1: %2b, Fwd_2: %2b", dut.fwd.forwardRs1, dut.fwd.forwardRs2);
+        $display("       Branch Decider -> Branch Taken: %b", dut.branch_decider.Branch);
+        $display("       Hazard Detection -> PCWrite: %b | IFIDWrite: %b | Bolha: %b | Flush: %b",
+                 dut.hdu.PCWrite, dut.hdu.IFIDWrite, dut.hdu.Bolha, dut.hdu.Flush);
 
         // --- ESTÁGIO EX ---
         $display("-----------------------------------------------------------------");
         // Mostra os valores que SAEM do registrador ID/EX
-        $display("  [ID/EX] Control -> RegWr: %b, MemRd: %b, MemWr: %b, MuxReg: %b, MuxULA: %b, ULAOp: %2b, PcULA: %b",
-                 dut.ID_EX.reg_wr_out, dut.ID_EX.mem_rd_out, dut.ID_EX.mem_wr_out, dut.ID_EX.mux_reg_wr_out, dut.ID_EX.mux_ula_out, dut.ID_EX.ula_out, dut.ID_EX.pc_ula_out);
+        $display("  [ID/EX] Control -> RegWr: %b, MemRd: %b, MemWr: %b, MuxReg: %b, alu_src1: %b, ULAOp: %2b, alu_src2: %b",
+                 dut.ID_EX.reg_wr_out, dut.ID_EX.mem_rd_out, dut.ID_EX.mem_wr_out, dut.ID_EX.mux_reg_wr_out, dut.ID_EX.alu_src1_out, dut.ID_EX.ula_out, dut.ID_EX.alu_src2_out);
         $display("       Data    -> rs1_value: %10d | rs2_value: %10d | rd: %2d | imm: %h | pc: %h",
                  dut.ID_EX.val_A_out, dut.ID_EX.val_B_out, dut.ID_EX.rd_out, dut.ID_EX.imm_out, dut.ID_EX.pc_out);
         $display("       Forward -> Fwd_1: %2b, Fwd_2: %2b", dut.fwd.forwardA, dut.fwd.forwardB);

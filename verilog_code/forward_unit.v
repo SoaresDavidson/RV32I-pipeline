@@ -27,10 +27,10 @@ module forward_unit(
         end
 
         // mux de rs2 (pos-regBank)
-        if (EXMEM_RegWrite && (EXMEMrd != 5'b0) && (EXMEMrd == forwardRs2)) begin
+        if (EXMEM_RegWrite && (EXMEMrd != 5'b0) && (EXMEMrd == IFIDrs2)) begin
             forwardRs2 = 2'b10;
         end
-        else if (MEMWB_RegWrite && (MEMWBrd != 5'b0) && (MEMWBrd == forwardRs2)) begin
+        else if (MEMWB_RegWrite && (MEMWBrd != 5'b0) && (MEMWBrd == IFIDrs2)) begin
             forwardRs2 = 2'b01; 
         end
         else begin
