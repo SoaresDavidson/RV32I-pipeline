@@ -10,6 +10,15 @@ rtl_work
 *.qpf
 *.qws
 *.v.bak
+simulation/
+work/
+RV32i.cr.mti
+RV32i.mpf
+transcript
+R232i.sof
+c5_pin_model_dump
+R232i.sof
+R232i.sof.rpt
 R232i_nativelink_simulation.rpt
 R232i.qpf
 R232i.qws

@@ -1,7 +1,7 @@
 module PC (
   input wire Clk,
   input wire Reset,
-  input wire Control,
+  input wire Jump,
   input wire Enable,
   input wire PCWrite,
   input wire [31:0] Target,
@@ -15,7 +15,7 @@ module PC (
       pc <= 32'b0;
     end
     else if (Enable == 1 && PCWrite == 1) begin
-      if (Control == 1) begin
+      if (Jump == 1) begin
         pc <= Target;
       end
       else begin

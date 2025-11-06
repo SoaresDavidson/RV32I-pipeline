@@ -72,7 +72,7 @@ always @(*) begin
         end
         7'b0100011: begin // tipo S 
             branch = 1'b0;
-            mem_rd = 1'b1;
+            mem_rd = 1'b0;
             mem_wr = 1'b1;
             ula_op = 2'b00;
             reg_wr = 1'b0;
