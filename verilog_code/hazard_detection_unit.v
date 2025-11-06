@@ -1,4 +1,5 @@
 module hazard_detection_unit (
+    input wire       IDEX_RegWrite,
     input wire       EXMEM_MemRead,
     input wire       IDEX_MemRead,
     input wire       B,
@@ -23,7 +24,18 @@ module hazard_detection_unit (
         Bolha     = 1'b0;
         Flush     = 1'b0;
 
-        // Hazard (caso do load seguido de instrucao B)
+        // Hazard (caso de instrução seguida de B ou JALR dependente)
+        if (IDEX_RegWrite &&
+            (IDEX_RegisterRd != 5'b00000) &&
+            (B || Jalr) &&
+            ((IDEX_RegisterRd == IFID_Register1) || (IDEX_RegisterRd == IFID_Register2))) begin
+
+            PCWrite   = 1'b0;
+            IFIDWrite = 1'b0;
+            Bolha     = 1'b1;
+        end
+
+        // Hazard (caso do load seguido de instrucao B ou JAlR)
         if (EXMEM_MemRead &&
             (EXMEM_RegisterRd != 5'b00000) &&
             (B || Jalr) &&
