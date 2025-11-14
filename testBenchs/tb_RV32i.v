@@ -102,7 +102,7 @@ always @(posedge clk) begin
         $display("       Funct3: %3b  | Funct7: %7b", dut.IF_ID.funct3, dut.IF_ID.funct7);
         $display("       Imm Gen: %8h", dut.imm_gen_output);
         $display("       RegBank Read -> rs1_value: %10d | rs2_value: %10d", dut.reg_bank.A, dut.reg_bank.B);
-        $display("       Forwarding -> Fwd_1: %2b | Fwd_2: %2b | foward_1_value: %10d | foward_2_value: %10d", dut.fwd.forwardRs1, dut.fwd.forwardRs2, dut.forwarding_rs1, dut.forwarding_rs2);
+        $display("       Forwarding -> Fwd_1: %2b | Fwd_2: %2b | forward_1_value: %10d | forward_2_value: %10d", dut.fwd.forwardRs1, dut.fwd.forwardRs2, dut.forwarding_rs1, dut.forwarding_rs2);
         $display("       Branch Decider -> Branch Taken: %b", dut.branch_decider.Branch);
         $display("       Hazard Detection -> PCWrite: %b | IFIDWrite: %b | Bolha: %b | Flush: %b",
                  dut.hdu.PCWrite, dut.hdu.IFIDWrite, dut.hdu.Bolha, dut.hdu.Flush);
