@@ -9,6 +9,7 @@ module hazard_detection_unit (
     input wire [4:0] IFID_Register1,
     input wire [4:0] IFID_Register2,
     input wire       Jump,
+    input wire       predicted,
      
     output reg       PCWrite,
     output reg       IFIDWrite,
@@ -23,22 +24,20 @@ module hazard_detection_unit (
         IFIDWrite = 1'b1;
         Bolha     = 1'b0;
         Flush     = 1'b0;
-
         // Hazard (caso de instrução seguida de B ou JALR dependente)
         if (IDEX_RegWrite &&
             (IDEX_RegisterRd != 5'b00000) &&
-            (B || Jalr) &&
+            (branch || jalr) &&
             ((IDEX_RegisterRd == IFID_Register1) || (IDEX_RegisterRd == IFID_Register2))) begin
 
             PCWrite   = 1'b0;
             IFIDWrite = 1'b0;
             Bolha     = 1'b1;
         end
-
         // Hazard (caso do load seguido de instrucao B ou JAlR)
         if (EXMEM_MemRead &&
             (EXMEM_RegisterRd != 5'b00000) &&
-            (B || Jalr) &&
+            (branch || jalr) &&
             ((EXMEM_RegisterRd == IFID_Register1) || (EXMEM_RegisterRd == IFID_Register2))) begin
 
             PCWrite   = 1'b0;
@@ -56,10 +55,8 @@ module hazard_detection_unit (
             Bolha     = 1'b1;
         end
 
-
-        // Hazard (caso de ocorrer salto)
-        else if (Jump) begin
-            // O salto foi decidido, limpa a próxima instrução
+        else if (predicted ^ Jump) begin
+            // A predição estava errada, limpa a próxima instrução
             Flush = 1'b1;
         end
     end

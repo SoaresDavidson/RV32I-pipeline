@@ -30,8 +30,9 @@ module tb_RV32i;
     initial begin
         // 4. Carrega o programa na memória ANTES de começar a simulação.
         // $readmemb("testBenchs/binarios/Testes/testes.bin", dut.im.instruction_memory);
-        $readmemb("testbenchs/binarios/Exemplos/program.bin", dut.im.instruction_memory);
+        // $readmemb("testbenchs/binarios/Exemplos/program.bin", dut.im.instruction_memory);
         // $readmemb("testbenchs/binarios/Exemplos/flush.bin", dut.im.instruction_memory);
+        $readmemb("testBenchs/binarios/Testes/teste_BTB.bin", dut.im.instruction_memory);
 
         $readmemb("testbenchs/binarios/memoria.bin", dut.m_m.memory);
         // assign dut.reg_bank.registers[1] = 32'd10;
@@ -54,7 +55,7 @@ module tb_RV32i;
         #20;
         rst = 0;
         enable = 1; // Habilita o processador
-        #300;
+        #400;
         $finish;
     
     end
@@ -62,7 +63,7 @@ module tb_RV32i;
     // Use a borda de descida do clock para garantir que todos os valores
 // do ciclo já foram calculados e registrados.
 reg [7:0] tipo;
-always @(negedge clk) begin
+always @(posedge clk) begin
     // Não imprima nada durante o reset ou se o processador estiver desabilitado
     case (dut.IF_ID.opcode) 
         7'b0110011: tipo = "R";
@@ -84,15 +85,24 @@ always @(negedge clk) begin
         $display("\n//--------------------[ CICLO @ %0t ]--------------------//", $time);
 
         // --- ESTÁGIO IF ---
-        $display("PC: %8h   |   Instruction: %32b", pc_out, out_instruction);
         
+        // --- BRANCH TARGET BUFFER ---
+        $display("  [BTB] Inputs -> pc: %8h | IFID_pc: %8h | target_address: %8h | branch_taken: %b",
+                 dut.btb.pc, dut.btb.IFID_pc, dut.btb.target_address, dut.btb.branch_taken);
+        $display("       Outputs -> predicted_address: %8h | predicted: %b",
+                 dut.btb.predicted_address, dut.btb.predicted);
+        $display("       Internal -> pc_less: %3d | buffer_pc: %b | buffer_target: %b | buffer_state: %2b | buffer_valid: %b",
+                 dut.btb.pc_less, dut.btb.buffer[dut.btb.pc_less][66:35], dut.btb.buffer[dut.btb.pc_less][34:3], dut.btb.buffer[dut.btb.pc_less][2:1], dut.btb.buffer[dut.btb.pc_less][0]);
+        $display("-----------------------------------------------------------------");
+        
+        $display("PC: %8h   |   Instruction: %32b", pc_out, out_instruction);
         // --- ESTÁGIO ID ---
         $display("-----------------------------------------------------------------");
         $display("  [IF/ID] Opcode: %7b | tipo: %c | rd: %2d, rs1: %2d, rs2: %2d", dut.IF_ID.opcode, tipo, dut.IF_ID.rd, dut.IF_ID.rs1, dut.IF_ID.rs2);
         $display("       Funct3: %3b  | Funct7: %7b", dut.IF_ID.funct3, dut.IF_ID.funct7);
         $display("       Imm Gen: %8h", dut.imm_gen_output);
         $display("       RegBank Read -> rs1_value: %10d | rs2_value: %10d", dut.reg_bank.A, dut.reg_bank.B);
-        $display("       Forwarding -> Fwd_1: %2b, Fwd_2: %2b", dut.fwd.forwardRs1, dut.fwd.forwardRs2);
+        $display("       Forwarding -> Fwd_1: %2b | Fwd_2: %2b | foward_1_value: %10d | foward_2_value: %10d", dut.fwd.forwardRs1, dut.fwd.forwardRs2, dut.forwarding_rs1, dut.forwarding_rs2);
         $display("       Branch Decider -> Branch Taken: %b", dut.branch_decider.Branch);
         $display("       Hazard Detection -> PCWrite: %b | IFIDWrite: %b | Bolha: %b | Flush: %b",
                  dut.hdu.PCWrite, dut.hdu.IFIDWrite, dut.hdu.Bolha, dut.hdu.Flush);
@@ -124,6 +134,7 @@ always @(negedge clk) begin
         // $display("%d %d %d %d %d", dut.m_m.memory[0], dut.m_m.memory[1], dut.m_m.memory[2], dut.m_m.memory[3], dut.m_m.funct3);
         $display("reg0: %0d reg1: %0d reg2: %0d reg3: %0d reg4: %0d reg5: %0d reg6: %0d, reg7: %0d, reg8: %0d", dut.reg_bank.registers[0], dut.reg_bank.registers[1], dut.reg_bank.registers[2], dut.reg_bank.registers[3], dut.reg_bank.registers[4], dut.reg_bank.registers[5], dut.reg_bank.registers[6], dut.reg_bank.registers[7], dut.reg_bank.registers[8]);
         $display("mem0: %0d mem1: %0d mem2: %0d mem3: %0d mem4: %0d mem5: %0d mem6: %0d, mem7: %0d, mem8: %0d", dut.m_m.memory[0], dut.m_m.memory[1], dut.m_m.memory[2], dut.m_m.memory[3], dut.m_m.memory[4], dut.m_m.memory[5], dut.m_m.memory[6], dut.m_m.memory[7], dut.m_m.memory[8]);
+        $display("%b", dut.btb.buffer[20]);
 
     end
 end

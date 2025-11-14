@@ -3,12 +3,13 @@ module BranchDecider (
   input  wire [2:0] funct3,
   input  wire [31:0] rs1,
   input  wire [31:0] rs2,
+  input  wire bolha,
   output reg  Branch
 );
   
   always @(*) begin
 	 Branch = 1'b0;  
-    if (opcode == 7'b1100011) begin
+    if (opcode == 7'b1100011 && ~bolha) begin
       case (funct3)
         3'b000: Branch = (rs1 == rs2);   // BEQ
         3'b001: Branch = (rs1 != rs2);   // BNE
