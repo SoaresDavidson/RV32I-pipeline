@@ -25,7 +25,7 @@ module PC (
       end else if (Jump == 1 && Target != pc) begin
         pc <= Target;
       end else if (IFIDpredicted == 1 && Jump == 0) begin
-          pc <= IFID_pc;
+          pc <= IFID_pc + 4;
         end else begin
           pc <= pc + 4;
         end
