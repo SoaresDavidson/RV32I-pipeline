@@ -7,13 +7,16 @@ module RV32i(
     output wire [31:0] pc_out,
     output wire [31:0] out_instruction
 );
+  //Branch Target Buffer
+  wire [31:0] btb_predicted_address;
+  wire btb_predicted;
   //program counter
   wire [31:0] pc;
   wire PCWrite;
   //instruction memory
   wire [31:0] instruction;
   //IF/ID
-  wire IFIDWrite;
+  wire IFIDWrite, IFIDpredicted;
   wire [6:0] opcode; 
   wire [4:0] IFID_rd, IFID_rs1, IFID_rs2; //registadores de destino e fonte
   wire [2:0] funct3; 
@@ -49,9 +52,7 @@ module RV32i(
   wire [1:0] forwardrs1;
   wire [1:0] forwardrs2;
   // hazard unit
-  wire Jump;
-  wire Bolha;
-  wire Flush;
+  wire Jump, Bolha, Flush;
   //ULA controler
   wire [3:0] operation;
   wire ula_err;
@@ -75,15 +76,32 @@ module RV32i(
   assign pc_out = pc;
   assign out_instruction = instruction;
 
-  
+  BranchTargetBuffer btb(
+    .clk(clk),
+    .rst(rst),
+    .pc(pc),
+    .IFID_pc(IFID_pc),
+    .target_address($signed(imm_gen_output) + ((jump && ~opcode[3]) ?  forwarding_rs1 : IFID_pc)),
+    .branch_taken((branch_tomado && branch) || jump),
+    //outputs
+    .predicted_address(btb_predicted_address),
+    .predicted(btb_predicted)
+  );
+    // .Target(IFIDpredicted && !branch ? IFID_pc : btb_predicted ? btb_predicted_address : $signed(imm_gen_output) + ((jump && ~opcode[3]) ?  forwarding_rs1 : IFID_pc)), // não questione, so comparar o opcode[3] do jalr e do jal a única diferença é esse bit  // 
   PC dut_pc(
     //entradas
     .Clk(clk),
     .Reset(rst),
+    .IFID_pc(IFID_pc),
+    .btb_predicted_address(btb_predicted_address),
+    .btb_predicted(btb_predicted),
+    .branch(branch),
+    .IFIDpredicted(IFIDpredicted),
     .Jump((branch_tomado && branch) || jump), // se for jump ou branch tomado em um instrução do tipo B, pega o target
     .Enable(enable),
     .PCWrite(PCWrite), // sinal vindo da hazard unit
-    .Target(imm_gen_output + ((jump && ~opcode[3]) ?  rs1_value : IFID_pc)), // não questione, so comparar o opcode[3] do jalr e do jal a única diferença é esse bit
+    //ternario aninhado pois estou com preguiça de criar mais fios ass:Davi
+    .Target($signed(imm_gen_output) + ((jump && ~opcode[3]) ?  forwarding_rs1 : IFID_pc)), // não questione, so comparar o opcode[3] do jalr e do jal a única diferença é esse bit
     //saída
     .pc(pc) // saída do PC
   );
@@ -102,6 +120,7 @@ module RV32i(
     .instruction(instruction),
     .clk(clk),
     .rst(rst),
+    .predicted_in(btb_predicted),
     .Flush(Flush),
     .enable(enable),
     .IFIDWrite(IFIDWrite),
@@ -119,7 +138,8 @@ module RV32i(
     .imm_S(imm_S),
     .imm_B(imm_B),
     .imm_U(imm_U),
-    .imm_J(imm_J)
+    .imm_J(imm_J),
+    .predicted_out(IFIDpredicted)
   );
 
   control ctrl(
@@ -139,6 +159,7 @@ module RV32i(
   );
 
   hazard_detection_unit hdu (
+    .IDEX_RegWrite(IDEXreg_wr),
     .EXMEM_MemRead(EXMEMmem_rd),
     .IDEX_MemRead(IDEXmem_rd),
     .branch(branch),
@@ -147,7 +168,8 @@ module RV32i(
     .IDEX_RegisterRd(IDEXrd),
     .IFID_Register1(IFID_rs1),
     .IFID_Register2(IFID_rs2),
-    .Jump((branch_tomado && branch) || jump), 
+    .Jump(~Bolha && ((branch_tomado && branch) || jump)), 
+    .predicted(IFIDpredicted),
     .PCWrite(PCWrite),
     .IFIDWrite(IFIDWrite),
     .Bolha(Bolha),
@@ -203,6 +225,7 @@ module RV32i(
     .funct3(funct3),
     .rs1(forwarding_rs1),
     .rs2(forwarding_rs2),
+    .bolha(Bolha),
     .Branch(branch_tomado)
   );
 
