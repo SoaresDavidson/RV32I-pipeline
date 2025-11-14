@@ -101,7 +101,7 @@ module RV32i(
     .Enable(enable),
     .PCWrite(PCWrite), // sinal vindo da hazard unit
     //ternario aninhado pois estou com preguiça de criar mais fios ass:Davi
-    .Target($signed(imm_gen_output) + ((jump && ~opcode[3]) ?  rs1_value : IFID_pc)), // não questione, so comparar o opcode[3] do jalr e do jal a única diferença é esse bit
+    .Target($signed(imm_gen_output) + ((jump && ~opcode[3]) ?  forwarding_rs1 : IFID_pc)), // não questione, so comparar o opcode[3] do jalr e do jal a única diferença é esse bit
     //saída
     .pc(pc) // saída do PC
   );
