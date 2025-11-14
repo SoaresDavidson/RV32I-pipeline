@@ -130,6 +130,8 @@ always @(*) begin
             reg_wr = 1'b1;
             mux_reg_wr = 1'b0; 
             jump = 1'b1;
+            alu_src1 = 2'b01;
+            alu_src2 = 2'b10;
         end
         7'b1100111: begin  // tipo I JALR
             branch = 1'b0;
