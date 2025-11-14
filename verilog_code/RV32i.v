@@ -81,13 +81,13 @@ module RV32i(
     .rst(rst),
     .pc(pc),
     .IFID_pc(IFID_pc),
-    .target_address($signed(imm_gen_output) + ((jump && ~opcode[3]) ?  rs1_value : IFID_pc)),
+    .target_address($signed(imm_gen_output) + ((jump && ~opcode[3]) ?  forwarding_rs1 : IFID_pc)),
     .branch_taken((branch_tomado && branch) || jump),
     //outputs
     .predicted_address(btb_predicted_address),
     .predicted(btb_predicted)
   );
-    // .Target(IFIDpredicted && !branch ? IFID_pc : btb_predicted ? btb_predicted_address : $signed(imm_gen_output) + ((jump && ~opcode[3]) ?  rs1_value : IFID_pc)), // não questione, so comparar o opcode[3] do jalr e do jal a única diferença é esse bit  // 
+    // .Target(IFIDpredicted && !branch ? IFID_pc : btb_predicted ? btb_predicted_address : $signed(imm_gen_output) + ((jump && ~opcode[3]) ?  forwarding_rs1 : IFID_pc)), // não questione, so comparar o opcode[3] do jalr e do jal a única diferença é esse bit  // 
   PC dut_pc(
     //entradas
     .Clk(clk),
