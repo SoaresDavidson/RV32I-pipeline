@@ -27,12 +27,17 @@ always @(posedge clk or posedge rst) begin
             buffer[IFID_pc_less] <= {IFID_pc, target_address, 2'b00, 1'b1};
         end
         else if (buffer[IFID_pc_less][0] == 1'b1) begin
-            case (buffer[IFID_pc_less][2:1])
-                2'b00: buffer[IFID_pc_less][2:1] <= branch_taken ? 2'b00 : 2'b01;
-                2'b01: buffer[IFID_pc_less][2:1] <= branch_taken ? 2'b00 : 2'b11;
-                2'b11: buffer[IFID_pc_less][2:1] <= branch_taken ? 2'b01 : 2'b10;
-                2'b10: buffer[IFID_pc_less][2:1] <= branch_taken ? 2'b11 : 2'b10;
-            endcase
+            if (branch_taken) begin
+                // Update the full entry with new PC, target address, reset state, and set valid
+                buffer[IFID_pc_less] <= {IFID_pc, target_address, 2'b00, 1'b1};
+            end else begin
+                case (buffer[IFID_pc_less][2:1])
+                    2'b00: buffer[IFID_pc_less][2:1] <= 2'b01;
+                    2'b01: buffer[IFID_pc_less][2:1] <= 2'b11;
+                    2'b11: buffer[IFID_pc_less][2:1] <= 2'b10;
+                    2'b10: buffer[IFID_pc_less][2:1] <= 2'b10;
+                endcase
+            end
         end
     end
 
