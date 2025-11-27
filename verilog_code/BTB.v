@@ -11,9 +11,9 @@ module BranchTargetBuffer(
 
 reg [66:0] buffer[0:255]; //buffer[pc_less] gives target address
 wire [7:0] pc_less;
-assign pc_less = pc[7:0];
+assign pc_less = pc[9:2];
 wire [7:0] IFID_pc_less;
-assign IFID_pc_less = IFID_pc[7:0];
+assign IFID_pc_less = IFID_pc[9:2];
 
 //pc[32],target[32],state[2], valid[1]
 

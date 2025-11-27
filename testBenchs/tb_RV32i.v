@@ -31,8 +31,9 @@ module tb_RV32i;
         // 4. Carrega o programa na memória ANTES de começar a simulação.
         // $readmemb("testBenchs/binarios/Testes/testes.bin", dut.im.instruction_memory);
         // $readmemb("testbenchs/binarios/Exemplos/program.bin", dut.im.instruction_memory);
-        // $readmemb("testbenchs/binarios/Exemplos/flush.bin", dut.im.instruction_memory);
-        $readmemb("testBenchs/binarios/Testes/teste_BTB.bin", dut.im.instruction_memory);
+        $readmemb("testbenchs/binarios/Exemplos/flush.bin", dut.im.instruction_memory);
+        // $readmemb("testBenchs/binarios/Testes/teste_BTB.bin", dut.im.instruction_memory);
+        // $readmemb("testBenchs/binarios/Branchs/bne.bin", dut.im.instruction_memory);
 
         $readmemb("testbenchs/binarios/memoria.bin", dut.m_m.memory);
         // assign dut.reg_bank.registers[1] = 32'd10;
@@ -55,7 +56,7 @@ module tb_RV32i;
         #20;
         rst = 0;
         enable = 1; // Habilita o processador
-        #400;
+        #1000;
         $finish;
     
     end
