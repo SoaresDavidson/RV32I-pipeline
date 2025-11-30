@@ -4,6 +4,9 @@ module hazard_detection_unit (
     input wire       IDEX_MemRead,
     input wire       branch,
     input wire       jalr,
+    input wire       mul,
+    input wire [2:0] IDEXfunct3,
+    input wire [2:0] counter,
     input wire [4:0] EXMEM_RegisterRd,
     input wire [4:0] IDEX_RegisterRd,
     input wire [4:0] IFID_Register1,
@@ -13,7 +16,9 @@ module hazard_detection_unit (
      
     output reg       PCWrite,
     output reg       IFIDWrite,
+    output reg       IDEXenable,
     output reg       Bolha,
+    output reg       Bolha_mem,
    output reg       Flush
 );
 
@@ -24,6 +29,8 @@ module hazard_detection_unit (
         IFIDWrite = 1'b1;
         Bolha     = 1'b0;
         Flush     = 1'b0;
+        IDEXenable = 1'b1;
+        Bolha_mem = 1'b0;
         // Hazard (caso de instrução seguida de B ou JALR dependente)
         if (IDEX_RegWrite &&
             (IDEX_RegisterRd != 5'b00000) &&
@@ -53,6 +60,13 @@ module hazard_detection_unit (
             PCWrite   = 1'b0;
             IFIDWrite = 1'b0;
             Bolha     = 1'b1;
+        end
+        // Hazard (caso de multiplicação em andamento)
+        else if (mul && (counter < 3'b110 && IDEXfunct3[1] == 1'b0) || (counter < 3'b111 && IDEXfunct3[1] == 1'b1)) begin
+            PCWrite   = 1'b0;
+            IFIDWrite = 1'b0;
+            IDEXenable = 1'b0;
+            Bolha_mem = 1'b1;
         end
 
         else if (predicted ^ Jump) begin
