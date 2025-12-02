@@ -1,0 +1,72 @@
+//teste 04: Branch (1 bolha)
+// addi x1 x0 10
+// add  x2 x0 x1
+// beq x2 x1 4
+// add x3 x1 x2
+// srai x3 x1 2
+0000000001010_00000_000_00001_0010011
+00000000_00000_00001_000_00010_0110011
+000000000001000001000010001100011
+000000000001000001000000110110011
+000101000001000001101000110010011
+
+
+// resultados:
+
+// ciclo 2:
+//        ID/EX
+//        bolha = 0
+//        mem_wr = 0
+//        mem_rd = 0
+//        en_wr_regbank = 1
+//        ula_op = 10
+//        fowarding = 0
+//        jump = 0
+
+// ciclo 3: ID/EX
+//        bolha = 0
+//        mem_wr = 0
+//        mem_rd = 0
+//        en_wr_regbank = 1
+//        ula_op = 10
+//        fowarding = 0
+//        jump = 0
+
+// ciclo 4: ID/EX
+//        bolha = 0
+//        mem_wr = 0
+//        mem_rd = 0
+//        en_wr_regbank = 0
+//        ula_op = 00
+//        fowarding = 1
+//        jump = 1
+
+//        EX
+//        fowarding = 1
+
+// ciclo 5:ID/EX
+//        bolha = 0
+//        mem_wr = 0
+//        mem_rd = 0
+//        en_wr_regbank = 0
+//        ula_op = 00
+//        fowarding = 0
+//        jump = 0
+
+//        WM
+//        result = 10
+
+// ciclo 6: WM
+//        result = 10
+
+// ciclo 7: WM
+//        result = 20
+//        en_wr_regbank = 0
+
+// ciclo 8:WM
+//        result = 0
+//        en_wr_regbank = 0
+
+// ciclo 9: WM
+//        result = 2
+

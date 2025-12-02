@@ -1,0 +1,61 @@
+// teste 02: dependecia de dados (sem bolhas)
+// addi x1 x0 12
+// addi x2 x0 5
+// sltiu x3 x1 14
+// andi x4 x2 3
+// xori x5 x1 9
+000000001100_00000_000_00001_0010011
+000000000101_00000_000_00010_0010011
+000000001110_00001_011_00010_0010011
+000000000011_00010_111_00100_0010011
+000000001001_00010_100_00101_0010011
+
+// resultados teste 2
+
+// ciclo 2: ID/EX
+//        bolha = 0
+//        mem_wr = 0
+//        mem_rd = 0
+//        en_wr_regbank = 1
+//        ula_op = 10
+//        fowarding = 0
+
+
+// ciclo 3: ID/EX
+//        bolha = 0
+//        mem_wr = 0
+//        mem_rd = 0
+//        en_wr_regbank = 1
+//        ula_op = 10
+//        fowarding = 0
+
+// ciclo 4: ID/EX
+//        bolha = 0
+//        mem_wr = 0
+//        mem_rd = 0
+//        en_wr_regbank = 1
+//        ula_op = 10
+//        fowarding = 1
+
+// ciclo 5: ID/EX
+//        bolha = 0
+//        mem_wr = 0
+//        mem_rd = 0
+//        en_wr_regbank = 1
+//        ula_op = 10
+//        fowarding = 1
+//
+//        WM:
+//        result = 12
+
+// ciclo 6: WM
+//        result = 5
+
+// ciclo 7: WM
+//        result = 15
+
+// ciclo 8: WM
+//        result = 1
+
+// ciclo 9: WM
+//        result = 5

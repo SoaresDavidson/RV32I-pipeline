@@ -1,0 +1,79 @@
+// inicializacao 
+// addi x1 x0 4 
+// addi x2 x0 2   
+00000000010000000000000010010011
+00000000001000000000000100010011
+
+// espaçamento = (add x0 x0 x0) * 5
+00000000000000000000000000110011
+00000000000000000000000000110011
+00000000000000000000000000110011
+00000000000000000000000000110011
+00000000000000000000000000110011
+
+
+// teste 01 : operacoes independentes
+// add x3 x1 x2
+// sub x4 x2 x1
+// xori x0 x2 4
+// sw x2 0(x1)
+// lb x7 0(x1)
+00000000001000001000000110110011
+00101000000100010000001000110011
+00000000010000010100000000010011
+00000000001000001010000000100011
+00000000000000001000001110000011
+
+// resultados:
+
+// ciclo 2: ID/EX
+//        bolha = 0
+//        mem_wr = 0
+//        mem_rd = 0
+//        en_wr_regbank = 1
+//        ula_op = 10
+
+// ciclo 3: ID/EX
+//       bolha = 0
+//        mem_wr = 0
+//        mem_rd = 0
+//        en_wr_regbank = 1
+//        ula_op = 10
+
+// ciclo 4: ID/EX
+//        bolha = 0
+//        mem_wr = 0
+//        mem_rd = 0
+//        en_wr_regbank = 1
+//        ula_op = 10
+
+// ciclo 5: ID/EX
+//        bolha = 0
+//        mem_wr = 1
+//        mem_rd = 0
+//        en_wr_regbank = 0
+//        ula_op = 00
+
+//        WM
+//        result = 3
+
+// ciclo 6: ID/EX
+//        bolha = 0
+//        mem_wr = 0
+//        mem_rd = 1
+//        en_wr_regbank = 1
+//      ula_op = 00
+
+//        EX/MEM 
+//        ula_res = 1
+//        rs2 = 2
+
+//        WM
+//        result = 1
+
+// ciclo 7: WM
+//        result = 6
+
+// ciclo 9: WM
+//
+//        result = 2

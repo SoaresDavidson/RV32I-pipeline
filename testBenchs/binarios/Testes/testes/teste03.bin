@@ -1,0 +1,81 @@
+// teste 03: dependencia de dados (com bolha) | pc = 5C
+// addi x1 x0 4
+// slli x2 x1 1
+// sw x1 2(x2)
+// lw x4 2(x2)
+// add x3 x1 x4
+000000000100_00000_000_00001_0010011
+000000000001_00001_001_00010_0010011
+0000000_00001_00010_010_00010_0100011
+0000000000100001001000100_0000011
+0000000000010010000000011_0110011
+
+// resultados teste 03
+
+// ciclo 2: ID/EX
+//        bolha = 0
+//        mem_wr = 0
+//        mem_rd = 0
+//        en_wr_regbank = 1
+//        ula_op = 10
+//        fowarding = 0
+
+// ciclo 3: ID/EX
+//        bolha = 0
+//        mem_wr = 0
+//        mem_rd = 0
+//        en_wr_regbank = 1
+//        ula_op = 10
+//        fowarding = 0
+
+// ciclo 4: ID/EX
+//        bolha = 0
+//        mem_wr = 1
+//        mem_rd = 0
+//        en_wr_regbank = 0
+//        ula_op = 00
+//        fowarding = 1
+
+//        EX
+//        fowarding = 1
+
+// ciclo 5: ID/EX
+//        bolha = 0
+//        mem_wr = 0
+//        mem_rd = 1
+//        en_wr_regbank = 1
+//        ula_op = 00
+//        fowarding = 1
+
+//        WM
+//        result = 4
+
+// ciclo 6: ID/EX
+//        bolha = 1
+//        mem_wr = 0
+//        mem_rd = 0
+//        en_wr_regbank = 0
+//        ula_op = 00
+//        fowarding = 1
+
+//        WM
+//        result = 8
+
+// ciclo 7: ID/EX
+//        bolha = 0
+//        mem_wr = 0
+//        mem_rd = 1
+//        en_wr_regbank = 1
+//        ula_op = 10
+//        fowarding = 0
+
+// ciclo 8: WM
+//        result = 4
+
+// ciclo 9: WM
+//        en_wr_regbank = 0
+//        result != 8
+
+// ciclo 10: WM
+//        en_wr_regbank = 1
+//        result = 8
