@@ -14,6 +14,8 @@ always @(*) begin
     if (rst) begin
         operation <= 4'b0000;
     end else begin
+	     operation <= 4'b0000;
+		  err <= 1'b0; 
         case (ula_op) 
             2'b00: operation <= 4'b0000; // ADD
             2'b01: operation <= 4'b0001; // SUB
@@ -34,9 +36,9 @@ always @(*) begin
                     3'b001: begin                                              // funct3 = 1
                         if (funct7 == 7'b0) begin
                             operation <= 4'b0101;  
-                            err = 1'b0;                               // SHIFT LEFT LOGICAL 5
+                            err <= 1'b0;                               // SHIFT LEFT LOGICAL 5
                         end else begin
-                            err = 1'b1;
+                            err <= 1'b1;
                         end   
                     end
 

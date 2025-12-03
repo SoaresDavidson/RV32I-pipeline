@@ -31,7 +31,7 @@ module RV32i(
   //foward unit
   reg [31:0] forwarding_A, forwarding_B, forwarding_rs1, forwarding_rs2;
   //ID/EX
-  wire IDEXmem_rd, IDEXmem_wr, IDEXreg_wr, IDEXmux_reg_wr;
+  wire IDEXmem_rd, IDEXmem_wr, IDEXreg_wr, IDEXmux_reg_wr, IDEXmul;
   wire [1:0] IDEXalu_src1, IDEXalu_src2;
   wire [1:0] IDEXula;
   wire [31:0] IDEXimm, IDEXpc;
@@ -52,7 +52,7 @@ module RV32i(
   wire [1:0] forwardrs1;
   wire [1:0] forwardrs2;
   // hazard unit
-  wire Jump, Bolha, Flush;
+  wire Jump, Bolha, Flush, Bolha_mem, IDEXenable;
   //ULA controler
   wire [3:0] operation;
   wire ula_err;
@@ -60,6 +60,11 @@ module RV32i(
   wire ULA_zero;
   reg [31:0] ULA_A, ULA_B;
   wire [31:0] ULA_C;
+  //multiplicador
+  reg mul;
+  wire [2:0] counter;
+  wire [31:0] signedS, unsignedS; 
+  wire [63:0] tempS, tempU;
   //EX/MEM
   wire EXMEMmem_rd,EXMEMmem_wr, EXMEMreg_wr, EXMEMmux_reg_wr;
   wire [31:0] EXMEMula_res, EXMEMval_B;
@@ -158,20 +163,29 @@ module RV32i(
     .jalr_out(jalr)
   );
 
+  always @(*) begin
+    mul = (opcode == 7'b0110011) && (funct7 == 7'b0000001); // verifica se é uma instrução de multiplicação
+  end
+
   hazard_detection_unit hdu (
     .IDEX_RegWrite(IDEXreg_wr),
     .EXMEM_MemRead(EXMEMmem_rd),
     .IDEX_MemRead(IDEXmem_rd),
     .branch(branch),
     .jalr(jalr),
+    .mul(IDEXmul),
+    .IDEXfunct3(IDEXfunct3),
+    .counter(counter),
     .EXMEM_RegisterRd(EXMEMrd),
     .IDEX_RegisterRd(IDEXrd),
     .IFID_Register1(IFID_rs1),
     .IFID_Register2(IFID_rs2),
-    .Jump(~Bolha && ((branch_tomado && branch) || jump)), 
+    .Jump((branch_tomado && branch) || jump), 
     .predicted(IFIDpredicted),
     .PCWrite(PCWrite),
     .IFIDWrite(IFIDWrite),
+    .IDEXenable(IDEXenable),
+    .Bolha_mem(Bolha_mem),
     .Bolha(Bolha),
     .Flush(Flush)
   );
@@ -238,6 +252,7 @@ module RV32i(
     .mem_wr_in(~Bolha ? mem_wr : 1'b0),
     .reg_wr_in(~Bolha ? reg_wr : 1'b0),
     .mux_reg_wr_in(~Bolha ? mux_reg_mem : 1'b0),
+    .mul_in(~Bolha ? mul : 1'b0),
     .pc_in(IFID_pc),
     .imm_in(jump ? 4 : imm_gen_output),
     .rs1_in(IFID_rs1),
@@ -245,11 +260,11 @@ module RV32i(
     .rd_in(IFID_rd),
     .funct7_in(funct7),
     .funct3_in(funct3),
-    .val_A_in(rs1_value),
-    .val_B_in(rs2_value),
+    .val_A_in(forwarding_rs1),
+    .val_B_in(forwarding_rs2),
     .clk(clk),
     .rst(rst),
-    .enable(enable),
+    .enable(IDEXmul ? IDEXenable : enable), // se for multiplicação, usa o sinal da hazard unit
     .pc_out(IDEXpc),
     .imm_out(IDEXimm),
     .rs1_out(IDEXrs1),
@@ -265,6 +280,7 @@ module RV32i(
     .mem_rd_out(IDEXmem_rd),
     .mem_wr_out(IDEXmem_wr),
     .reg_wr_out(IDEXreg_wr),
+    .mul_out(IDEXmul),
     .mux_reg_wr_out(IDEXmux_reg_wr)
   );
   //forward unit
@@ -337,14 +353,29 @@ module RV32i(
 		.ULA_zero (ULA_zero),
 		.ula_op (operation)
 	);
+  
+  MulPipelined32Bits uut (
+    .Clk(clk),
+    .Reset(rst),
+    .A(ULA_A),
+    .mul(IDEXmul),
+    .funct3(IDEXfunct3[1:0]),
+    .B(ULA_B),
+    .Rd(IDEXrd),
+    .counter(counter),
+    .regularS(signedS),
+    .unsignedS(unsignedS),
+    .tempS(tempS),
+    .tempU(tempU)
+  );
 
   EX_MEM EX_MEM(
-    .mem_rd_in(IDEXmem_rd),
-    .mem_wr_in(IDEXmem_wr),
-    .reg_wr_in(IDEXreg_wr),
-    .mux_reg_wr_in(IDEXmux_reg_wr),
+    .mem_rd_in(Bolha_mem ? 1'b0 : IDEXmem_rd),
+    .mem_wr_in(Bolha_mem ? 1'b0 : IDEXmem_wr),
+    .reg_wr_in(Bolha_mem ? 1'b0 : IDEXreg_wr),
+    .mux_reg_wr_in(Bolha_mem ? 1'b0 : IDEXmux_reg_wr),
     .funct3_in(IDEXfunct3),
-    .ula_res_in(ULA_C),
+    .ula_res_in(IDEXmul ? (IDEXfunct3[1] ? unsignedS[31:0] : signedS[31:0]) : ULA_C),
     .val_B_in(forwarding_B),
     .rd_in(IDEXrd),
     .clk(clk),
