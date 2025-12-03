@@ -91,7 +91,7 @@ always @(*) begin
             mem_rd = 1'b0;
             mem_wr = 1'b0;
             ula_op = 2'b00;
-            reg_wr = 1'b1;
+            reg_wr = 1'b0;
             mux_reg_wr = 1'b0; 
             alu_src1 = 2'b00;
             alu_src2 = 2'b00;

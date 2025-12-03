@@ -9,7 +9,7 @@ module BranchDecider (
   
   always @(*) begin
 	 Branch = 1'b0;  
-    if (opcode == 7'b1100011 && ~bolha) begin
+    if (opcode == 7'b1100011) begin
       case (funct3)
         3'b000: Branch = ($signed(rs1) == $signed(rs2));   // BEQ
         3'b001: Branch = ($signed(rs1) != $signed(rs2));   // BNE

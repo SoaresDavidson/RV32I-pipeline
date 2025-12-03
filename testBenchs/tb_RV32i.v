@@ -32,12 +32,14 @@ module tb_RV32i;
         // $readmemb("testBenchs/binarios/Testes/testes.bin", dut.im.instruction_memory);
         // $readmemb("testbenchs/binarios/Exemplos/program.bin", dut.im.instruction_memory);
         // $readmemb("testbenchs/binarios/Exemplos/flush.bin", dut.im.instruction_memory);
-        $readmemb("testBenchs/binarios/Testes/mul.bin", dut.im.instruction_memory);
+        $readmemb("testBenchs/binarios/mul/mul_big.bin", dut.im.instruction_memory);
         // $readmemb("testBenchs/binarios/Branchs/bne.bin", dut.im.instruction_memory);
+        // $readmemb("testBenchs/binarios/BTB/teste_BTB.bin", dut.im.instruction_memory);
+        // $readmemb("testBenchs/binarios/BTB/BTB_miss.bin", dut.im.instruction_memory);
 
         $readmemb("testbenchs/binarios/memoria.bin", dut.m_m.memory);
-        // assign dut.reg_bank.registers[1] = 32'd10;
-        //assign dut.reg_bank.registers[2] = 32'd20;
+        assign dut.reg_bank.registers[1] = 32'hFFFFFFFA; // -6 em complemento de 2
+        assign dut.reg_bank.registers[2] = 32'hFFFFFFFC; // -4 em complemento de 2
 
         // assign dut.m_m.memory[0] = 8'b1000;
         // assign dut.m_m.memory[1] = 8'b1;
@@ -56,7 +58,7 @@ module tb_RV32i;
         #20;
         rst = 0;
         enable = 1; // Habilita o processador
-        #200;
+        #1000;
         $finish;
     
     end
@@ -83,6 +85,7 @@ always @(posedge clk) begin
 
         // --- CABEÇALHO DO CICLO ---
         // Adiciona um cabeçalho claro para cada ciclo de clock
+        $display("imm_b: %12b | imm_j: %20b", dut.IF_ID.imm_B, dut.IF_ID.imm_J);
         $display("\n//--------------------[ CICLO @ %0t ]--------------------//", $time);
 
         // --- ESTÁGIO IF ---
@@ -104,8 +107,8 @@ always @(posedge clk) begin
         $display("       Imm Gen: %8h", dut.imm_gen_output);
         $display("       RegBank Read -> rs1_value: %10d | rs2_value: %10d", dut.reg_bank.A, dut.reg_bank.B);
         $display("       Forwarding -> Fwd_1: %2b | Fwd_2: %2b | forward_1_value: %10d | forward_2_value: %10d", dut.fwd.forwardRs1, dut.fwd.forwardRs2, dut.forwarding_rs1, dut.forwarding_rs2);
-        $display("       Branch Decider -> Branch Taken: %b", dut.branch_decider.Branch);
-        $display("       Hazard Detection -> PCWrite: %b | IFIDWrite: %b | IDEXenable: %b | Bolha: %b | Bolha_mem: %b | Flush: %b | mul: %b",
+        $display("       Branch Decider -> Branch Taken: %b | IFID_BTB_predicted: %b | xor:%b" , dut.branch_decider.Branch, dut.IF_ID.predicted_out, dut.branch_decider.Branch ^ dut.IF_ID.predicted_out);
+        $display("       Hazard Detection -> PCWrite: %b | IFIDWrite: %b | IDEXenable: %b | Bolha: %b | Bolha_mem: %b | Flush: %b | hazard_mul: %b",
                  dut.hdu.PCWrite, dut.hdu.IFIDWrite, dut.hdu.IDEXenable, dut.hdu.Bolha, dut.hdu.Bolha_mem, dut.hdu.Flush, dut.hdu.mul);
 
         // --- ESTÁGIO EX ---

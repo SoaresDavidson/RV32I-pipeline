@@ -62,14 +62,14 @@ module hazard_detection_unit (
             Bolha     = 1'b1;
         end
         // Hazard (caso de multiplicação em andamento)
-        else if (mul && (counter < 3'b110 && IDEXfunct3[1] == 1'b0) || (counter < 3'b111 && IDEXfunct3[1] == 1'b1)) begin
+        else if (mul && ((counter < 3'b110 && IDEXfunct3[1] == 1'b0) || (counter < 3'b111 && IDEXfunct3[1] == 1'b1))) begin
             PCWrite   = 1'b0;
             IFIDWrite = 1'b0;
             IDEXenable = 1'b0;
             Bolha_mem = 1'b1;
         end
 
-        else if (predicted ^ Jump) begin
+        else if ((predicted ^ Jump) && ~Bolha) begin
             // A predição estava errada, limpa a próxima instrução
             Flush = 1'b1;
         end
