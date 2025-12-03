@@ -35,6 +35,10 @@ def getOpcode(instruction):
               return "0110111"
         else:
             return "0010111"
+    elif instruction == "HALT":
+        return "HALT"
+    elif instruction == "NOP":
+        return "NOP"
     else:
         return "UNKNOWN"
 
@@ -44,7 +48,10 @@ def getFullInstruction(instruction):
     opcode = getOpcode(args[0])
     if opcode == "UNKNOWN":
         return "INVALID"
-
+    if opcode == "HALT": #retorna 32 bits 1
+        return "1" * 32
+    if opcode == "NOP": #retorna 32 bits 0
+        return '0' * 32
     if opcode == "0110011":  # R-type
         funct3 = funct3R[typeR.index(args[0])]
         #LER PARA A RS1 e RS2 a string que representa o binário do registrador
@@ -57,14 +64,14 @@ def getFullInstruction(instruction):
             funct7 = typeR.index(args[0]) % 7
         else:
             funct7 = "0000000"
-        return funct7 + rs2 + rs1 + funct3 + rd + opcode
+        return funct7 + '_' + rs2 + '_' + rs1 + '_' + funct3 + '_' + rd + '_' + opcode
     
     if opcode == "0010011" or opcode == "0000011" or opcode == "1100111":  # I-type
         rd = format(int(args[1]), '05b')
         rs1 = format(int(args[2]), '05b')
         imm = format(int(args[3]), '012b') 
         funct3 = funct3I[typeI.index(args[0])]
-        return imm + rs1 + funct3 + rd + opcode
+        return imm + '_' + rs1 + '_' + funct3 + '_' + rd + '_' + opcode
     
     if opcode == "0100011":  # S-type
         rs2 = format(int(args[2]), '05b')
@@ -73,7 +80,7 @@ def getFullInstruction(instruction):
         funct3 = "000" if args[0] == "SB" else "001" if args[0] == "SH" else "010"
         imm_high = imm[11:4:-1]
         imm_low = imm[4:-1:-1]
-        return imm_high + rs2 + rs1 + funct3 + imm_low + opcode
+        return imm_high + '_' + rs2 + '_' + rs1 + '_' + funct3 + '_' + imm_low + '_' + opcode
 
     if opcode == "1100011":  # B-type
         rs1 = format(int(args[1]), '05b')
@@ -86,7 +93,7 @@ def getFullInstruction(instruction):
         imm_11 = imm[11]
         #printar o tamanho de cada imm para debugar
         print(f"imm_12: {len(imm_12)}, imm_10_5: {len(imm_10_5)}, imm_4_1: {len(imm_4_1)}, imm_11: {len(imm_11)}")
-        return imm_12 + imm_10_5 + rs2 + rs1 + funct3 + imm_4_1 + imm_11 + opcode
+        return imm_12 + '_' + imm_10_5 + '_' + rs2 + '_' + rs1 + '_' + funct3 + '_' + imm_4_1 + '_' + imm_11 + '_' +  opcode
     
     
     if opcode == "1101111":  # J-type
@@ -96,7 +103,7 @@ def getFullInstruction(instruction):
         imm_10_1 = imm[10:0:-1]
         imm_11 = imm[11]
         imm_19_12 = imm[19:11:-1]
-        return imm_20 + imm_10_1 + imm_11 + imm_19_12 + rd + opcode
+        return imm_20 + '_' + imm_10_1 + '_' + imm_11 + '_' + imm_19_12 + '_' + rd + '_' + opcode
     
 if __name__ == '__main__':
 
